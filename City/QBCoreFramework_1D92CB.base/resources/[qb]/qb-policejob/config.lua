@@ -53,7 +53,7 @@ Config.Locations = {
        [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
    }, 
    ["armory"] = {
-       [1] = vector3(461.86, -980.88, 30.69),
+       [1] = vector4(462.23, -981.12, 30.68, 90.654),
    },   
    ["trash"] = {
        [1] = vector4(439.0907, -976.746, 30.776, 93.03),
@@ -125,12 +125,24 @@ Config.AuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
 		["police"] = "Police Car 1",
+		["police2"] = "Police Car 2",
+		["police3"] = "Police Car 3",
+		["police4"] = "Police Car 4",
+		["policeb"] = "Police Car 5",
+		["policet"] = "Police Car 6",
+		["sheriff"] = "Sheriff Car 1",
+		["sheriff2"] = "Sheriff Car 2",
 	},
 	-- Grade 1
 	[1] = {
 		["police"] = "Police Car 1",
 		["police2"] = "Police Car 2",
 		["police3"] = "Police Car 3",
+		["police4"] = "Police Car 4",
+		["policeb"] = "Police Car 5",
+		["policet"] = "Police Car 6",
+		["sheriff"] = "Sheriff Car 1",
+		["sheriff2"] = "Sheriff Car 2",
 
 	},
 	-- Grade 2
@@ -141,6 +153,8 @@ Config.AuthorizedVehicles = {
 		["police4"] = "Police Car 4",
 		["policeb"] = "Police Car 5",
 		["policet"] = "Police Car 6",
+		["sheriff"] = "Sheriff Car 1",
+		["sheriff2"] = "Sheriff Car 2",
 	},
 	-- Grade 3
 	[3] = {
@@ -165,7 +179,6 @@ Config.AuthorizedVehicles = {
 		["sheriff2"] = "Sheriff Car 2",
 	}
 }
-Config.Vehicles = {}
 
 Config.WhitelistedVehicles = {}
 
