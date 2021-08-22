@@ -1,0 +1,61 @@
+    #   ____  ____   _____               
+#  / __ \|  _ \ / ____|              
+# | |  | | |_) | |     ___  _ __ ___ 
+# | |  | |  _ <| |    / _ \| '__/ _ \
+# | |__| | |_) | |___| (_) | | |  __/
+#  \___\_\____/ \_____\___/|_|  \___|
+
+## You CAN edit the following:
+endpoint_add_tcp "88.214.59.40:30328" # zap-hosting: do not modify!
+endpoint_add_udp "88.214.59.40:30328" # zap-hosting: do not modify!
+sv_maxclients 10
+set steam_webApiKey "none"
+sets tags "default, deployer, qbcore, qb-core"
+
+## You MAY edit the following:
+sv_licenseKey "kx1yidc7m9zw80fjpzbiokrey0hmy2bi"
+sv_hostname "squad-qb"
+sets sv_projectName "[QBCore Framework] squad-qb"
+sets sv_projectDesc "An advanced FiveM RP framework including jobs, gangs, housing & more!"
+sets locale "en-US" 
+load_server_icon myLogo.png
+set mysql_connection_string "mysql://zap785415-1:iWHYJ8FaA4UT3C1o@mysql-mariadb17-dal-104.zap-hosting.com/zap785415-1?charset=utf8mb4"
+
+# Voice config
+setr voice_useNativeAudio true
+setr voice_useSendingRangeOnly true
+setr voice_defaultCycle "GRAVE"
+setr voice_defaultVolume 0.3
+setr voice_enableRadioAnim 1
+setr voice_syncData 1
+
+# These resources will start by default.
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager
+ensure basic-gamemode
+ensure hardcap
+ensure baseevents
+
+# QBCore & Extra stuff
+ensure qb-core
+ensure [qb]
+ensure [standalone]
+ensure [voice]
+ensure ziv-loadscreen-master
+ensure qb-blackjack
+ensure pillbox_hospital
+ensure ballas_club
+ensure casinoexterior
+ensure casinointerior
+ensure cookiez
+ensure plasmagame
+
+# Add system admins
+add_ace group.admin command allow # allow all commands
+add_ace group.admin command.quit deny # but don't allow quit
+add_principal identifier.discord.460539323146567686 group.admin
+add_principal identifier.discord.370482718343168000 group.admin 
+# Deployer Note: this admin master has no identifiers to be automatically added.
+# add_principal identifier.discord.111111111111111111 group.admin #example
