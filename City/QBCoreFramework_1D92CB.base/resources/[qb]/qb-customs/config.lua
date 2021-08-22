@@ -8,7 +8,7 @@ vehicleRepairCostMultiplier = 1
 bennyGarages = {
     [1] = {coords = vector4(-211.55, -1324.55, 30.90, 319.73135375977), useJob = false, job = {"mechanic", "police"}},
     [2] = {coords = vector4(109.89, 6627.07, 31.78, 221.7938), useJob = true, job = {"mechanic"}},
-    [3] = {coords = vector4(-324.95, -137.1, 38.56, 87.92), useJob = true, job = {"mechanic"}}
+    [3] = {coords = vector4(-324.95, -137.1, 38.56, 87.92), useJob = false, job = {"mechanic", "police"}}
 }
 
 --[[ bennyLocations = {
