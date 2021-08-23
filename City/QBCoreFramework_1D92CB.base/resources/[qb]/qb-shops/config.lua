@@ -829,13 +829,4 @@ Config.Locations = {
         ["products"] = Config.Products["normal"],
         ["showblip"] = true,
     }, 
-    ["littleseoulclothing"] = {
-        ["label"] = "Little Seoul Clothing",
-        ["type"] = "clothing",
-        ["coords"] = {
-            [1] = vector3(-803.79, -594.97, 30.28)
-        },
-        ["products"] = Config.Products["normal"],
-        ["showblip"] = true,
-    }, 
 }

@@ -10,7 +10,7 @@ local Keys = {
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 
-QBCore = QBCore
+QBCore = nil
 
 Citizen.CreateThread(function() 
     while true do
@@ -218,7 +218,7 @@ function SlaughterAnimal(AnimalId)
 	ClearPedTasksImmediately(PlayerPedId())
 
 	local AnimalWeight = math.random(10, 160) / 10
-	QBCore.Functions.Notify('You slaughtered the animal and recieved' ..AnimalWeight.. 'kg of meat')
+	QBCore.Functions.Notify('You slaughtered the animal and recieved ' ..AnimalWeight.. 'kg of meat', "success")
 
 	TriggerServerEvent('QBCore:reward', AnimalWeight)
 
