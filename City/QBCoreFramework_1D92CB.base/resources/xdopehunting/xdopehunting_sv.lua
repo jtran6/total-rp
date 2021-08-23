@@ -18,8 +18,8 @@ end)
 RegisterServerEvent('QBCore:sell')
 AddEventHandler('QBCore:sell', function()
     local Player = QBCore.Functions.GetPlayer(source)
-    local MeatPrice = 125
-    local LeatherPrice = 25
+    local MeatPrice = 5000
+    local LeatherPrice = 1000
 
     local MeatQuantity = Player.Functions.GetItemByName('meat')
     local LeatherQuantity = Player.Functions.GetItemByName('leather')
