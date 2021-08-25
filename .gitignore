@@ -1,4 +1,5 @@
 City/QBCoreFramework_1D92CB.base/cache
 screenlog.0
 City/default/logs
-server.cfg
+City/QBCoreFramework_1D92CB.base/server.local.cfg
+City/default/config.json
