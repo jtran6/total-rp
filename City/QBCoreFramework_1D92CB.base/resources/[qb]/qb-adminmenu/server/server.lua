@@ -223,24 +223,7 @@ QBCore.Commands.Add("announce", "Make An Announcement (Admin Only)", {}, false, 
     end
 end, "admin")
 
-
-function dump(o)
-	if type(o) == 'table' then
-	   local s = '{ '
-	   for k,v in pairs(o) do
-		  if type(k) ~= 'number' then k = '"'..k..'"' end
-		  s = s .. '['..k..'] = ' .. dump(v) .. ','
-	   end
-	   return s .. '} '
-	else
-	   return tostring(o)
-	end
- end
-
-
 QBCore.Commands.Add("admins", "Open Admin Menu (Admin Only)", {}, false, function(source, args)
-    print(dump(source))
-    print(dump(args))
     TriggerClientEvent('qb-admin:client:openMenu', source)
 end, "admin")
 
