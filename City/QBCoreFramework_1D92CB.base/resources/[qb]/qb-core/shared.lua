@@ -381,7 +381,10 @@ QBShared.Items = {
 	["stripedbass"] 			     = {["name"] = "stripedbass", 			        ["label"] = "Striped Bass",             ["weight"] = 1111,      ["type"] = "item",      ["image"] = "stripedbass.png",          ["unique"] = false,     ["useable"] = true,     ["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "A Striped Bass"},
 	["fishingrod"] 			 		 = {["name"] = "fishingrod", 					["label"] = "Fishing Rod", 				["weight"] = 5000, 		["type"] = "item", 		["image"] = "fishingrod.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A fishing rod for adventures with friends!!"},	
 	["fishingbait"] 			     = {["name"] = "fishingbait", 					["label"] = "Fish Bait", 				["weight"] = 400, 		["type"] = "item", 		["image"] = "fishbait.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "A fish bait"},
+	["meat"] 		 				 = {["name"] = "meat", 							["label"] = "Meat", 					["weight"] = 1000, 		["type"] = "item", 		["image"] = "meat.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,	   ["combinable"] = nil,   ["description"] = "Raw Meat"},
+	["leather"] 		 			 = {["name"] = "leather", 						["label"] = "Leather", 					["weight"] = 1000, 		["type"] = "item", 		["image"] = "leather.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,	   ["combinable"] = nil,   ["description"] = "Raw Leather"},
 }
+
 
 -- // HASH WEAPON ITEMS, NEED SOMETIMES TO GET INFO FOR CLIENT
 
@@ -4545,6 +4548,61 @@ QBShared.Vehicles = {
 		["price"] = 178500,
 		["category"] = "sports",
 		["hash"] = `vectre`,
+		["shop"] = "pdm",
+	},
+	--WHITELISTED
+	["rmodmustang"] = {
+		["name"] = "RMOD Customs Mustang GT",
+		["brand"] = "RMOD",
+		["model"] = "rmodmustang",
+		["price"] = 500000,
+		["category"] = "sports",
+		["hash"] = GetHashKey("rmodmustang"),
+		["shop"] = "pdm",
+	},
+	["rmodf40"] = {
+		["name"] = "RMOD Customs F40",
+		["brand"] = "RMOD",
+		["model"] = "rmodf40",
+		["price"] = 500000,
+		["category"] = "sports",
+		["hash"] = GetHashKey("rmodf40"),
+		["shop"] = "pdm",
+	},
+	["rmodgtr50"] = {
+		["name"] = "RMOD GTR50",
+		["brand"] = "RMOD",
+		["model"] = "rmodgtr50",
+		["price"] = 500000,
+		["category"] = "sports",
+		["hash"] = `rmodgtr50`,
+		["shop"] = "pdm",
+	},
+	["rmodmartin"] = {
+		["name"] = "RMOD Aston Martin Vantage",
+		["brand"] = "RMOD",
+		["model"] = "rmodmartin",
+		["price"] = 500000,
+		["category"] = "sports",
+		["hash"] = `rmodmartin`,
+		["shop"] = "pdm",
+	},
+	["rmodrs6"] = {
+		["name"] = "RMOD RS6",
+		["brand"] = "RMOD",
+		["model"] = "rmodrs6",
+		["price"] = 500000,
+		["category"] = "sports",
+		["hash"] = `rmodrs6`,
+		["shop"] = "pdm",
+	},
+	["rmodsianr"] = {
+		["name"] = "RMOD Sian R",
+		["brand"] = "RMOD",
+		["model"] = "rmodsianr",
+		["price"] = 500000,
+		["category"] = "sports",
+		["hash"] = `rmodsianr`,
 		["shop"] = "pdm",
 	},
 }

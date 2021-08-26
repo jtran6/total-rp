@@ -829,4 +829,13 @@ Config.Locations = {
         ["products"] = Config.Products["normal"],
         ["showblip"] = true,
     }, 
+    ["beanmachine"] = {
+        ["label"] = "Cyber Bar",
+        ["type"] = "leisure",
+        ["coords"] = {
+            [1] = vector3(280.27, -971.9, 29.42)
+        },
+        ["products"] = Config.Products["normal"],
+        ["showblip"] = true,
+    }, 
 }
