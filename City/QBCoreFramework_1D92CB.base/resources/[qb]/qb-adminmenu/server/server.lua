@@ -223,7 +223,7 @@ QBCore.Commands.Add("announce", "Make An Announcement (Admin Only)", {}, false, 
     end
 end, "admin")
 
-QBCore.Commands.Add("admin", "Open Admin Menu (Admin Only)", {}, false, function(source, args)
+QBCore.Commands.Add("admins", "Open Admin Menu (Admin Only)", {}, false, function(source, args)
     TriggerClientEvent('qb-admin:client:openMenu', source)
 end, "admin")
 
