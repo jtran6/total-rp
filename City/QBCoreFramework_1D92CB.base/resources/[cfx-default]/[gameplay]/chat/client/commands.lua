@@ -8,17 +8,17 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 	end
 
-	while QB.GetPlayerData().job == nil do
+	while QBCore.Functions.GetPlayerData().job == nil do
 		Citizen.Wait(10)
 	end
 
-	PlayerData = QB.GetPlayerData()
+    PlayerData = QBCore.Functions.GetPlayerData()
 end)
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(60000)
-		PlayerData = QB.GetPlayerData()
+        PlayerData = QBCore.Functions.GetPlayerData()
 	end
 end)
 
