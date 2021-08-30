@@ -120,8 +120,39 @@ function closeBanking() {
 
 $( function() {
     $("body").on("keydown", function (key) {
-        if (Config.closeKeys.includes(key.which)) {
+        if (Config.closeKeys.includes(key.which) || key.keyCode == 27) {
             closeBanking();
+        }
+
+        if ($('#pinContainer').is(':visible')) {
+            if (key.which >= 48 && key.which <= 57) { // 48 - 57 (0-9 keys)
+                var currentVal = $('#pinCode').val();
+                var number = key.which - 48;
+                $('#pinCode').val(currentVal + number);
+            } else if (key.which >= 96 && key.which <= 105) { //96 - 105 (0-9 numberpad)
+                var currentVal = $('#pinCode').val();
+                var number = key.which - 96;
+                $('#pinCode').val(currentVal + number);
+            } else if (key.which == 13) {
+                var currentVal = $('#pinCode').val();
+                if (currentVal == clientPin) {
+                    $('#errorMsg').addClass('alert-info').removeClass('alert-danger');
+                    $('#errorMsg').html('Please enter your debit card pin, to access the ATM.');
+                    $('#pinCode').val('');
+                    $.post("https://qb-atms/loadBankingAccount", JSON.stringify({
+                        cid: clientCid,
+                        cardnumber: cardNumb
+                    }));
+                } else {
+                    $('#pinCode').val('');
+                    $('#errorMsg').removeClass('alert-info').addClass('alert-danger');
+                    $('#errorMsg').html('You have entered an incorrect pin, please try again.')
+                    setTimeout(function () {
+                        $('#errorMsg').addClass('alert-info').removeClass('alert-danger');
+                        $('#errorMsg').html('Please enter your debit card pin, to access the ATM.');
+                    }, 5000);
+                }
+            }
         }
     });
 
