@@ -4,7 +4,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
         local ped = PlayerPedId()
-        if not IsPedSittingInAnyVehicle(ped) then
+        if not IsPedSittingInAnyVehicle(ped) and not IsPedFalling(ped) then
             if IsControlJustReleased(0, 36) then
                 stage = stage + 1
                 if stage == 2 then
@@ -46,7 +46,7 @@ Citizen.CreateThread(function()
                 DisableControlAction(1, 141, true)
                 DisableControlAction(1, 142, true)
 
-                if (IsControlPressed(0, 32) and not movingForward) then
+                if (IsControlPressed(0, 32) and not movingForward) and Config.EnableProne  then
                     movingForward = true
                     SetPedMoveAnimsBlendOut(ped)
                     local pronepos = GetEntityCoords(ped)

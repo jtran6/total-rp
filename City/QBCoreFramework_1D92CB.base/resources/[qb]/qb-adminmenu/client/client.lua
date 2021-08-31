@@ -1,18 +1,20 @@
 local banlength = nil
 local banreason = 'Unknown'
 local kickreason = 'Unknown'
-vehicleDevMode = false
 
-local menu = MenuV:CreateMenu(false, 'Admin Menu', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test')
-local menu2 = MenuV:CreateMenu(false, 'Admin Options', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test1')
-local menu4 = MenuV:CreateMenu(false, 'Online Players', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test3')
-local menu5 = MenuV:CreateMenu(false, 'Manage Server', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test4')
-local menu6 = MenuV:CreateMenu(false, 'Available Weather Options', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test5')
-local menu7 = MenuV:CreateMenu(false, 'Dealer List', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test6')
-local menu8 = MenuV:CreateMenu(false, 'Ban', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test7')
-local menu9 = MenuV:CreateMenu(false, 'Kick', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test8')
-local menu10 = MenuV:CreateMenu(false, 'Permissions', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test9')
-local menu11 = MenuV:CreateMenu(false, 'Developer Options', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test10')
+local menu = MenuV:CreateMenu(false, 'Admin Menu', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test')
+local menu2 = MenuV:CreateMenu(false, 'Admin Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test1')
+local menu4 = MenuV:CreateMenu(false, 'Online Players', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test3')
+local menu5 = MenuV:CreateMenu(false, 'Manage Server', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test4')
+local menu6 = MenuV:CreateMenu(false, 'Available Weather Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test5')
+local menu7 = MenuV:CreateMenu(false, 'Dealer List', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test6')
+local menu8 = MenuV:CreateMenu(false, 'Ban', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test7')
+local menu9 = MenuV:CreateMenu(false, 'Kick', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test8')
+local menu10 = MenuV:CreateMenu(false, 'Permissions', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test9')
+local menu11 = MenuV:CreateMenu(false, 'Developer Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test10')
+local menu12 = MenuV:CreateMenu(false, 'Vehicle Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test11')
+local menu13 = MenuV:CreateMenu(false, 'Vehicle Categories', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test12')
+local menu14 = MenuV:CreateMenu(false, 'Vehicle Models', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test13')
 
 RegisterNetEvent('qb-admin:client:openMenu')
 AddEventHandler('qb-admin:client:openMenu', function()
@@ -36,6 +38,12 @@ local menu_button3 = menu:AddButton({
     label = 'Server Management',
     value = menu5,
     description = 'Misc. Server Options'
+})
+local menu_button21 = menu:AddButton({
+    icon = '🚗',
+    label = 'Vehicles',
+    value = menu12,
+    description = 'Vehicle Options'
 })
 local menu_button4 = menu:AddButton({
     icon = '💊',
@@ -233,7 +241,7 @@ menu_button11:On("select",function()
             value = "RAIN",
             description = 'Make It Rain!'
         },
-       
+
         [10] = {
             icon = '⛈️',
             label = 'Thunder',
@@ -324,6 +332,43 @@ local noclip_button = menu11:AddCheckbox({
     value = menu11,
     description = 'Enable/Disable NoClip'
 })
+local names_button = menu11:AddCheckbox({               
+    icon = '📋',                                        
+    label = 'Names',                                    
+    value = menu11,                               
+    description = 'Enable/Disable Names overhead'   
+})                                               
+local blips_button = menu11:AddCheckbox({     
+    icon = '📍',                             
+    label = 'Blips',                                    
+    value = menu11,                                     
+    description = 'Enable/Disable Blips for players'    
+}) 
+
+local menu12_button1 = menu12:AddButton({
+    icon = '🚗',
+    label = 'Spawn Vehicle',
+    value = menu13,
+    description = 'Spawn a vehicle'
+})
+local menu12_button2 = menu12:AddButton({
+    icon = '🔧',
+    label = 'Fix Vehicle',
+    value = 'fix',
+    description = 'Fix the vehicle you are in'
+})
+local menu12_button3 = menu12:AddButton({
+    icon = '💲',
+    label = 'Buy',
+    value = 'buy',
+    description = 'Buy the vehicle for free'
+})
+local menu12_button4 = menu12:AddButton({
+    icon = '☠',
+    label = 'Remove Vehicle',
+    value = 'remove',
+    description = 'Remove closest vehicle'
+})
 
 local deleteLazer = false
 deletelazer_button:On('change', function(item, newValue, oldValue)
@@ -339,7 +384,6 @@ heading_button:On("select", function()
 end)
 
 vehicledev_button:On('select', function()
-    vehicleDevMode = not vehicleDevMode
     ToggleVehicleDeveloperMode()
 end)
 
@@ -349,6 +393,65 @@ end)
 
 togglecoords_button:On('change', function()
     ToggleShowCoordinates()
+end)
+
+local vehicles = {}
+for k, v in pairs(QBCore.Shared.Vehicles) do
+    local category = v["category"]
+    if vehicles[category] == nil then
+        vehicles[category] = { }
+    end
+    vehicles[category][k] = v
+end
+
+-- Car Categories
+menu12_button1:On('Select', function(item)
+    menu13:ClearItems()
+    for k, v in pairs(vehicles) do
+        local menu_button10 = menu13:AddButton({
+            label = k,
+            value = v,
+            description = 'Category Name',
+            select = function(btn)
+                local select = btn.Value
+                OpenCarModelsMenu(select)
+            end
+        })
+    end
+end)
+
+function OpenCarModelsMenu(category)
+    menu14:ClearItems()
+    MenuV:OpenMenu(menu14)
+    for k, v in pairs(category) do
+        local menu_button10 = menu14:AddButton({
+             label = v["name"],
+             value = k,
+             description = 'Spawn ' .. v["name"],
+             select = function(btn)
+                 TriggerServerEvent('QBCore:CallCommand', "car", { k })
+             end
+        })
+    end
+end
+
+menu12_button2:On('Select', function(item)
+    TriggerServerEvent('QBCore:CallCommand', "fix", {})
+end)
+
+menu12_button3:On('Select', function(item)
+    TriggerServerEvent('QBCore:CallCommand', "admincar", {})
+end)
+
+menu12_button4:On('Select', function(item)
+    TriggerServerEvent('QBCore:CallCommand', "dv", {})
+end)
+
+names_button:On('change', function()           
+    TriggerEvent('qb-admin:client:toggleNames')
+end)                                           
+blips_button:On('change', function()           
+    TriggerEvent('qb-admin:client:toggleBlips')
 end)
 
 -- Dealer List
@@ -395,7 +498,7 @@ menu_button13:On("select", function(item, value)
 end)
 
 function OpenDealerMenu(dealer)
-    local EditDealer = MenuV:CreateMenu(false, 'Edit Dealer ' .. dealer["name"], 'topright', 155, 0, 0, 'size-125', 'none', 'menuv')
+    local EditDealer = MenuV:CreateMenu(false, 'Edit Dealer ' .. dealer["name"], 'topright', 220, 20, 60, 'size-125', 'none', 'menuv')
     EditDealer:ClearItems()
     MenuV:OpenMenu(EditDealer)
     local elements = {
@@ -434,7 +537,7 @@ end
 
 function OpenPlayerMenus(player)
 
-    local Players = MenuV:CreateMenu(false, player.cid .. ' Options', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv') -- Players Sub Menu
+    local Players = MenuV:CreateMenu(false, player.cid .. ' Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv') -- Players Sub Menu
     Players:ClearItems()
     MenuV:OpenMenu(Players)
     local elements = {
@@ -475,30 +578,36 @@ function OpenPlayerMenus(player)
             description = "Bring " .. player.cid .. " to your position"
         },
         [7] = {
+            icon = '🚗',
+            label = "Sit in vehicle",
+            value = "intovehicle",
+            description = "Sit in " .. player.cid .. "'s vehicle"
+        },
+        [8] = {
             icon = '🎒',
             label = "Open Inventory",
             value = "inventory",
             description = "Open " .. player.cid .. " inventorys"
         },
-        [8] = {
+        [9] = {
             icon = '👕',
             label = "Give Clothing Menu",
             value = "cloth",
             description = "Give the Cloth menu to " .. player.cid
         },
-        [9] = {
+        [10] = {
             icon = '🥾',
             label = "Kick",
             value = "kick",
             description = "Kick " .. player.cid .. " you need to give a reason"
         },
-        [10] = {
+        [11] = {
             icon = '🚫',
             label = "Ban",
             value = "ban",
             description = "Ban " .. player.cid .. " you need to give a reason"
         },
-        [11] = {
+        [12] = {
             icon = '🎟️',
             label = "Permissions",
             value = "perms",

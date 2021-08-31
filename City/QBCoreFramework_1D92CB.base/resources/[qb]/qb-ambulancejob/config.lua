@@ -35,6 +35,10 @@ Config.Locations = {
         [6] = {coords = vector4(366.43, -581.54, 43.28, 66.5), taken = false, model = 1631638868}, 
         [7] = {coords = vector4(364.93, -585.86, 43.28, 67.5), taken = false, model = 1631638868}, 
         [8] = {coords = vector4(363.82, -589.09, 43.28, 68.5), taken = false, model = 1631638868},
+    }, 
+    ["stations"] = {
+        [1] = {label = "Doctor's Post Paleto", coords = vector4(-254.88, 6324.5, 32.58, 3.5)},
+        [2] = {label = "Pillbox Hospital", coords = vector4(304.27, -600.33, 43.28, 272.249)}
     }
 }
 
@@ -77,7 +81,7 @@ Config.Items = {
             slot = 3,
         },
         [4] = {
-            name = "weapon_flashlight",
+            name = "firstaid",
             price = 0,
             amount = 50,
             info = {},
@@ -85,12 +89,20 @@ Config.Items = {
             slot = 4,
         },
         [5] = {
-            name = "weapon_fireextinguisher",
+            name = "weapon_flashlight",
             price = 0,
             amount = 50,
             info = {},
             type = "item",
             slot = 5,
+        },
+        [6] = {
+            name = "weapon_fireextinguisher",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 6,
         },
     }
 }

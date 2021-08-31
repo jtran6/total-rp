@@ -9,13 +9,11 @@ local permissions = {
 }
 
 -- Get Dealers
-
 QBCore.Functions.CreateCallback('test:getdealers', function(source, cb)
     cb(exports['qb-drugs']:GetDealers())
 end)
 
 -- Get Players
-
 QBCore.Functions.CreateCallback('test:getplayers', function(source, cb) -- WORKS
     local players = {}
     for k, v in pairs(QBCore.Functions.GetPlayers()) do
@@ -55,6 +53,26 @@ end
 
 -- Events
 
+RegisterServerEvent('qb-admin:server:GetPlayersForBlips')       
+AddEventHandler('qb-admin:server:GetPlayersForBlips', function()
+    local src = source					                        
+    local players = {}                                          
+    for k, v in pairs(QBCore.Functions.GetPlayers()) do         
+        local targetped = GetPlayerPed(v)                       
+        local ped = QBCore.Functions.GetPlayer(v)             
+        table.insert(players, {                             
+            name = ped.PlayerData.charinfo.firstname .. " " .. ped.PlayerData.charinfo.lastname .. " | (" .. GetPlayerName(v) .. ")",
+            id = v,                                      
+            coords = GetEntityCoords(targetped),             
+            cid = ped.PlayerData.charinfo.firstname .. " " .. ped.PlayerData.charinfo.lastname,
+            citizenid = ped.PlayerData.citizenid,            
+            sources = GetPlayerPed(ped.PlayerData.source),    
+            sourceplayer= ped.PlayerData.source              
+        })                                                  
+    end                                                  
+    TriggerClientEvent('qb-admin:client:Show', src, players)  
+end)
+
 RegisterNetEvent("qb-admin:server:kill")
 AddEventHandler("qb-admin:server:kill", function(player)
     TriggerClientEvent('hospital:client:KillPlayer', player.id)
@@ -70,7 +88,7 @@ AddEventHandler("qb-admin:server:kick", function(player, reason)
     local src = source
     if QBCore.Functions.HasPermission(src, permissions["kick"]) then
         TriggerEvent("qb-log:server:CreateLog", "bans", "Player Kicked", "red", string.format('%s was kicked by %s for %s', GetPlayerName(player.id), GetPlayerName(src), reason), true)
-        DropPlayer(player.id, "You have been kicked from the server:\n" .. reason .. "\n\n🔸 Join the discord server for more information: https://discord.gg/example")
+        DropPlayer(player.id, "You have been kicked from the server:\n" .. reason .. "\n\n🔸 Check our Discord for more information: " .. QBCore.Config.Server.discord)
     end
 end)
 
@@ -99,9 +117,9 @@ AddEventHandler("qb-admin:server:ban", function(player, time, reason)
         })
         TriggerEvent("qb-log:server:CreateLog", "bans", "Player Banned", "red", string.format('%s was banned by %s for %s', GetPlayerName(player.id), GetPlayerName(src), reason), true)
         if banTime >= 2147483647 then
-            DropPlayer(player.id, "You have been banned:\n" .. reason .. "\n\nYour ban is permanent.\n🔸 Join the discord for more information: https://discord.gg/example")
+            DropPlayer(player.id, "You have been banned:\n" .. reason .. "\n\nYour ban is permanent.\n🔸 Check our Discord for more information: " .. QBCore.Config.Server.discord)
         else
-            DropPlayer(player.id, "You have been banned:\n" .. reason .. "\n\nBan expires: " .. timeTable["day"] .. "/" .. timeTable["month"] .. "/" .. timeTable["year"] .. " " .. timeTable["hour"] .. ":" .. timeTable["min"] .. "\n🔸 Join the discord for more information: https://discord.gg/example")
+            DropPlayer(player.id, "You have been banned:\n" .. reason .. "\n\nBan expires: " .. timeTable["day"] .. "/" .. timeTable["month"] .. "/" .. timeTable["year"] .. " " .. timeTable["hour"] .. ":" .. timeTable["min"] .. "\n🔸 Check our Discord for more information: " .. QBCore.Config.Server.discord)
         end
     end
 end)
@@ -134,6 +152,31 @@ AddEventHandler('qb-admin:server:goto', function(player)
     SetEntityCoords(admin, coords)
 end)
 
+RegisterNetEvent('qb-admin:server:intovehicle')
+AddEventHandler('qb-admin:server:intovehicle', function(player)
+    local src = source
+    local admin = GetPlayerPed(src)
+    -- local coords = GetEntityCoords(GetPlayerPed(player.id))
+    local targetPed = GetPlayerPed(player.id)
+    local vehicle = GetVehiclePedIsIn(targetPed,false)
+    local seat = -1
+    if vehicle ~= 0 then
+        for i=0,8,1 do
+            if GetPedInVehicleSeat(vehicle,i) == 0 then
+                seat = i
+                break
+            end
+        end
+        if seat ~= -1 then
+            SetPedIntoVehicle(admin,vehicle,seat)
+            TriggerClientEvent('QBCore:Notify', src, 'Entered vehicle', 'success', 5000)
+        else
+            TriggerClientEvent('QBCore:Notify', src, 'The vehicle has no free seats!', 'danger', 5000)
+        end
+    end
+end)
+
+
 RegisterNetEvent('qb-admin:server:bring')
 AddEventHandler('qb-admin:server:bring', function(player)
     local src = source
@@ -151,13 +194,16 @@ end)
 
 RegisterNetEvent("qb-admin:server:cloth")
 AddEventHandler("qb-admin:server:cloth", function(player)
-	TriggerClientEvent("qb-clothing:client:openMenu", player.id)
+    TriggerClientEvent("qb-clothing:client:openMenu", player.id)
 end)
 
 RegisterServerEvent('qb-admin:server:setPermissions')
 AddEventHandler('qb-admin:server:setPermissions', function(targetId, group)
-    QBCore.Functions.AddPermission(targetId, group[1].rank)
-    TriggerClientEvent('QBCore:Notify', targetId, 'Your Permission Level Is Now '..group[1].label)
+    local src = source
+    if QBCore.Functions.HasPermission(src, "admin") then
+        QBCore.Functions.AddPermission(targetId, group[1].rank)
+        TriggerClientEvent('QBCore:Notify', targetId, 'Your Permission Level Is Now '..group[1].label)
+    end
 end)
 
 RegisterServerEvent('qb-admin:server:SendReport')
@@ -207,6 +253,14 @@ end)
 
 -- Commands
 
+QBCore.Commands.Add("blips", "Show blips for players (Admin Only)", {}, false, function(source, args)
+    TriggerClientEvent('qb-admin:client:toggleBlips', source)
+end, "admin")
+
+QBCore.Commands.Add("names", "Show player name overhead (Admin Only)", {}, false, function(source, args)
+    TriggerClientEvent('qb-admin:client:toggleNames', source)
+end, "admin")
+
 QBCore.Commands.Add("coords", "Enable coord display for development stuff (Admin Only)", {}, false, function(source, args)
     TriggerClientEvent('qb-admin:client:ToggleCoords', source)
 end, "admin")
@@ -223,7 +277,7 @@ QBCore.Commands.Add("announce", "Make An Announcement (Admin Only)", {}, false, 
     end
 end, "admin")
 
-QBCore.Commands.Add("admins", "Open Admin Menu (Admin Only)", {}, false, function(source, args)
+QBCore.Commands.Add("admin", "Open Admin Menu (Admin Only)", {}, false, function(source, args)
     TriggerClientEvent('qb-admin:client:openMenu', source)
 end, "admin")
 
@@ -307,7 +361,7 @@ QBCore.Commands.Add("reportr", "Reply To A Report (Admin Only)", {}, false, func
         for k, v in pairs(QBCore.Functions.GetPlayers()) do
             if QBCore.Functions.HasPermission(v, "admin") then
                 if QBCore.Functions.IsOptin(v) then
-                    TriggerClientEvent('chatMessage', v, "ReportReply("..source..") - "..GetPlayerName(source), "warning", msg)
+                    TriggerClientEvent('chatMessage', v, "REPORT REPLY ("..source..") - "..GetPlayerName(source), "warning", msg)
                     TriggerEvent("qb-log:server:CreateLog", "report", "Report Reply", "red", "**"..GetPlayerName(source).."** replied on: **"..OtherPlayer.PlayerData.name.. " **(ID: "..OtherPlayer.PlayerData.source..") **Message:** " ..msg, false)
                 end
             end
@@ -378,7 +432,7 @@ RegisterCommand("kickall", function(source, args, rawCommand)
         for k, v in pairs(QBCore.Functions.GetPlayers()) do
             local Player = QBCore.Functions.GetPlayer(v)
             if Player ~= nil then
-                DropPlayer(Player.PlayerData.source, "Server restart, check our Discord for more information! (discord.gg/ChangeInqb-adminMainLua)")
+                DropPlayer(Player.PlayerData.source, "Server restart, check our Discord for more information: " .. QBCore.Config.Server.discord)
             end
         end
     end
