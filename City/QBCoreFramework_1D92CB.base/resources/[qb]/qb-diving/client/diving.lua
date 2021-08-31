@@ -217,7 +217,9 @@ AddEventHandler('qb-diving:client:UseGear', function(bool)
             currentGear.enabled = true
             TriggerServerEvent('qb-diving:server:RemoveGear')
             ClearPedTasks(PlayerPedId())
-            TriggerEvent('chatMessage', "SYSTEM", "error", "/divingsuit to take off your diving suit")
+            TriggerEvent('chat:addMessage', {
+            template = '<div class="chat-message system">SYSTEM: /divingsuit to take off your diving suit </div>'
+            })
         end)
     else
         if currentGear.enabled then
