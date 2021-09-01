@@ -27,7 +27,11 @@ local menu4 = MenuV:CreateMenu(false, 'Recruit Menu', 'topright', 155, 0, 0, 'si
 
 RegisterNetEvent('qb-bossmenu:client:openMenu')
 AddEventHandler('qb-bossmenu:client:openMenu', function()
-    MenuV:OpenMenu(menu)
+    for k, v in pairs(Config.Jobs) do
+        if k == PlayerJob.name and PlayerJob.isboss then
+            MenuV:OpenMenu(menu)
+        end
+    end
 end)
 
 local menu_button = menu:AddButton({
@@ -58,7 +62,7 @@ local menu_button4 = menu:AddButton({
     icon = '💰',
     label = 'Society Money',
     value = menu2,
-    description = 'View/Mange Society Money'
+    description = 'View/Manage Society Money'
 })
 local menu_button5 = menu2:AddButton({
     icon = '💲',

@@ -36,7 +36,7 @@ AddEventHandler("qb-bossmenu:server:withdrawMoney", function(amount)
         Accounts[job] = 0
     end
 
-    if Accounts[job] >= amount then
+    if Accounts[job] >= amount and amount > 0 then
         Accounts[job] = Accounts[job] - amount
         Player.Functions.AddMoney("cash", amount)
     else

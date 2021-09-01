@@ -131,6 +131,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 4,
+            requiredJob = { "mechanic", "police" }
         },
         [5] = {
             name = "screwdriverset",
@@ -357,6 +358,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 3,
+            requiredJob = { "mechanic", "police" }
         },
         [4] = {
             name = "weapon_pistol",
@@ -365,7 +367,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 4,
-            requiresLicense = false
+            requiresLicense = true
         },
         [5] = {
             name = "weapon_snspistol",
@@ -374,7 +376,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 5,
-            requiresLicense = false
+            requiresLicense = true
         },
         [6] = {
             name = "weapon_vintagepistol",
@@ -383,7 +385,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 6,
-            requiresLicense = false
+            requiresLicense = true
         },
     },
     ["coffeeplace"] = {
@@ -430,7 +432,7 @@ Config.Locations = {
         ["label"] = "Diamond Casino",
         ["type"] = "normal",
         ["coords"] = {
-            [1] = vector3(950.09, 35.62, 71.84)
+            [1] = vector3(948.3834, 34.21247, 71.839)
         },
         ["products"] = Config.Products["casino"],
         ["showblip"] = true,
@@ -792,50 +794,5 @@ Config.Locations = {
         },
         ["products"] = Config.Products["mustapha"],
         ["showblip"] = true,
-    },
-    ["cookies"] = {
-        ["label"] = "Cookies",
-        ["type"] = "hardware",
-        ["coords"] = {
-            [1] = vector3(-932.21, -1180.38, 5.0)
-        },
-        ["products"] = Config.Products["coffeeshop"],
-        ["showblip"] = true,
-    },      
-    ["italianrestaurant"] = {
-        ["label"] = "Italian Restaurant",
-        ["type"] = "leisure",
-        ["coords"] = {
-            [1] = vector3(131.52, -1053.56, 22.96)
-        },
-        ["products"] = Config.Products["normal"],
-        ["showblip"] = true,
-    },  
-    ["burgetshot"] = {
-        ["label"] = "Burgershot",
-        ["type"] = "leisure",
-        ["coords"] = {
-            [1] = vector3(-1193.85, -892.66, 14.0)
-        },
-        ["products"] = Config.Products["normal"],
-        ["showblip"] = true,
-    },  
-    ["cyberbar"] = {
-        ["label"] = "Cyber Bar",
-        ["type"] = "leisure",
-        ["coords"] = {
-            [1] = vector3(339.14, -908.3, 29.25)
-        },
-        ["products"] = Config.Products["normal"],
-        ["showblip"] = true,
-    }, 
-    ["beanmachine"] = {
-        ["label"] = "Cyber Bar",
-        ["type"] = "leisure",
-        ["coords"] = {
-            [1] = vector3(280.27, -971.9, 29.42)
-        },
-        ["products"] = Config.Products["normal"],
-        ["showblip"] = true,
-    }, 
+    },    
 }

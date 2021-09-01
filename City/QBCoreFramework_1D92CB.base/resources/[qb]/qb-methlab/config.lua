@@ -7,7 +7,7 @@ Config.CooldownActive = false
 Config.Locations = {
     ["laboratories"] = {
         [1] = {
-            coords = vector4(321.72, -305.87, 52.50, 94.5),
+            coords = vector4(1662.89, 35.5, 171.68, 88.02),
         },
     },
     ["exit"] = {

@@ -283,13 +283,13 @@ QBDiving.Locations = {
 QBDiving.CoralTypes = {
     [1] = {
         item = "dendrogyra_coral",
-        maxAmount = math.random(5, 10),
-        price = math.random(100, 250),
+        maxAmount = math.random(1, 5),
+        price = math.random(70, 100),
     },
     [2] = {
         item = "antipatharia_coral",
-        maxAmount = math.random(5, 10),
-        price = math.random(150, 300),
+        maxAmount = math.random(2, 7),
+        price = math.random(50, 70),
     }
 }
 
@@ -301,13 +301,3 @@ QBDiving.SellLocations = {
         -- ["z"] = 13.15
 }
 }
-
--- [1] = {
---     ["coords"] = {
---         ["x"] = -1686.9,
---         ["y"] = -1072.23,
---         ["z"] = 13.15
---     }
--- }
-
---232.5, y = 368.7, z = 105.94
