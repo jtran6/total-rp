@@ -26,37 +26,37 @@ QB.VehicleShops = {
         ["OwnedJob"] = false, -- false or a job inside a string like "cardealer"
         ["ShowroomVehicles"] = {
             [1] = {
-                coords = vector3(-56.1, -1094.95, 26.42),
-                defaultVehicle = 'adder', -- The vehicle that needs to be there on restart
-                chosenVehicle = 'adder', -- Keep this the same as defaultvehicle
+                coords = vector4(-45.65, -1093.66, 25.44, 69.5), --VECTOR4 ONLY
+                defaultVehicle = 'dominator3', -- The vehicle that needs to be there on restart
+                chosenVehicle = 'dominator3', -- Keep this the same as defaultvehicle
                 inUse = false, -- When changing vehicle this gets set to true, don't change
                 buying = false, -- When buying a vehicle from an owned job this gets set to true, don't change
             },
             [2] = {
                 coords = vector4(-48.27, -1101.86, 25.44, 294.5),
-                defaultVehicle = 'schafter2',
-                chosenVehicle = 'schafter2',
+                defaultVehicle = 'rmodmustang',
+                chosenVehicle = 'rmodmustang',
                 inUse = false,
                 buying = false,
             },
             [3] = {
-                coords = vector3(-35.31, -1099.95, 26.42),
-                defaultVehicle = 'comet2',
-                chosenVehicle = 'comet2',
+                coords = vector4(-39.6, -1096.01, 25.44, 66.5),
+                defaultVehicle = 'rmodrs6',
+                chosenVehicle = 'rmodrs6',
                 inUse = false,
                 buying = false,
             },
             [4] = {
                 coords = vector4(-51.21, -1096.77, 25.44, 254.5),
-                defaultVehicle = 'vigero',
-                chosenVehicle = 'vigero',
+                defaultVehicle = 'rmodsianr',
+                chosenVehicle = 'rmodsianr',
                 inUse = false,
                 buying = false,
             },
             [5] = {
                 coords = vector4(-40.18, -1104.13, 25.44, 338.5),
-                defaultVehicle = 't20',
-                chosenVehicle = 't20',
+                defaultVehicle = 'rmodf40',
+                chosenVehicle = 'rmodf40',
                 inUse = false,
                 buying = false,
             },

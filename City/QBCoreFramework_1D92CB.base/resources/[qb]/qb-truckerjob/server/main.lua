@@ -37,13 +37,13 @@ AddEventHandler('qb-trucker:server:01101110', function(drops)
     local bonus = 0
     local DropPrice = math.random(100, 120)
     if drops > 5 then 
-        bonus = math.ceil((DropPrice / 10) * 5) + 100
+        bonus = math.ceil((DropPrice / 10) * 10) + 1000
     elseif drops > 10 then
-        bonus = math.ceil((DropPrice / 10) * 7) + 300
+        bonus = math.ceil((DropPrice / 10) * 14) + 3000
     elseif drops > 15 then
-        bonus = math.ceil((DropPrice / 10) * 10) + 400
+        bonus = math.ceil((DropPrice / 10) * 20) + 4000
     elseif drops > 20 then
-        bonus = math.ceil((DropPrice / 10) * 12) + 500
+        bonus = math.ceil((DropPrice / 10) * 24) + 5000
     end
     local price = (DropPrice * drops) + bonus
     local taxAmount = math.ceil((price / 100) * PaymentTax)

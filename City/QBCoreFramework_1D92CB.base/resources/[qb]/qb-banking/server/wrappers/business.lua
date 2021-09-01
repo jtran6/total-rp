@@ -4,24 +4,6 @@ savingsAccounts = {}
 gangAccounts = {}
 bankCards = {}
 
-function tprint (t, s)
-    for k, v in pairs(t) do
-        local kfmt = '["' .. tostring(k) ..'"]'
-        if type(k) ~= 'string' then
-            kfmt = '[' .. k .. ']'
-        end
-        local vfmt = '"'.. tostring(v) ..'"'
-        if type(v) == 'table' then
-            tprint(v, (s or '')..kfmt)
-        else
-            if type(v) ~= 'string' then
-                vfmt = tostring(v)
-            end
-            print(type(t)..(s or '')..kfmt..' = '..vfmt)
-        end
-    end
-end 
-
 function generatebusinessAccount(acc, sc, bid)
 
     local self = {}
@@ -37,7 +19,7 @@ function generatebusinessAccount(acc, sc, bid)
         self.balance = bankAccount[1].amount
         self.account_type = "business"
         self.account_for = bankAccount[1].business
-        if self.account_for == "estateagent" then
+        if self.account_for == "realestate" then
             self.account_name = "Real Estates"
         elseif self.account_for == "police" then
             self.account_name = "Police"
