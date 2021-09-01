@@ -247,6 +247,87 @@ Config.PedList = {
 		gender = 'male',
 		scenario = 'WORLD_HUMAN_GUARD_STAND_CASINO'
 	},
+	-- Ammunations
+
+    -- Legion Square
+    {
+        model = `s_m_y_ammucity_01`,
+        coords = vector4(22.59, -1105.55, 29.80, 159.83),
+        gender = 'male'
+    },
+
+    -- Popular Street
+    {
+        model = `s_m_y_ammucity_01`,
+        coords = vector4(810.21, -2159.02, 29.62, 1.43),
+        gender = 'male'
+    },
+
+    -- Vespucci Boulevard
+    {
+        model = `s_m_y_ammucity_01`,
+        coords = vector4(842.42, -1035.31, 28.19, 358.67),
+        gender = 'male'
+    },
+
+    -- Little Seoul
+    {
+        model = `s_m_y_ammucity_01`,
+        coords = vector4(662.34, -933.61, 21.83, 180.99),
+        gender = 'male'
+    },
+
+    -- Vinewood Hills
+    {
+        model = `s_m_y_ammucity_01`,
+        coords = vector4(253.87, -50.58, 69.94, 67.39),
+        gender = 'male'
+    },
+
+    -- Palomino Freeway
+    {
+        model = `s_m_y_ammucity_01`,
+        coords = vector4(2567.97, 292.64, 108.73, 358.18),
+        gender = 'male'
+    },
+
+    -- Sandy Shores
+    {
+        model = `s_m_y_ammucity_01`,
+        coords = vector4(1692.21, 3760.91, 34.71, 229.39),
+        gender = 'male'
+    },
+
+    -- Paleto
+    {
+        model = `s_m_y_ammucity_01`,
+        coords = vector4(-331.61, 6084.92, 31.45, 226.57),
+        gender = 'male'
+    },
+
+	-- Hayes Depot (Impound/Tow) -- 
+	{
+        model = `mp_m_waremech_01`,
+        coords = vector4(490.28, -1319.69, 29.2, 300.6),
+        gender = 'male'
+    },
+
+	-- SuperFly --
+	{
+        model = `u_m_y_militarybum`,
+        coords = vector4(-1171.27, -1571.04, 4.66, 121.19),
+        gender = 'male'
+    },
+
+	-- Pillbox Medical Center --
+	{
+        model = `s_f_y_scrubs_01`,
+        coords = vector4(309.63, -593.85, 43.28, 8.63),
+        gender = 'female'
+    },
+	-----------------------------
+	-- START TOTAL RP MLO PEDS --
+	-----------------------------
 
 	-- Cookies --
 	-- Cashier
@@ -314,4 +395,5 @@ Config.PedList = {
 		coords = vector4(109.43, -1286.55, 28.45, 294.47),
 		gender = 'female',
 	},
+	
 }
