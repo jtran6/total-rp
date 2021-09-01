@@ -48,7 +48,7 @@ Citizen.CreateThread(function()
 				jailTime = jailTime - 1
 				if jailTime <= 0 then
 					jailTime = 0
-					QBCore.Functions.Notify("Your time is up! Check yourself out at the visitors center", "success", 10000)
+					QBCore.Functions.Notify("Your time is up! Call someone to come get you..", "success", 10000)
 				end
 				TriggerServerEvent("prison:server:SetJailStatus", jailTime)
 			end
@@ -129,7 +129,7 @@ end)
 RegisterNetEvent('prison:client:Leave')
 AddEventHandler('prison:client:Leave', function()
 	if jailTime > 0 then 
-		QBCore.Functions.Notify("You still have to... "..jailTime.." months..")
+		QBCore.Functions.Notify("You still have... "..jailTime.." month(s)..")
 	else
 		jailTime = 0
 		TriggerServerEvent("prison:server:SetJailStatus", 0)
