@@ -28,6 +28,7 @@ AddEventHandler("consumables:client:UseJoint", function()
         end
         TriggerEvent("evidence:client:SetStatus", "weedsmell", 300)
         TriggerEvent('animations:client:SmokeWeed')
+        TriggerServerEvent('hud:Server:RelieveStress', math.random(15, 18))
     end)
 end)
 
