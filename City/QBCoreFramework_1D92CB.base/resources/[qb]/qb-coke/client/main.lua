@@ -32,7 +32,7 @@ Citizen.CreateThread(function()
             inRange = true
 
             if distance < 2 then
-                DrawText3Ds((93.02, 3755.3, 40.77, "[G] Process Coca Leaf")
+                DrawText3Ds(93.02, 3755.3, 40.77, "[G] Process Coca Leaf")
                 if IsControlJustPressed(0, 47) then
                     TriggerServerEvent("qb-coke:server:grindleaves")
 
