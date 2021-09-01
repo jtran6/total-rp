@@ -396,4 +396,17 @@ Config.PedList = {
 		gender = 'female',
 	},
 	
+	-- Dealers --
+	-- Mandarin
+	{
+		model = `g_m_m_chicold_01`,
+		coords = vector4(388.25, -2026.7, 23.4, 64.61),
+		gender = 'male',
+	},
+	-- Scooby
+	{
+		model = `a_c_pug`,
+		coords = vector4(32.9, 856.05, 197.73, 42.51),
+		gender = 'male',
+	},
 }
