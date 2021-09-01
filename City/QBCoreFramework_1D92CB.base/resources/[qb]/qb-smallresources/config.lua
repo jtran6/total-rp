@@ -72,6 +72,9 @@ Config.BlacklistedVehs = {
     [`LAZER`] = true,
     [`TUG`] = true,
     [`MINITANK`] = true,
+    [`BOMBUSHKA`] = true,
+    [`TRAILERSMALL2`] = true,
+    [`KOSATKA`] = true,
 }
 
 Config.BlacklistedPeds = {
