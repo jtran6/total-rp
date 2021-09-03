@@ -357,13 +357,19 @@ Config.PedList = {
 	},
 
 	-- Italian Restaurant --
+	-- Top Level Bartender
+	{
+		model = `s_f_y_bartender_01`,
+		coords = vector4(125.8, -1034.99, 29.28, 81.1),
+		gender = 'female',
+	},
 	-- Singer
 	{
 		model = `cs_gurk`,
 		coords = vector4(142.23, -1046.34, 23.35, 42.32),
 		gender = 'female',
 	},
-	-- Bartender
+	-- Bottom Bartender
 	{
 		model = `s_f_y_bartender_01`,
 		coords = vector4(131.48, -1055.06, 22.96, 341.85),
@@ -408,5 +414,25 @@ Config.PedList = {
 		model = `a_c_pug`,
 		coords = vector4(32.9, 856.05, 197.73, 42.51),
 		gender = 'male',
+	},
+	-- Skateshop --
+	-- Cashier
+	{
+		model = `a_f_y_yoga_01`,
+		coords = vector4(-1126.59, -1439.12, 5.23, 297.66),
+		gender = 'female',
+	},
+	-- LA Fitness --
+	-- Tyrone
+	{
+		model = `a_m_y_beach_03`,
+		coords = vector4(257.09, -271.07, 53.96, 333.47),
+		gender = 'male',
+	},
+	-- Shawty
+	{
+		model = `a_f_y_yoga_01`,
+		coords = vector4(259.6, -271.96, 53.96, 336.14),
+		gender = 'female',
 	},
 }
