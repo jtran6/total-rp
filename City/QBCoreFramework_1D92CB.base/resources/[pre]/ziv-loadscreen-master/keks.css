@@ -42,16 +42,9 @@ iframe {
 }
 
 p {
-
     font-size: 63px;
 }
 
-
-@font-face {
-
-    font-weight: normal;
-    font-style: normal;
-}
 
 h1, h2 {
   position: relative;
@@ -135,8 +128,25 @@ h1:before, h2:before {
     z-index:9999;
 
 }
+#frame {
+    position: relative;
 
+    width: 100%;
+    height: 1000px;
 
+    background-image: url(backup.jpg);
+    background-position: center;
+    background-size: cover; }
+
+#myImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    display: block;
+    margin: auto; }
 
 /* Loading Dots - made by superdupersumus @ https://codepen.io/xwildeyes/pen/KpqVzN */
 
