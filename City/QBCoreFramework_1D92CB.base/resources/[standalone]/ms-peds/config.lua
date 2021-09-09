@@ -435,4 +435,19 @@ Config.PedList = {
 		coords = vector4(259.6, -271.96, 53.96, 336.14),
 		gender = 'female',
 	},
+
+	-- Go Cart Stadium
+	-- Mechanic
+	{
+		model = `mp_m_waremech_01`,
+		
+		coords = vector4(5474.17, 254.19, 20.07, 354.22),
+		gender = 'male',
+	},
+	-- Food Vendor
+	{
+		model = `a_f_y_yoga_01`,
+		coords = vector4(5471.83, 254.41, 20.07, 357.32),
+		gender = 'female',
+	},
 }
