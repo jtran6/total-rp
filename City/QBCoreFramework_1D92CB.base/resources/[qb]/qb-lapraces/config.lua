@@ -3,11 +3,8 @@ Config = Config or {}
 Config.WhitelistedCreators = {
     "BSS50310",
     "EUJ43251",
-    "XSV37891",
-    "UNA59325",
-    "WGZ05833",
-    "NVU77833",
-    "AHO58808",
+    "GUQ07251",
+    "HFY44136",
 }
 
 Config.RaceSetupAllowed = true

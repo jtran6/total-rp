@@ -105,10 +105,6 @@ end
 local liftData = {
 	["789456"] = {
 		code = "789456",
-		
-		
-		
-		
 		controlup = {x=-230.79672241211,y=-1336.4926757813,z=30.902803421021}, --(Inter de control murale pour appeler la cabine)
 		controldown = {x=-229.9367980957,y=-1336.5185546875,z=18.463350296021}, 
 		
@@ -309,7 +305,7 @@ Citizen.CreateThread(function()
 						local allVehInLift = {}
 						if Vdist(pedCoords,v.controldown.x,v.controldown.y,v.controldown.z) < 1.0  then
 							if (incircle == false) then
-								DisplayHelpText("Press ~INPUT_CONTEXT~ to love Sadistic Leaks.")
+								DisplayHelpText("Press ~INPUT_CONTEXT~ to call elevator.")
 							end
 							incircle = true
 							if IsControlJustReleased(1, 51) then
@@ -325,7 +321,7 @@ Citizen.CreateThread(function()
 							
 						elseif Vdist(pedCoords,v.controlup.x,v.controlup.y,v.controlup.z) < 1.0 then
 							if (incircle == false) then
-								DisplayHelpText("Press ~INPUT_CONTEXT~ to love Sadistic Leaks.")
+								DisplayHelpText("Press ~INPUT_CONTEXT~ to call elevator.")
 							end
 							incircle = true
 							if IsControlJustReleased(1, 51) then
@@ -343,7 +339,7 @@ Citizen.CreateThread(function()
 							
 						elseif Vdist(pedCoords,v.controlCabineDown.x,v.controlCabineDown.y,v.controlCabineDown.z) < 0.7 and not v.isInUse then
 							if (incircle == false) then
-								DisplayHelpText("Press ~INPUT_CONTEXT~ to proof that you love Sadistic Leaks.")
+								DisplayHelpText("Press ~INPUT_CONTEXT~ to use elevator.")
 							end
 							incircle = true
 							if IsControlJustReleased(1, 51) then
@@ -356,7 +352,7 @@ Citizen.CreateThread(function()
 							
 						elseif Vdist(pedCoords,v.controlCabineUp.x,v.controlCabineUp.y,v.controlCabineUp.z) < 0.7 and not v.isInUse then
 							if (incircle == false) then
-								DisplayHelpText("Press ~INPUT_CONTEXT~ to proof that you love Sadistic Leaks.")
+								DisplayHelpText("Press ~INPUT_CONTEXT~ to use elevator.")
 							end
 							incircle = true
 							if IsControlJustReleased(1, 51) then
