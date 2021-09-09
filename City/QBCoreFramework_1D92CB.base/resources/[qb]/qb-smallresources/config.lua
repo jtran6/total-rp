@@ -114,4 +114,30 @@ Config.Teleports = {
             drawText = '[E] Leave'
         },
     },
+    -- Mafia Hotel Parking Garage Elevator
+    [3] = {
+        [1] = {
+            coords = vector4(380.33, -15.18, 83.0, 28.42),
+            ["AllowVehicle"] = false, 
+            drawText = '[E] Go Up'
+        },
+        [2] = {
+            coords = vector4(417.25, -10.67, 99.65, 230.03),
+            ["AllowVehicle"] = false,
+            drawText = '[E] Go Down to Parking'
+        },
+    },
+    -- Stadium
+    [4] = {
+        [1] = {
+            coords = vector4(-282.49, -2031.49, 30.15, 107.73),
+            ["AllowVehicle"] = false, 
+            drawText = '[E] Go to Arena'
+        },
+        [2] = {
+            coords = vector4(5610.07, 376.63, 20.07, 134.78),
+            ["AllowVehicle"] = false,
+            drawText = '[E] Leave Arena'
+        },
+    },
 }

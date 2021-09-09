@@ -1,4 +1,4 @@
--- Leaked By: Leaking Hub | J. Snow | leakinghub.com
+
 
 local index = 0
 local treeProgram = Config.program

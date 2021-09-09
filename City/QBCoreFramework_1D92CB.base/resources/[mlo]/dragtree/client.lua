@@ -1,4 +1,4 @@
--- Leaked By: Leaking Hub | J. Snow | leakinghub.com
+
 
 local pos = Config.position
 
