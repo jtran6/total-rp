@@ -135,7 +135,7 @@ Config.Teleports = {
             drawText = '[E] Go to Arena'
         },
         [2] = {
-            coords = vector4(5610.07, 376.63, 20.07, 134.78),
+            coords = vector4(5579.38, 254.75, 20.07, 354.4),
             ["AllowVehicle"] = false,
             drawText = '[E] Leave Arena'
         },

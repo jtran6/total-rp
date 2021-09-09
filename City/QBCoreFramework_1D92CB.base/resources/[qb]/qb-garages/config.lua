@@ -111,6 +111,13 @@ Garages = {
         putVehicle = vector3(-53.85, -1835.19, 26.57),
         isHouse = false,
     },
+    ["gocartstadium"] = {
+        label = "Go Cart Stadium Parking",
+        takeVehicle = vector3(5571.65, 254.29, 20.07),
+        spawnPoint = vector4(5556.04, 254.28, 20.07, 354.46),
+        putVehicle = vector3(5563.84, 254.68, 20.07),
+        isHouse = false,
+    },
 }
 
 HouseGarages = {}

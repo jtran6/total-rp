@@ -29,9 +29,8 @@ Citizen.CreateThread(function()
                                   false, true)
 
     while not HasCollisionLoadedAroundEntity(vehicle) do
-        print("Collision")
         RequestCollisionAtCoord(pos[1], pos[2], pos[3])
-        Citizen.Wait(1000)
+        Citizen.Wait(30000)
     end
 
     SetVehicleEngineOn(vehicle, false, true, false)
