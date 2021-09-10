@@ -254,7 +254,7 @@ function Hotwire()
         local ped = PlayerPedId()
         local vehicle = GetVehiclePedIsIn(ped, true)
         IsHotwiring = true
-        local hotwireTime = math.random(20000, 40000)
+        local hotwireTime = math.random(20000, 30000)
         SetVehicleAlarm(vehicle, true)
         SetVehicleAlarmTimeLeft(vehicle, hotwireTime)
         PoliceCall()
@@ -269,7 +269,7 @@ function Hotwire()
             flags = 16,
         }, {}, {}, function() -- Done
             StopAnimTask(ped, "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", 1.0)
-            if (math.random(0, 100) < 10) then
+            if (math.random(0, 100) < 85) then
                 lockpicked = false
                 TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
                 TriggerEvent('vehiclekeys:client:SetOwner', GetVehicleNumberPlateText(vehicle))

@@ -795,4 +795,22 @@ Config.Locations = {
         ["products"] = Config.Products["mustapha"],
         ["showblip"] = true,
     },    
+    ["gocarthardware"] = {
+        ["label"] = "Go Cart Hardware Shop",
+        ["type"] = "hardware",
+        ["coords"] = {
+            [1] = vector3(5474.17, 254.19, 20.07)
+        },
+        ["products"] = Config.Products["hardware"],
+        ["showblip"] = true,
+    }, 
+    ["gocartconvience"] = {
+        ["label"] = "Go Cart Convience Shop",
+        ["type"] = "normal",
+        ["coords"] = {
+            [1] = vector3(5471.83, 254.41, 20.07)
+        },
+        ["products"] = Config.Products["normal"],
+        ["showblip"] = true,
+    }, 
 }
