@@ -368,10 +368,10 @@ BikerWeedFarm = {
         end
     },
     Details = {
-        production = "weed_production",		-- Weed on the tables
-        fans = "weed_set_up",				-- Fans + mold buckets
-        drying = "weed_drying",				-- Drying weed hooked to the ceiling
-        chairs = "weed_chairs",				-- Chairs at the tables
+        production = "weed_production",        -- Weed on the tables
+        fans = "weed_set_up",                -- Fans + mold buckets
+        drying = "weed_drying",                -- Drying weed hooked to the ceiling
+        chairs = "weed_chairs",                -- Chairs at the tables
         Enable = function (details, state, refresh)
             SetIplPropState(BikerWeedFarm.interiorId, details, state, refresh)
         end

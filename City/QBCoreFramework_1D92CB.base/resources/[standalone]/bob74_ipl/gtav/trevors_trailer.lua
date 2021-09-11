@@ -14,9 +14,9 @@ TrevorsTrailer = {
         Clear = function() EnableIpl({TrevorsTrailer.Interior.tidy, TrevorsTrailer.Interior.trash}, false) end
     },
     Details = {
-        copHelmet = "V_26_Trevor_Helmet3",			-- Cop helmet in the closet
-        briefcase = "V_24_Trevor_Briefcase3",		-- Briefcase in the main room
-        michaelStuff = "V_26_Michael_Stay3",		-- Michael's suit hanging on the window
+        copHelmet = "V_26_Trevor_Helmet3",            -- Cop helmet in the closet
+        briefcase = "V_24_Trevor_Briefcase3",        -- Briefcase in the main room
+        michaelStuff = "V_26_Michael_Stay3",        -- Michael's suit hanging on the window
         Enable = function (details, state, refresh) SetIplPropState(TrevorsTrailer.interiorId, details, state, refresh) end
     },
 

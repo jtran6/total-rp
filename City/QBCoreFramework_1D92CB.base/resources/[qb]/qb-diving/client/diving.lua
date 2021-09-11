@@ -142,7 +142,10 @@ end
 RegisterNetEvent('qb-diving:server:CallCops')
 AddEventHandler('qb-diving:server:CallCops', function(Coords, msg)
     PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-    TriggerEvent("chatMessage", "911 MESSAGE", "error", msg)
+    TriggerEvent('chat:addMessage', {
+        template = '<div class="chat-message emergency">911 MESSAGE: {1}</div>',
+        args = {src, msg}
+    });
     local transG = 100
     local blip = AddBlipForRadius(Coords.x, Coords.y, Coords.z, 100.0)
     SetBlipSprite(blip, 9)

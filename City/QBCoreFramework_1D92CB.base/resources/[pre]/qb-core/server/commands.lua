@@ -144,9 +144,17 @@ QBCore.Commands.Add("ooc", "OOC Chat Message", {}, false, function(source, args)
 
 	for k, v in pairs(QBCore.Functions.GetPlayers()) do
 		if v == source then
-			TriggerClientEvent('chatMessage', v, "OOC " .. GetPlayerName(source), "normal", message)
+			TriggerEvent('chat:addMessage', {
+				template = '<div class="chat-message normal">OOC : {0} {1}</div>',
+				args = {message, Player.PlayerData.citizenid}
+				});
+		-- TriggerClientEvent('chatMessage', v, "OOC " .. GetPlayerName(source), "normal", message)
 		elseif #(GetEntityCoords(GetPlayerPed(source)) - GetEntityCoords(GetPlayerPed(v))) < 20.0 then
-			TriggerClientEvent('chatMessage', v, "OOC " .. GetPlayerName(source), "normal", message)
+			TriggerEvent('chat:addMessage', {
+				template = '<div class="chat-message normal">OOC : {0} {1}</div>',
+				args = {message, Player.PlayerData.citizenid}
+				});
+			-- TriggerClientEvent('chatMessage', v, "OOC " .. GetPlayerName(source), "normal", message)
 		elseif QBCore.Functions.HasPermission(v, "admin") then
 			if QBCore.Functions.IsOptin(v) then
 				TriggerClientEvent('chatMessage', v, "Proximity OOC " .. GetPlayerName(source), "normal", message)

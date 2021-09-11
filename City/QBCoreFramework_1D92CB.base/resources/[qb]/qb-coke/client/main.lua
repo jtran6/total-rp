@@ -458,7 +458,6 @@ function knockDoorAnim(home)
         knockingDoor = false
         Citizen.Wait(1000)
         dealerIsHome = true
-        -- TriggerEvent("chatMessage", "Dealer Johnny", "normal", 'Yo '..myData.charinfo.firstname..', damn you got ')
         TriggerServerEvent("qb-coke:server:cokesell")
 
         -- knockTimeout()

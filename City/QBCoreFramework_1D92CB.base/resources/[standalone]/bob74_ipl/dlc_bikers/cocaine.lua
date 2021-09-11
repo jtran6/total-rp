@@ -45,11 +45,11 @@ BikerCocaine = {
         end
     },
     Details = {
-        cokeBasic1 = "coke_cut_01",						-- On the basic tables
-        cokeBasic2 = "coke_cut_02",						-- On the basic tables
-        cokeBasic3 = "coke_cut_03",						-- On the basic tables
-        cokeUpgrade1 = "coke_cut_04",					-- On the upgraded tables
-        cokeUpgrade2 = "coke_cut_05",					-- On the upgraded tables
+        cokeBasic1 = "coke_cut_01",                        -- On the basic tables
+        cokeBasic2 = "coke_cut_02",                        -- On the basic tables
+        cokeBasic3 = "coke_cut_03",                        -- On the basic tables
+        cokeUpgrade1 = "coke_cut_04",                    -- On the upgraded tables
+        cokeUpgrade2 = "coke_cut_05",                    -- On the upgraded tables
         Enable = function (details, state, refresh)
             SetIplPropState(BikerCocaine.interiorId, details, state, refresh)
         end

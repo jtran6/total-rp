@@ -187,3 +187,7 @@ input:focus {
 .chat-message.success {
   background-color: rgba(77, 189, 77, 0.705);
 }
+
+.chat-message.status {
+  background-color: rgba(247, 247, 247, 0);
+}

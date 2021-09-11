@@ -83,12 +83,18 @@ Citizen.CreateThread(function()
                                     end
                                 else
                                     if waitingDelivery == nil then
-                                        TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "These are the products, I\'ll keep in touch through email")
+                                        TriggerEvent('chat:addMessage', {
+                                            template = '<div class="chat-message status"> Dealer {1} These are the products, I\'ll keep in touch through email</div>',
+                                            args = {src, Config.Dealers[currentDealer]["name"]}
+                                        });
                                         requestDelivery()
                                         interacting = false
                                         dealerIsHome = false
                                     else
-                                        TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "error", 'You still need to complete a delivery, what are you waiting for?!')
+                                        TriggerEvent('chat:addMessage', {
+                                            template = '<div class="chat-message emergency"> Dealer {1} You still need to complete a delivery, what are you waiting for?!</div>',
+                                            args = {src, Config.Dealers[currentDealer]["name"]}
+                                        });
                                     end
                                 end
                             end
@@ -176,12 +182,21 @@ function knockDoorAnim(home)
         Citizen.Wait(1000)
         dealerIsHome = true
         if Config.Dealers[currentDealer]["name"] == "Mystery man" then
-            TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "normal", 'Hello my child, what can I do for you')
+            TriggerEvent('chat:addMessage', {
+                template = '<div class="chat-message status"> Dealer {1} Hello my child, what can I do for you</div>',
+                args = {src, Config.Dealers[currentDealer]["name"]}
+            });
         elseif Config.Dealers[currentDealer]["name"] == "Fred" then
             dealerIsHome = false
-            TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "normal", 'Unfortunately I don\'t do business anymore ... You should have treated me better')
+            TriggerEvent('chat:addMessage', {
+                template = '<div class="chat-message status"> Dealer {1} Unfortunately I don\'t do business anymore ... You should have treated me better</div>',
+                args = {src, Config.Dealers[currentDealer]["name"]}
+            });
         else
-            TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "normal", 'Yo '..myData.charinfo.firstname..', what can I do for you?')
+            TriggerEvent('chat:addMessage', {
+                template = '<div class="chat-message status"> Dealer {1} Yo {2}, what can I do for you?</div>',
+                args = {src, Config.Dealers[currentDealer]["name"], myData.charinfo.firstname}
+            });
         end
         -- knockTimeout()
     else
@@ -389,7 +404,10 @@ end
 RegisterNetEvent('qb-drugs:client:robberyCall')
 AddEventHandler('qb-drugs:client:robberyCall', function(msg, streetLabel, coords)
     PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-    TriggerEvent("chatMessage", "911-ALERT", "error", msg)
+    TriggerEvent('chat:addMessage', {
+        template = '<div class="chat-message emergency"> 911-ALERT: {1}</div>',
+        args = {src, msg}
+    });
     local transG = 250
     local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
     SetBlipSprite(blip, 458)

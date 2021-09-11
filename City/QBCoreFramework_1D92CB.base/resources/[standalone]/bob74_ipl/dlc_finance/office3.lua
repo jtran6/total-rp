@@ -2,7 +2,7 @@
 -- Office 3: -1579.756, -565.0661, 108.523 (Lom Bank)
 
 exports('GetFinanceOffice3Object', function()
-	return FinanceOffice3
+    return FinanceOffice3
 end)
 
 FinanceOffice3 = {

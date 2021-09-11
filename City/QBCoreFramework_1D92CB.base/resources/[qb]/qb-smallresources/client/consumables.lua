@@ -28,7 +28,9 @@ AddEventHandler("consumables:client:UseJoint", function()
         end
         TriggerEvent("evidence:client:SetStatus", "weedsmell", 300)
         TriggerEvent('animations:client:SmokeWeed')
-        TriggerServerEvent('hud:Server:RelieveStress', math.random(15, 18))
+        TriggerServerEvent('hud:server:RelieveStress', math.random(15, 18))
+        TriggerServerEvent('hospital:server:AddArmor', 25)
+        SetPedArmour(PlayerPedId(), GetArmorPed(PlayerPedId()))
     end)
 end)
 

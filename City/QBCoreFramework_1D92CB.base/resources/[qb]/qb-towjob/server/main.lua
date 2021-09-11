@@ -34,8 +34,8 @@ RegisterNetEvent('qb-tow:server:nano')
 AddEventHandler('qb-tow:server:nano', function()
     local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
 
-	xPlayer.Functions.AddItem("cryptostick", 1, false)
-	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["cryptostick"], "add")
+    xPlayer.Functions.AddItem("cryptostick", 1, false)
+    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["cryptostick"], "add")
 end)
 
 RegisterNetEvent('qb-tow:server:11101110')
@@ -64,7 +64,7 @@ AddEventHandler('qb-tow:server:11101110', function(drops)
 end)
 
 QBCore.Commands.Add("npc", "Toggle Npc Job", {}, false, function(source, args)
-	TriggerClientEvent("jobs:client:ToggleNpc", source)
+    TriggerClientEvent("jobs:client:ToggleNpc", source)
 end)
 
 QBCore.Commands.Add("tow", "Place A Car On The Back Of Your Flatbed", {}, false, function(source, args)

@@ -2,7 +2,7 @@
 -- Garage 3: Lom Bank
 
 exports('GetImportCEOGarage3Object', function()
-	return ImportCEOGarage3
+    return ImportCEOGarage3
 end)
 
 ImportCEOGarage3 = {
