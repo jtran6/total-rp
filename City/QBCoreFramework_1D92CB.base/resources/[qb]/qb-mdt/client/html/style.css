@@ -1,0 +1,1358 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #D8B303;
+    background-image: -webkit-linear-gradient(45deg, rgba(50, 50, 250, .2) 25%, transparent 25%, transparent 50%, rgba(50, 50, 250, .2) 50%, rgba(50, 50, 250, .2) 75%, transparent 75%, transparent)
+}
+
+.v-input .v-input__control .v-input__slot .v-text-field__slot input::-webkit-outer-spin-button,
+.v-input .v-input__control .v-input__slot .v-text-field__slot input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* ::-webkit-scrollbar-track {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+} */
+
+html {
+    overflow: hidden;
+}
+
+#QB_MDT {
+    background-color: transparent !important;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+
+/* Container */
+
+#container {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    background: #394D61;
+    border-radius: 5px;
+}
+
+
+/* Navigation */
+
+#navigation {
+    position: relative;
+    height: 7%;
+    background: #DCDCDC;
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
+    border-radius: 5px 5px 0px 0px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    width: 45%;
+    height: 100%;
+}
+
+.nav-links a {
+    color: black !important;
+    letter-spacing: 0.5;
+}
+
+.nav-links a:hover {
+    color: #D8B303 !important;
+    letter-spacing: 0.5;
+}
+
+
+/* Navigation */
+
+
+/* Content */
+
+#content {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    height: 93%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.page-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 95%;
+    height: 95%;
+}
+
+.current-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.current-page h1 {
+    color: #DCDCDC;
+    text-align: center;
+}
+
+
+/* Home */
+
+.home-shortcut {
+    /* Shortcuts */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.home-shortcut-cards {
+    position: relative;
+    width: 18%;
+    height: 80%;
+    background: rgba(50, 50, 100, 0.1);
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+    transition: 200ms;
+}
+
+.home-shortcut-cards h3,
+p {
+    text-align: center;
+    padding: 5px 10px;
+    color: #DCDCDC;
+}
+
+.home-shortcut-cards .v-btn {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    background: rgba(200, 200, 250, 0.2) !important;
+    color: #DCDCDC;
+}
+
+.home-shortcut-cards:hover {
+    transform: scale(1.05);
+}
+
+.home-duty {
+    /* Dutys */
+    height: 50%;
+    width: 100%;
+}
+
+.home-duty-card {
+    height: 100%;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    background: rgba(50, 50, 100, 0.1);
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
+}
+
+.home-duty-container {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    color: #DCDCDC;
+    letter-spacing: 1;
+}
+
+.home-duty-container td,
+.home-duty-container th {
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-left: 1%;
+    border-radius: 5px;
+}
+
+.home-duty-container tr:nth-child(odd) {
+    background: rgba(200, 200, 250, 0.1);
+}
+
+.home-duty-container th {
+    background: #1F2739;
+}
+
+.duty-on {
+    background: green;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    float: right;
+    margin-right: 72%;
+    animation: dutyOnPulse 2s infinite;
+}
+
+.duty-off {
+    background: red;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    float: right;
+    margin-right: 72%;
+    animation: dutyOffPulse 2s infinite;
+}
+
+@keyframes dutyOnPulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(51, 217, 178, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+    }
+}
+
+@keyframes dutyOffPulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(255, 82, 82, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    }
+}
+
+
+/* Home */
+
+
+/* Criminal Record */
+
+.cr-result {
+    border: solid #D8B303 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 55%;
+    height: 90%;
+    border-radius: 5px;
+}
+
+.cr-result-wanted {
+    position: absolute;
+    top: 7%;
+    left: 7%;
+}
+
+.cr-results-image {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 45%;
+    height: 75%;
+}
+
+.cr-results-image img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    height: 434px;
+    width: 280px;
+    border-radius: 5px;
+    border: black solid 2px;
+}
+
+.cr-result-data {
+    position: absolute;
+    right: 3%;
+    top: 10%;
+    width: 55%;
+    height: 75%;
+}
+
+.cr-result-data h3 {
+    color: #D8B303;
+    letter-spacing: 1;
+}
+
+.cr-result-data h4 {
+    color: #DCDCDC;
+    letter-spacing: 1;
+    padding-top: 0;
+    padding-bottom: 30px;
+}
+
+.cr-buttons {
+    position: absolute;
+    bottom: 2%;
+    right: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+    height: 7%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cr-buttons .v-btn {
+    background: #D8B303;
+    color: black;
+    font-weight: 600;
+}
+
+.cr-search-header {
+    color: #DCDCDC;
+    position: absolute;
+    top: 7%;
+    right: 0;
+}
+
+.cr-search {
+    border: solid #D8B303 2px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30%;
+    height: 90%;
+    border-radius: 5px;
+}
+
+.cr-search .v-text-field {
+    width: 60%;
+}
+
+.cr-search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 57px !important;
+    border-radius: 0;
+    background: #D8B303 !important;
+    font-weight: 600;
+}
+
+.cr-search-clear-btn {
+    position: absolute;
+    right: 20%;
+    top: 0;
+    width: 20%;
+    height: 57px !important;
+    border-radius: 0;
+    background: #D8B303 !important;
+    font-weight: 600;
+}
+
+.cr-search-result {
+    position: absolute;
+    bottom: 0;
+    height: 92%;
+    width: 100%;
+    overflow-x: auto;
+    padding: 5px 5px;
+}
+
+.cr-search-result .v-btn {
+    background: #D8B303;
+    margin: 5px 0;
+    height: 40px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.cr-search-result .v-btn p {
+    color: black;
+    font-weight: 600;
+}
+
+.cr-note-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cr-note-card {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+    background: #394D61;
+    border-radius: 5px;
+}
+
+.cr-note-card h2 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.cr-note-card .v-textarea {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+}
+
+.cr-save-btn {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40%;
+    background: #2D3139 !important;
+    color: #DCDCDC;
+}
+
+.cr-charges-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cr-charges-card {
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+    background: #394D61;
+    border-radius: 5px;
+}
+
+.cr-charges-card h2 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.cr-newcharge-btn {
+    color: #D8B303 !important;
+    position: absolute;
+    bottom: 20;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+/* Criminal Record */
+
+
+/* Search Vehicle */
+
+.sv-result {
+    border: solid #D8B303 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 60%;
+    height: 90%;
+    border-radius: 5px;
+}
+
+.sv-result-data {
+    position: absolute;
+    width: 65%;
+    left: 10;
+    margin: auto;
+}
+
+.sv-result-data h3 {
+    color: #D8B303;
+    letter-spacing: 1;
+}
+
+.sv-result-data h4 {
+    color: #DCDCDC;
+    letter-spacing: 1;
+    padding-top: 0;
+    padding-bottom: 30px;
+}
+
+.sv-result-image {
+    border: solid #D8B303 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40;
+    margin: auto;
+    width: 50%;
+    height: 33%;
+    border-radius: 15px;
+}
+
+.sv-result-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+}
+
+.sv-result-image h2 {
+    text-align: center;
+    margin: 20% 0;
+}
+
+.sv-result-actions {
+    position: absolute;
+    width: 30%;
+    right: 10;
+    margin: auto;
+}
+
+.sv-result-actions h3 {
+    color: #D8B303;
+    letter-spacing: 1;
+    text-align: center;
+}
+
+.sv-result-actions h4 {
+    color: #DCDCDC;
+    letter-spacing: 1;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sv-result-actions .v-btn {
+    background: #D8B303 !important;
+    font-weight: 600;
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.sv-search {
+    border: solid #D8B303 2px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30%;
+    height: 90%;
+    border-radius: 5px;
+}
+
+.sv-search .v-text-field {
+    width: 60%;
+}
+
+.sv-search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 57px !important;
+    border-radius: 0;
+    background: #D8B303 !important;
+    font-weight: 600;
+}
+
+.sv-search-clear-btn {
+    position: absolute;
+    right: 20%;
+    top: 0;
+    width: 20%;
+    height: 57px !important;
+    border-radius: 0;
+    background: #D8B303 !important;
+    font-weight: 600;
+}
+
+.sv-search-result {
+    position: absolute;
+    bottom: 0;
+    height: 92.46%;
+    width: 100%;
+    overflow-x: auto;
+    padding: 5px 5px;
+}
+
+.sv-search-result .v-btn {
+    background: #D8B303;
+    margin: 5px 0;
+    height: 40px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.sv-search-result .v-btn p {
+    color: black;
+    font-weight: 600;
+}
+
+
+/* Search Vehicle */
+
+
+/* Profile */
+
+.profile-user {
+    border: solid #D8B303 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 30%;
+    height: 80%;
+    border-radius: 5px;
+}
+
+.profile-user .v-divider {
+    background: #D8B303;
+    margin: 15 10 -10;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 30% !important;
+    transition: 100ms ease-in-out;
+}
+
+.profile-image-wrapper img {
+    width: 300px;
+    height: 300px;
+    border-radius: 30%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+}
+
+.profile-image-overlay {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    border-radius: 30%;
+    transition: 100ms ease-in-out;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.profile-image-wrapper:hover .profile-image-overlay {
+    opacity: 0.8;
+}
+
+.profile-image-wrapper p {
+    position: absolute;
+    right: 0;
+    bottom: 30;
+    right: 105;
+    top: 0;
+    font-weight: 600;
+    color: #DCDCDC;
+}
+
+.profile-user p {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    margin-left: 25%;
+    transform: translateY(50%);
+}
+
+.profile-user-dutyoff-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    background: rgb(255, 82, 82) !important;
+    color: black !important;
+}
+
+.profile-user-dutyon-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    background: rgb(51, 217, 178) !important;
+    color: black !important;
+}
+
+
+/* Admin */
+
+.profile-box {
+    border: solid #D8B303 2px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 65.5%;
+    height: 70%;
+    border-radius: 5px 0px 0px 5px;
+    overflow-x: auto;
+}
+
+.profile-management {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.profile-title {
+    position: absolute;
+    right: 53%;
+    top: 26%;
+    color: #DCDCDC;
+    letter-spacing: 0.5;
+}
+
+.profile-management-cards {
+    position: relative;
+    margin: 10 10;
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.profile-management-cards img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 180px;
+    height: 250px;
+    border-radius: 15px;
+}
+
+.profile-management-cards .v-btn {
+    position: absolute;
+    bottom: 5;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90%;
+    color: #DCDCDC;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.profile-management-cards:hover .v-btn {
+    opacity: 1;
+}
+
+
+/* Admin */
+
+
+/* User */
+
+.profile-duty-title {
+    position: absolute;
+    right: 53%;
+    top: 36%;
+    color: #DCDCDC;
+    letter-spacing: 0.5;
+}
+
+.profile-duty-card {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 65%;
+    height: 60%;
+    background: rgba(50, 50, 100, 0.1);
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
+}
+
+.profile-duty-container {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    color: #DCDCDC;
+    letter-spacing: 1;
+}
+
+.profile-duty-container td,
+.profile-duty-container th {
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-left: 1%;
+    border-radius: 5px;
+}
+
+.profile-duty-container tr:nth-child(odd) {
+    background: rgba(200, 200, 250, 0.1);
+}
+
+.profile-duty-container th {
+    background: #1F2739;
+}
+
+.profile-duty-on {
+    background: green;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    float: right;
+    margin-right: 58%;
+    animation: dutyOnPulse 2s infinite;
+}
+
+.profile-duty-off {
+    background: red;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    float: right;
+    margin-right: 58%;
+    animation: dutyOffPulse 2s infinite;
+}
+
+
+/* User */
+
+
+/* Profile */
+
+
+/* Content */
+
+
+/* Image Change Overlay */
+
+.imageChange-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.imageChange-card {
+    position: absolute;
+    width: 600px;
+    height: 150px;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+    background: #394D61;
+    border-radius: 5px;
+}
+
+.imageChange-card h3 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.imageChange-close {
+    position: absolute;
+    top: 10;
+    right: 10;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(150, 40, 40);
+    transition: 100ms ease-in-out;
+}
+
+.imageChange-close:hover {
+    transform: scale(1.05);
+    background: rgb(200, 40, 40);
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.5);
+}
+
+.imageChange-textfield {
+    width: 80%;
+    margin: 15px 50%;
+    transform: translateX(-50%);
+}
+
+.imageChange-btn {
+    position: absolute;
+    bottom: 10px;
+    margin: 0 50%;
+    transform: translateX(-50%);
+    background: #2D3139 !important;
+    color: #DCDCDC;
+}
+
+
+/* Image Change Overlay */
+
+
+/* Management Overlay */
+
+.management-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.management-card {
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+    background: #394D61;
+    border-radius: 5px;
+}
+
+.management-card h2 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.management-close-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.management-changedata {
+    border: solid #D8B303 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin: auto;
+    width: 50%;
+    height: 60%;
+    padding: 0px 20px;
+    border-radius: 5px;
+}
+
+.management-changedata .v-text-field {
+    margin-top: 10%;
+}
+
+.management-changedata-two {
+    border: solid #D8B303 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    margin: auto;
+    width: 40%;
+    height: 60%;
+    padding: 0px 20px;
+    border-radius: 5px;
+}
+
+.management-changedata-two img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 180px;
+    height: 250px;
+    border-radius: 30%;
+    box-shadow: 0px 0px 0px 2px black;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+}
+
+.management-savedata-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+    background: rgba(200, 200, 250, 0.1) !important;
+    color: #DCDCDC;
+}
+
+.management-delete-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 25%;
+    background: rgba(200, 200, 250, 0.1) !important;
+    color: #DCDCDC;
+}
+
+
+/* Management Overlay */
+
+
+/* Charges Overlay */
+
+.cr-charges {
+    border: solid #D8B303 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10 0;
+    width: 90%;
+    height: 80%;
+    overflow-x: auto;
+}
+
+.cr-charges .v-btn {
+    background: #D8B303 !important;
+    color: black;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10;
+    width: 80%;
+}
+
+
+/* Charges Overlay */
+
+
+/* New Charge Overlay */
+
+.cr-newcharge-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cr-newcharge-card {
+    position: absolute;
+    width: 1640px;
+    height: 800px;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+    background: #394D61;
+    border-radius: 5px;
+}
+
+.cr-newcharge-card h2 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.cr-details-box {
+    position: absolute;
+    bottom: 60;
+    left: 10;
+    width: 60%;
+    height: 90%;
+}
+
+.cr-details-box h3 {
+    margin-left: 20;
+}
+
+.cr-details-box .v-text-field {
+    width: 90%;
+    margin-left: 20;
+}
+
+.cr-newcharge-submit-btn {
+    position: absolute;
+    bottom: 10;
+    left: 43.65%;
+    background: #D8B303 !important;
+    color: black !important;
+    width: 200;
+}
+
+.cr-details-charges {
+    border: solid #D8B303 2px;
+    height: 30%;
+    width: 90%;
+    margin-left: 20;
+    padding: 5 5;
+    overflow-x: auto;
+}
+
+.cr-changedetails-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    height: 90%;
+}
+
+.cr-changedetails-box h3 {
+    margin-left: 20;
+}
+
+.cr-changedetails-box .v-text-field {
+    width: 90%;
+    margin-left: 20;
+}
+
+.cr-details-charges .v-btn {
+    background: #D8B303 !important;
+    color: black;
+    margin: 5 5;
+}
+
+.cr-changedetails-charges-h3 {
+    position: absolute;
+    bottom: 43.5%;
+    left: 40;
+}
+
+.cr-changedetails-charges {
+    border: solid #D8B303 2px;
+    height: 30%;
+    width: 60%;
+    padding: 5 5;
+    overflow-x: auto;
+    margin: 25% 40;
+}
+
+.cr-changedetails-charges .v-btn {
+    background: #D8B303 !important;
+    color: black;
+    margin: 5 5;
+}
+
+.cr-fines-box {
+    border: solid #D8B303 2px;
+    position: absolute;
+    bottom: 32;
+    right: 10;
+    width: 35%;
+    height: 90%;
+    overflow-x: auto;
+    padding: 20px 50px;
+}
+
+.cr-fines-box .v-text-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.cr-fines-result {
+    margin-top: 50;
+    width: 100%;
+}
+
+.cr-fines-result .v-btn {
+    background: #D8B303 !important;
+    color: black;
+    width: 100%;
+    margin-bottom: 10;
+}
+
+.cr-changecharge-details {
+    position: absolute;
+    bottom: 16.5%;
+    right: 40;
+    width: 30%;
+    height: 25%;
+}
+
+.cr-change-btns {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cr-change-btns .v-btn {
+    background: #D8B303 !important;
+    color: black !important;
+}
+
+
+/* New Charge Overlay */
+
+
+/* Warrants Overlay */
+
+.warrants-view-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.warrants-view-card {
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+    background: #394D61;
+    border-radius: 5px;
+}
+
+.warrants-view-card h2 {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.warrants-details-box {
+    position: absolute;
+    bottom: 60;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    height: 80%;
+}
+
+.cr-details-box .v-text-field {
+    width: 90%;
+    margin-left: 20;
+}
+
+.warrants-details-charges {
+    border: solid #D8B303 2px;
+    height: 35%;
+    width: 100%;
+    padding: 5 5;
+    overflow-x: auto;
+}
+
+.warrants-details-charges .v-btn {
+    background: #D8B303 !important;
+    color: black;
+    margin: 5 5;
+}
+
+
+/* Warrants Overlay */
+
+
+/* Licenses Overlay */
+
+.licenses-view-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.licenses-view-card {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.5);
+    background: #394D61;
+    border-radius: 5px;
+}
+
+.licenses-view-card h2 {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.licenses-details-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    width: 80%;
+    height: 65%;
+    margin: auto;
+}
+
+.licenses-details-box .v-chip {
+    margin-bottom: 5;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.licenses-details-box .v-chip .v-btn {
+    background: rgba(0, 0, 0, 0.2) !important;
+    margin-right: 10;
+}
+
+
+/* Licenses Overlay */
+
+
+/* Container */

@@ -1,0 +1,610 @@
+<html>
+
+<head>
+    <meta type="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Deltarix MDT</title>
+</head>
+
+<body>
+    <div id='app' data-app>
+        <v-app id='QB_MDT' v-show='isOpen'>
+            <v-main>
+                <div id='container'>
+                    <div id='navigation'>
+                        <div class='nav-links'>
+                            <a v-for='(page, pageIndex) in MainPages' @click='changePage(page)'>{{page}}</a>
+                        </div>
+                    </div>
+
+                    <div id='content'>
+
+                        <v-fade-transition>
+                            <div v-if='currentPage == "HOME"'>
+                                <div class='page-content'>
+                                    <div class='home-shortcut'>
+
+                                        <div class='home-shortcut-cards'>
+                                            <h3>CRIMINAL RECORD</h3>
+                                            <p>
+                                                Search public criminal records by user name or phone number
+                                            </p>
+                                            <v-btn small elevation='5' @click='changePage("CRIMINAL RECORD")'>GO TO CRIMINAL RECORD</v-btn>
+                                        </div>
+
+                                        <div class='home-shortcut-cards'>
+                                            <h3>SEARCH VEHICLES</h3>
+                                            <p>
+                                                Search the complete database of vehicles by plate
+                                            </p>
+                                            <v-btn small elevation='5' @click='changePage("SEARCH VEHICLES")'>GO TO SEARCH VEHICLES</v-btn>
+                                        </div>
+
+                                        <div class='home-shortcut-cards'>
+                                            <h3>DISPATCH</h3>
+                                            <p>
+                                                View the full history of incoming dispatch calls and choose to respond
+                                            </p>
+                                            <v-btn small elevation='5' @click='changePage("DISPATCH")'>GO TO DISPATCH</v-btn>
+                                        </div>
+
+                                        <div class='home-shortcut-cards'>
+                                            <h3>WARRANTS</h3>
+                                            <p>
+                                                View all active warrants
+                                            </p>
+                                            <v-btn small elevation='5' @click='changePage("WARRANTS")'>GO TO WARRANTS</v-btn>
+                                        </div>
+
+                                        <div class='home-shortcut-cards'>
+                                            <h3>PROFILE</h3>
+                                            <p>
+                                                View or edit your custom profile and go on or off duty 
+                                            </p>
+                                            <v-btn small elevation='5' @click='changePage("PROFILE")'>GO TO PROFILE</v-btn>
+                                        </div>
+
+                                    </div>
+                                    <div class='home-duty'>
+                                        <div class='home-duty-card'>
+                                            <div>
+                                                <table class='home-duty-container'>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>NAME</h2>
+                                                            </th>
+                                                            <th>
+                                                                <h2>POSITION</h2>
+                                                            </th>
+                                                            <th>
+                                                                <h2>CALLSIGN</h2>
+                                                            </th>
+                                                            <th>
+                                                                <h2>DUTY STATUS</h2>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody v-for='(onduty, ondutyIndex) in drxProfiles' :value='onduty.badgenumber'>
+                                                        <tr>
+                                                            <td>{{onduty.charname}}</td>
+                                                            <td>{{onduty.policegroup}}</td>
+                                                            <td>{{onduty.badgenumber}}</td>
+                                                            <td v-if='onduty.duty == "true"'>ON DUTY
+                                                                <div class='duty-on'></div>
+                                                            </td>
+                                                            <td v-else>OFF DUTY
+                                                                <div class='duty-off'></div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <div v-if='currentPage == "CRIMINAL RECORD"'>
+                                <div class='page-content'>
+                                    <div class='current-page'>
+                                        <h1>CRIMINAL RECORD</h1>
+                                        <div class='cr-result'>
+                                            <h4 class='cr-result-wanted' v-if='selectedPerson.wanted == "Yes"' style='color: red;'>WANTED</h4>
+                                            <div class='cr-results-image'>
+                                                <img v-if='selectedPerson.image' :src='selectedPerson.image'>
+                                                <img v-else-if='selectedPerson.image == ""' src='images/imageBars.png'>
+                                            </div>
+                                            <div class='cr-result-data'>
+                                                <h3>NAME</h3>
+                                                <h4 v-if='selectedPerson.charname'>{{selectedPerson.charname}}</h4>
+                                                <h4 v-else-if='selectedPerson.charname == ""'> ... </h4>
+                                                <h3>PHONE NUMBER</h3>
+                                                <h4 v-if='selectedPerson.phone_number'>{{selectedPerson.phone_number}}</h4>
+                                                <h4 v-else-if='selectedPerson.phone_number == ""'> ... </h4>
+                                                <h3>DATE OF BIRTH</h3>
+                                                <h4 v-if='selectedPerson.dateofbirth'>{{selectedPerson.dateofbirth}}</h4>
+                                                <h4 v-else-if='selectedPerson.dateofbirth == ""'> ... </h4>
+                                                <h3>GENDER</h3>
+                                                <h4 v-if='selectedPerson.sex == "m"'>Male</h4>
+                                                <h4 v-else-if='selectedPerson.sex == "f"'>Female</h4>
+                                                <h4 v-else-if='selectedPerson.sex == ""'> ... </h4>
+                                                <h3>JOB</h3>
+                                                <h4 v-if='selectedPerson.job'>{{selectedPerson.job}}</h4>
+                                                <h4 v-else-if='selectedPerson.job == ""'> ... </h4>
+                                                <h3>GANG</h3>
+                                                <h4 v-if='selectedPerson.gang'>{{selectedPerson.gang}}</h4>
+                                                <h4 v-else-if='selectedPerson.gang == ""'> ... </h4>
+                                            </div>
+                                            <div class='cr-buttons'>
+                                                <v-btn @click='imageChange = !imageChange' elevation='5' plain :disabled='selectedPerson.charname == ""'>Change image</v-btn>
+                                                <v-btn @click='changeNote =! changeNote' elevation='5' plain :disabled='selectedPerson.charname == ""'>Notes</v-btn>
+                                                <v-btn @click='fetchLicenses()' elevation='5' plain :disabled='selectedPerson.charname == ""'>Licenses</v-btn>
+                                                <v-btn @click='fetchPersonCharges()' elevation='5' plain :disabled='selectedPerson.charname == ""'>Charges</v-btn>
+                                                <v-btn @click='personWarrantOverlay()' elevation='5' plain :disabled='selectedPerson.charname == ""'>Create warrant</v-btn>
+                                                <v-btn @click='markPersonWanted()' elevation='5' plain :disabled='selectedPerson.charname == ""'>Mark as wanted</v-btn>
+                                            </div>
+                                        </div>
+
+                                        <h3 class='cr-search-header'>SEARCH NAME, PHONENUMBER OR REGISTRATION</h3>
+                                        <div class='cr-search'>
+                                            <v-text-field dark v-model='searchInput' ref='searchInput' searchInput='' label='SEARCH' filled></v-text-field>
+                                            <v-btn elevation='0' class='cr-search-btn' small @click='searchPerson(searchInput)'>SEARCH</v-btn>
+                                            <v-btn elevation='0' class='cr-search-clear-btn' small @click='searchPersonClear()'>CLEAR</v-btn>
+                                            <div class='cr-search-result'>
+                                                <v-btn @click='selectPerson(sr.citizenid, sr.charname, sr.birthdate, sr.gender, sr.height, sr.phone, sr.note, sr.image)' v-for='(sr, index) in searchResults' :key='sr.charname' elevation='5' plain tile>
+                                                    <p>{{sr.charname}}</p>
+                                                </v-btn>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <div v-if='currentPage == "SEARCH VEHICLES"'>
+                                <div class='page-content'>
+                                    <div class='current-page'>
+                                        <h1>SEARCH VEHICLES</h1>
+                                        <div class='sv-result'>
+                                            <div class='sv-result-data'>
+                                                <h3>OWNER</h3>
+                                                <h4 v-if='selectedVehicle.charname'>{{selectedVehicle.charname}}</h4>
+                                                <h4 v-else-if='selectedVehicle.charname == ""'> ... </h4>
+                                                <h3>PLATE NUMBER</h3>
+                                                <h4 v-if='selectedVehicle.plate'>{{selectedVehicle.plate}}</h4>
+                                                <h4 v-else-if='selectedVehicle.plate == ""'> ... </h4>
+                                                <h3>TYPE</h3>
+                                                <h4 v-if='selectedVehicle.type'>{{selectedVehicle.type}}</h4>
+                                                <h4 v-else-if='selectedVehicle.type == ""'> ... </h4>
+                                                <h3>MODEL</h3>
+                                                <h4 v-if='selectedVehicle.model'>{{selectedVehicle.model}}</h4>
+                                                <h4 v-else-if='selectedVehicle.model == ""'> ... </h4>
+                                                <h3>COLORS</h3>
+                                                <h4 v-if='selectedVehicle.color'>{{selectedVehicle.color}}</h4>
+                                                <h4 v-else-if='selectedVehicle.color == null'> ... </h4>
+                                            </div>
+                                            <div class='sv-result-image' v-if='selectedVehicle.image'>
+                                                <img :src='selectedVehicle.image'>
+                                            </div>
+                                            <div class='sv-result-actions'>
+                                                <h3>VEHICLE IMAGE</h3>
+                                                <h4 v-if='selectedVehicle.plate'>CHANGE OR INSERT IMAGE FOR VEHICLE</h4>
+                                                <h4 v-else-if='selectedVehicle.plate == ""'>...</h4>
+                                                <v-btn @click='imageChange =! imageChange' :disabled='selectedVehicle.plate == ""' elevation='5' plain>INSERT IMAGE</v-btn>
+                                                <h3>STOLEN STATUS</h3>
+                                                <h4 v-if='selectedVehicle.stolen == ""'> ... </h4>
+                                                <h4 v-if='selectedVehicle.stolen == "No"'>NOT STOLEN</h4>
+                                                <h4 v-else-if='selectedVehicle.stolen == "Yes"' style='color: red;'>STOLEN</h4>
+                                                <v-btn v-if='selectedVehicle.stolen == ""' :disabled='selectedVehicle.plate == ""' elevation='5' plain>MARK AS STOLEN</v-btn>
+                                                <v-btn v-if='selectedVehicle.stolen == "No"' elevation='5' plain @click='markVehicleStolen()'>MARK AS STOLEN</v-btn>
+                                                <v-btn v-else-if='selectedVehicle.stolen == "Yes"' elevation='5' plain @click='markVehicleStolen()'>MARKED AS STOLEN</v-btn>
+
+                                                <h3>FLAG VEHICLE</h3>
+                                                <h4 v-if='selectedVehicle.plate == ""'> ... </h4>
+                                                <h4 v-if='selectedVehicle.plate'>CREATE / EDIT / DELETE FLAGS</h4>
+                                                <v-btn :disabled='selectedVehicle.plate == ""' elevation='5' plain @click='vehicleWarrantOverlay()'>FLAG VEHICLE</v-btn>
+
+                                            </div>
+                                        </div>
+
+                                        <div class='sv-search'>
+                                            <v-text-field dark v-model='searchVehicle' ref='searchVehicle' searchVehicle='' label='SEARCH PLATE NUMBER' filled></v-text-field>
+                                            <v-btn elevation='0' class='sv-search-btn' small @click='searchVehicleInput(searchVehicle)'>SEARCH</v-btn>
+                                            <v-btn elevation='0' class='sv-search-clear-btn' small @click='searchVehicleClear()'>CLEAR</v-btn>
+                                            <div class='sv-search-result'>
+                                                <template v-for='sr in VehicleResults'>
+                                                <v-btn @click='selectVehicle(sr.citizenid, sr.plate)' elevation='5' plain tile>
+                                                    <p>{{sr.plate}}</p>
+                                                </v-btn>
+                                            </template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <div v-if='currentPage == "PROFILE"'>
+                                <div class='page-content'>
+
+                                    <div class='current-page'>
+                                        <h1>YOUR PROFILE</h1>
+
+                                        <div class='profile-user'>
+
+                                            <div class='profile-image-wrapper'>
+                                                <img src='images/policeEmblem.png'>
+                                                <div class='profile-image-overlay'>
+                                                    <div class='profile-image-text-box' @click='imageChange = !imageChange'>
+                                                        <p class='profile-image-text'>Change image</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <v-divider></v-divider>
+                                            <p>Welcome, {{vrpcharname}}</p>
+                                            <p>Phone number: {{phone_number}}</p>
+                                            <p>Date of birth: {{dateofbirth}}</p>
+                                            <v-divider></v-divider>
+                                            <p>Position: {{policegroup}}</p>
+                                            <p>Callsign: {{badgenumber}}</p>
+                                            <p>Duty status: {{duty}}</p>
+                                            <v-divider></v-divider>
+                                            <template v-if='duty == "TRUE"'>
+                                                <v-btn elevation='5' @click='dutyStatus(duty)' class='profile-user-dutyoff-btn'>Go off duty</v-btn>
+                                            </template>
+                                            <template v-else>
+                                                <v-btn elevation='5' @click='dutyStatus(duty)' class='profile-user-dutyon-btn'>Go on duty</v-btn>
+                                            </template>
+                                        </div>
+
+                                        <template v-if='rank == "true"'>
+                                            <h3 class='profile-title'>Employees of LSPD</h3>
+                                            <div class='profile-box'>
+                                                <div class='profile-management'>
+                                                    <div class='profile-management-cards' v-for='(char, charIndex) in drxProfiles' :key='char.identifier'>
+                                                        <img :src='char.image'>
+                                                        <v-divider></v-divider>
+                                                        <v-btn @click='changeEmployeeData(char.identifier, char.rank, char.charname, char.policegroup, char.badgenumber, char.duty, char.image)' plain>{{char.charname}}</v-btn>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+
+                                        <template v-else>
+                                            <h3 class='profile-duty-title'>Employees of LSPD</h3>
+                                            <div class='profile-duty-card'>
+                                                <table class='profile-duty-container'>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <h2>NAME</h2>
+                                                            </th>
+                                                            <th>
+                                                                <h2>POSITION</h2>
+                                                            </th>
+                                                            <th>
+                                                                <h2>CALLSIGN</h2>
+                                                            </th>
+                                                            <th>
+                                                                <h2>DUTY STATUS</h2>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody v-for='(onduty, ondutyIndex) in drxProfiles' :value='onduty.badgenumber'>
+                                                        <tr>
+                                                            <td>{{onduty.charname}}</td>
+                                                            <td>{{onduty.policegroup}}</td>
+                                                            <td>{{onduty.badgenumber}}</td>
+                                                            <td v-if='onduty.duty == "true"'>ON DUTY
+                                                                <div class='profile-duty-on'></div>
+                                                            </td>
+                                                            <td v-else>OFF DUTY
+                                                                <div class='profile-duty-off'></div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </template>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <v-overlay class='imageChange-overlay' :z-index='zimageChange' :value='imageChange'>
+                                <div class='imageChange-card'>
+                                    <h3>Insert image link (imgur):</h3>
+                                    <div class='imageChange-close' @click='imageChange = !imageChange'></div>
+                                    <v-text-field v-if='currentPage == "CRIMINAL RECORD" && selectedPerson.charname' class='imageChange-textfield' ref='selectedPerson.image' v-model='selectedPerson.image' label='Link' selectedPerson.image=''></v-text-field>
+                                    <v-text-field v-else-if='currentPage == "SEARCH VEHICLES" && selectedVehicle.plate' class='imageChange-textfield' ref='selectedVehicle.image' v-model='selectedVehicle.image' label='Link' selectedVehicle.image=''></v-text-field>
+                                    <v-text-field v-else class='imageChange-textfield' ref='image' v-model='image' label='Link' image=''></v-text-field>
+                                    <v-btn v-if='currentPage == "CRIMINAL RECORD" && selectedPerson.charname' class='imageChange-btn' @click='changePersonImage()'>Upload image</v-btn>
+                                    <v-btn v-if='currentPage == "SEARCH VEHICLES" && selectedVehicle.plate' class='imageChange-btn' @click='changeVehicleImage()'>Upload</v-btn>
+                                    <v-btn v-if='currentPage == "PROFILE"' class='imageChange-btn' @click='changeImage(image)'>Upload</v-btn>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <v-overlay class='management-overlay' :z-index='zmanagementChange' :value='managementChange'>
+                                <div class='management-card'>
+                                    <h2>{{charnameData}}'s data</h2>
+                                    <v-btn class='management-close-btn' icon @click='managementChange =! managementChange'>
+                                        <v-icon>fas fa-chevron-left</v-icon>
+                                    </v-btn>
+                                    <!-- Changeable -->
+                                    <div class='management-changedata'>
+                                        <v-text-field v-model='policegroupData' ref='policegroupData' policegroupData='' label='Position'></v-text-field>
+                                        <v-text-field v-model='badgenumberData' ref='badgenumberData' badgenumberData='' label='Badge number'></v-text-field>
+                                        <v-text-field v-model='imageData' ref='imageData' imageData='' label='Image'></v-text-field>
+                                    </div>
+                                    <div class='management-changedata-two'>
+                                        <img :src='imageData'>
+                                    </div>
+                                    <v-btn class='management-savedata-btn' @click='changeComitData(identifierData, rankData, policegroupData, badgenumberData, imageData)'>Save data</v-btn>
+                                    <v-btn class='management-delete-btn' @click='DeleteData(identifierData)'>Delete from database</v-btn>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <v-overlay class='cr-note-overlay' :z-index='zchangeNote' :value='changeNote'>
+                                <div class='cr-note-card'>
+                                    <h2>{{selectedPerson.charname}}'s notes</h2>
+                                    <div class='imageChange-close' @click='changeNote = !changeNote'></div>
+                                    <v-textarea no-resize filled rows='6' counter label='Write a note' v-model='selectedPerson.note' ref='selectedPerson.note' selectedPerson.note=''></v-textarea>
+                                    <v-btn class='cr-save-btn' elevation='5' @click='saveNote()'>Save notes</v-btn>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <v-overlay class='cr-charges-overlay' :z-index='zchangeCharges' :value='changeCharges'>
+                                <div class='cr-charges-card'>
+                                    <h2>{{selectedPerson.charname}}'s charges</h2>
+                                    <div class='imageChange-close' @click='changeCharges = !changeCharges'></div>
+
+                                    <div class='cr-charges'>
+                                        <v-btn v-for='(tits, index) in selectedCharge' :key='tits.id' tile elevation='0' @click='showCharge(tits.id, tits.identifier, tits.title, tits.incident, tits.victim, tits.author, tits.charges, tits.fine, tits.jailTime, tits.date, tits.sentenced)'>Title: {{tits.title}} | Author: {{tits.author}} | Date: {{tits.date}}</v-btn>
+                                    </div>
+
+                                    <v-btn @click='newChargeOverlay()' small icon class='cr-newcharge-btn'>
+                                        <v-icon>fas fa-plus</v-icon>
+                                    </v-btn>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <v-overlay class='cr-newcharge-overlay' :z-index='znewCharges' :value='newCharges'>
+                                <div class='cr-newcharge-card'>
+                                    <h2>NEW CHARGE</h2>
+                                    <div class='imageChange-close' @click='newCharges = !newCharges'></div>
+
+                                    <div class='cr-details-box'>
+                                        <h3>INCIDENT</h3>
+                                        <v-text-field ref='newCharge.title' v-model='newCharge.title' newCharge.title='' filled label='Write incident'></v-text-field>
+                                        <h3>DETAILS</h3>
+                                        <v-textarea ref='newCharge.incident' v-model='newCharge.incident' newCharge.incident='' no-resize filled rows='6' counter label='Write details about the incident'></v-textarea>
+                                        <h3>JAIL TIME</h3>
+                                        <v-text-field ref='newCharge.jailTime' v-model='newCharge.jailTime' filled label='Jail time / months' type='number'></v-text-field>
+                                        <h3>CHARGES / FINE: <span>${{newCharge.fine}}</span></h3>
+                                        <div class='cr-details-charges'>
+                                            <v-btn elevation='0' tile v-for='amount, label in newCharge.charges' :key='label' @click='removeFine(label)'>{{label}} (x{{amount}})</v-btn>
+                                        </div>
+                                    </div>
+
+                                    <div class='cr-fines-box'>
+                                        <v-text-field dark v-model='searchCharges' ref='searchCharges' searchCharges='' label='SEARCH CHARGES' filled></v-text-field>
+                                        <div class='cr-fines-result'>
+                                            <v-btn elevation='0' tile v-for='(fines, finesIndex) in FilterCharges' :key='fines.id' @click='addFine(fines.id)'>{{fines.label}} | ${{fines.amount}}</v-btn>
+                                        </div>
+                                    </div>
+                                    <v-btn :disabled='newCharge.title == "" || newCharge.incident == ""' class='cr-newcharge-submit-btn' elevation='5' @click='createNewCharge()'>Submit</v-btn>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                        <v-fade-transition>
+                            <v-overlay class='cr-newcharge-overlay' :z-index='zshowCharges' :value='showCharges'>
+                                <div class='cr-newcharge-card'>
+                                    <h2>CHARGE ID: {{showCurrentCharge.id}}</h2>
+                                    <div class='imageChange-close' @click='showCharges = !showCharges'></div>
+
+                                    <div class='cr-changedetails-box'>
+                                        <h3>INCIDENT</h3>
+                                        <v-text-field ref='showCurrentCharge.title' v-model='showCurrentCharge.title' showCurrentCharge.title='' filled label='Write incident'></v-text-field>
+                                        <h3>DETAILS</h3>
+                                        <v-textarea ref='showCurrentCharge.incident' v-model='showCurrentCharge.incident' showCurrentCharge.incident='' no-resize filled rows='6' counter label='Write details about the incident'></v-textarea>
+                                    </div>
+
+                                    <h3 class='cr-changedetails-charges-h3'>CHARGES</h3>
+                                    <div class='cr-changedetails-charges'>
+                                        <v-btn disabled elevation='0' tile v-for='amount, label in showCurrentCharge.charges' :key='label'>{{label}} (x{{amount}})</v-btn>
+                                    </div>
+
+                                    <div class='cr-changecharge-details'>
+                                        <h3>RECOMMENDED FINE</h3>
+                                        <v-text-field ref='showCurrentCharge.fine' v-model='showCurrentCharge.fine' showCurrentCharge.fine='' filled label='Recommended fine'></v-text-field>
+                                        <h3>RECOMMENDED JAIL TIME</h3>
+                                        <v-text-field ref='showCurrentCharge.jailTime' v-model='showCurrentCharge.jailTime' showCurrentCharge.jailTime='' filled label='Recommended jail time'></v-text-field>
+                                    </div>
+                                    <div class='cr-change-btns'>
+                                        <v-btn v-if='showCurrentCharge.sentenced == "Yes"' disabled elevation='5' class='cr-currentcharge-btn'>
+                                            Victim sentenced
+                                        </v-btn>
+                                        <v-btn v-else-if='showCurrentCharge.sentenced == "No"' :disabled='showCurrentCharge.title == "" || showCurrentCharge.incident == "" || showCurrentCharge.fine == "" || showCurrentCharge.jailTime == ""' elevation='5' class='cr-currentcharge-btn' @click='sentenceTarget()'>
+                                            Sentence victim
+                                        </v-btn>
+                                        <v-btn elevation='5' class='cr-editcharge-btn' @click='editCharge()'>Save changes</v-btn>
+                                        <v-btn v-if='rank == "admin"' elevation='5' class='cr-deletecharge-btn' @click='deleteCharge()'>Delete charge from database</v-btn>
+                                    </div>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                    <v-fade-transition>
+                            <v-overlay class='dispatch-overlay' :z-index='zdispatch' :value='dispatch'>
+                                <div class='dispatch-card'>
+                                    <h2>CALL ID: {{dispatchCall.id}}</h2>
+                                    <div class='imageChange-close' @click='dispatch = !dispatch'></div>
+
+                                    <div class='dispatch-overlay-box'>
+                                        <v-textarea no-resize filled rows='5' counter label='Write a respond to the caller' v-model='dispatchCall.respond' ref='dispatchCall.respond' dispatchCall.respond=''></v-textarea>
+                                        <v-btn elevation='5' @click='respondDispatchCall()'>Respond to call</v-btn>
+                                    </div>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                    <v-fade-transition>
+                            <v-overlay class='cr-newcharge-overlay' :z-index='zvehicleWarrant' :value='vehicleWarrant'>
+                                <div class='cr-newcharge-card'>
+                                    <h2>VEHICLE: {{vehicleWarrantSelected.model}} | VEHICLE PLATE: {{vehicleWarrantSelected.plate}}</h2>
+                                    <div class='imageChange-close' @click='vehicleWarrant = !vehicleWarrant'></div>
+
+                                    <div class='cr-details-box'>
+                                        <h3>INCIDENT</h3>
+                                        <v-text-field ref='vehicleWarrantSelected.title' v-model='vehicleWarrantSelected.title' vehicleWarrantSelected.title='' filled label='Write incident'></v-text-field>
+                                        <h3>DETAILS</h3>
+                                        <v-textarea ref='vehicleWarrantSelected.incident' v-model='vehicleWarrantSelected.incident' vehicleWarrantSelected.incident='' no-resize filled rows='3' counter label='Write details about the incident'></v-textarea>
+                                        <h3>WARRANTS</h3>
+                                        <div class='cr-details-charges'>
+                                            <v-btn elevation='0' tile v-for='id, label in vehicleWarrantSelected.warrants' :key='label' @click='removeWarrant(label)'>{{label}} (x{{id}})</v-btn>
+                                        </div>
+                                    </div>
+
+
+                                    <div class='cr-fines-box'>
+                                        <v-text-field dark v-model='searchWarrants' ref='searchWarrants' searchWarrants='' label='SEARCH WARRANTS' filled></v-text-field>
+                                        <div class='cr-fines-result'>
+                                            <v-btn elevation='0' tile v-for='(warrants, warrantsIndex) in FilterVehWarrants' :key='warrants.id' @click='addWarrant(warrants.id)'>{{warrants.label}}</v-btn>
+                                        </div>
+                                    </div>
+                                    <v-btn :disabled='vehicleWarrantSelected.title == "" || vehicleWarrantSelected.incident == ""' class='cr-newcharge-submit-btn' elevation='5' @click='createNewWarrant()'>Submit</v-btn>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                       <v-fade-transition>
+                            <v-overlay class='cr-newcharge-overlay' :z-index='zpersonWarrant' :value='personWarrant'>
+                                <div class='cr-newcharge-card'>
+                                    <h2>PERSON: {{personWarrantSelected.victim}}</h2>
+                                    <div class='imageChange-close' @click='personWarrant = !personWarrant'></div>
+
+                                    <div class='cr-details-box'>
+                                        <h3>INCIDENT</h3>
+                                        <v-text-field ref='personWarrantSelected.title' v-model='personWarrantSelected.title' personWarrantSelected.title='' filled label='Write incident'></v-text-field>
+                                        <h3>DETAILS</h3>
+                                        <v-textarea ref='personWarrantSelected.incident' v-model='personWarrantSelected.incident' personWarrantSelected.incident='' no-resize filled rows='3' counter label='Write details about the incident'></v-textarea>
+                                        <h3>WARRANTS</h3>
+                                        <div class='cr-details-charges'>
+                                            <v-btn elevation='0' tile v-for='id, label in personWarrantSelected.warrants' :key='label' @click='removeWarrant(label)'>{{label}} (x{{id}})</v-btn>
+                                        </div>
+                                    </div>
+
+
+                                    <div class='cr-fines-box'>
+                                        <v-text-field dark v-model='searchWarrants' ref='searchWarrants' searchWarrants='' label='SEARCH WARRANTS' filled></v-text-field>
+                                        <div class='cr-fines-result'>
+                                            <v-btn elevation='0' tile v-for='(warrants, warrantsIndex) in FilterWarrants' :key='warrants.id' @click='addWarrant(warrants.id)'>{{warrants.label}}</v-btn>
+                                        </div>
+                                    </div>
+                                    <v-btn :disabled='personWarrantSelected.title == "" || personWarrantSelected.incident == ""' class='cr-newcharge-submit-btn' elevation='5' @click='createNewWarrant()'>Submit</v-btn>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+                       <v-fade-transition>
+                            <v-overlay class='warrants-view-overlay' :z-index='zshowWarrants' :value='showWarrants'>
+                                <div class='warrants-view-card'>
+                                    <h2>WARRANT ID: {{selectedWarrant.id}}</h2>
+                                    <div class='imageChange-close' @click='showWarrants = !showWarrants'></div>
+
+                                    <div class='warrants-details-box'>
+                                        <h3>INCIDENT</h3>
+                                        <v-text-field disabled ref='selectedWarrant.title' v-model='selectedWarrant.title' selectedWarrant.title='' filled label='Incident'></v-text-field>
+                                        <h3>DETAILS</h3>
+                                        <v-textarea disabled ref='selectedWarrant.incident' v-model='selectedWarrant.incident' selectedWarrant.incident='' no-resize filled rows='3' counter label='Details about the incident'></v-textarea>
+                                        <h3>CHARGES</h3>
+                                        <div class='warrants-details-charges'>
+                                            <v-btn disabled elevation='0' tile v-for='id, label in selectedWarrant.warrants' :key='label'>{{label}} (x{{id}})</v-btn>
+                                        </div>
+                                    </div>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition> -->
+
+                        <v-fade-transition>
+                            <v-overlay class='licenses-view-overlay' :z-index='zshowLicenses' :value='showLicenses'>
+                                <div class='licenses-view-card'>
+                                    <h2>{{selectedPerson.charname}}'s Licenses</h2>
+                                    <div class='imageChange-close' @click='showLicenses = !showLicenses'></div>
+
+                                    <div class='licenses-details-box'>
+                                        <v-chip label v-if='UserLicenses.dmv == "dmv"'>
+                                            <v-btn small icon @click='removeLicense("dmv")'>
+                                                <v-icon>fas fa-ban</v-icon>
+                                            </v-btn> | DMV passed
+                                        </v-chip>
+                                        <v-chip label v-if='UserLicenses.driver == true'>
+                                            <v-btn small icon @click='removeLicense("driver")'>
+                                                <v-icon>fas fa-ban</v-icon>
+                                            </v-btn> | Driver's license
+                                        </v-chip>
+                                        <v-chip label v-if='UserLicenses.business == "true"'>
+                                            <v-btn small icon @click='removeLicense("business")'>
+                                                <v-icon>fas fa-ban</v-icon>
+                                            </v-btn> | Business license
+                                        </v-chip>
+                                        <v-chip label v-if='UserLicenses.truck == "drive_truck"'>
+                                            <v-btn small icon @click='removeLicense("drive_truck")'>
+                                                <v-icon>fas fa-ban</v-icon>
+                                            </v-btn> | Truck license
+                                        </v-chip>
+                                        <v-chip label v-if='UserLicenses.boat == "boat"'>
+                                            <v-btn small icon @click='removeLicense("boat")'>
+                                                <v-icon>fas fa-ban</v-icon>
+                                            </v-btn> | Boat license
+                                        </v-chip>
+                                        <v-chip label v-if='UserLicenses.weapon == "true"'>
+                                            <v-btn small icon @click='removeLicense("weapon")'>
+                                                <v-icon>fas fa-ban</v-icon>
+                                            </v-btn> | Weapon license</v-chip>
+                                        <v-chip label v-if='UserLicenses.weed == "weed_processing"'>
+                                            <v-btn small icon @click='removeLicense("weed_processing")'>
+                                                <v-icon>fas fa-ban</v-icon>
+                                            </v-btn> | Weed processing license
+                                        </v-chip>
+                                    </div>
+                                </div>
+                            </v-overlay>
+                        </v-fade-transition>
+
+                    </div>
+                </div>
+            </v-main>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>

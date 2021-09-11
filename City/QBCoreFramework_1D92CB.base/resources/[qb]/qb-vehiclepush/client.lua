@@ -43,7 +43,9 @@ Citizen.CreateThread(function()
         if Vehicle.Vehicle ~= nil then
  
                 if IsVehicleSeatFree(Vehicle.Vehicle, -1) and GetVehicleEngineHealth(Vehicle.Vehicle) <= Config.DamageNeeded then
-                    QBCore.Functions.DrawText3D(Vehicle.Coords.x, Vehicle.Coords.y, Vehicle.Coords.z, 'Press [~g~SHIFT~w~] and [~g~E~w~] to push the vehicle')
+                    if GetVehicleClass(Vehicle.Vehicle) ~= 13 and GetVehicleClass(Vehicle.Vehicle) ~= 14 and GetVehicleClass(Vehicle.Vehicle) ~= 15 and GetVehicleClass(Vehicle.Vehicle) ~= 16 then
+                        QBCore.Functions.DrawText3D(Vehicle.Coords.x, Vehicle.Coords.y, Vehicle.Coords.z, 'Press [~g~SHIFT~w~] and [~g~E~w~] to push the vehicle')
+                    end
                 end
      
 

@@ -1,4 +1,3 @@
--- Leaked By: Leaking Hub | J. Snow | leakinghub.com
 -- You can modify this to use your own Notification system
 function notification(msg,typeOfNotif)
 	if typeOfNotif == "success" then
@@ -128,8 +127,6 @@ local MaskHomme = {
 [1]={model = 107, colorA = 7, colorB = 1},
 [2]={model = 108, colorA = 0, colorB = 1}
 }
-
-
 
 
 Citizen.CreateThread(function()
@@ -330,11 +327,13 @@ RegisterNUICallback('validate', function(data, cb)
 	end
 	if reason == "" then
 		TriggerServerEvent("PaintBall:NewSession",data)
-		notification("Lobby created ! will be deleted in 3 minutes if not launched","success")
+		--QBCore.Functions.Notify("Lobby created, it will be deleted in 3 minutes if not launched", "success", 10000)
+		notification("Lobby created, it will be deleted in 3 minutes if not launched","success")
 		
 	else
 		notification(reason,"error")
-		-- TriggerEvent("pNotify:SendNotification", {text = reason, type = "error", timeout = 3000, layout = "bottomLeft"})
+		--QBCore.Functions.Notify("Error", "success", 10000)
+		--TriggerEvent("pNotify:SendNotification", {text = reason, type = "error", timeout = 3000, layout = "bottomLeft"})
 	end
 end)
 
@@ -705,7 +704,7 @@ function startNextGame(color,idx,manche)
 			end
 			PushScaleformMovieFunction(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
 			PushScaleformMovieFunctionParameterString("~g~Round : "..tostring(manche))
-			PushScaleformMovieFunctionParameterString("Don't shoot your allies !")
+			PushScaleformMovieFunctionParameterString("Friendly Fire is on! Don't shoot your allies!")
 			PopScaleformMovieFunctionVoid()
 			return scaleform
 		end
@@ -935,10 +934,10 @@ AddEventHandler('PaintBall:GoToNextMancheMSG', function(winner)
 	else
 		if winner == currentTeam then
 			message = "~g~You win !"
-			message2 = "Continue like that !"
+			message2 = "Keep it up!"
 		else
-			message = "~r~You loose !"
-			message2 = "Wake up ! "
+			message = "~r~You lose!"
+			message2 = "Wake up! "
 		end
 	end
 	

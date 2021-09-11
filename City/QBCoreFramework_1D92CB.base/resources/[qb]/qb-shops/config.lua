@@ -794,7 +794,43 @@ Config.Locations = {
         },
         ["products"] = Config.Products["mustapha"],
         ["showblip"] = true,
-    },    
+    },  
+    ["cookies"] = {
+        ["label"] = "Cookies",
+        ["type"] = "hardware",
+        ["coords"] = {
+            [1] = vector3(-932.21, -1180.38, 5.0)
+        },
+        ["products"] = Config.Products["coffeeshop"],
+        ["showblip"] = true,
+    },      
+    ["italianrestaurant"] = {
+        ["label"] = "Italian Restaurant",
+        ["type"] = "leisure",
+        ["coords"] = {
+            [1] = vector3(131.52, -1053.56, 22.96)
+        },
+        ["products"] = Config.Products["normal"],
+        ["showblip"] = true,
+    },  
+    ["burgetshot"] = {
+        ["label"] = "Burgershot",
+        ["type"] = "leisure",
+        ["coords"] = {
+            [1] = vector3(-1193.85, -892.66, 14.0)
+        },
+        ["products"] = Config.Products["normal"],
+        ["showblip"] = true,
+    },  
+    ["cyberbar"] = {
+        ["label"] = "Cyber Bar",
+        ["type"] = "leisure",
+        ["coords"] = {
+            [1] = vector3(339.14, -908.3, 29.25)
+        },
+        ["products"] = Config.Products["normal"],
+        ["showblip"] = true,
+    }, 
     ["gocarthardware"] = {
         ["label"] = "Go Cart Hardware Shop",
         ["type"] = "hardware",
@@ -802,7 +838,7 @@ Config.Locations = {
             [1] = vector3(5474.17, 254.19, 20.07)
         },
         ["products"] = Config.Products["hardware"],
-        ["showblip"] = true,
+        ["showblip"] = false,
     }, 
     ["gocartconvience"] = {
         ["label"] = "Go Cart Convience Shop",
@@ -811,6 +847,6 @@ Config.Locations = {
             [1] = vector3(5471.83, 254.41, 20.07)
         },
         ["products"] = Config.Products["normal"],
-        ["showblip"] = true,
-    }, 
+        ["showblip"] = false,
+    }
 }

@@ -1,9 +1,9 @@
 local Plates = {}
-cuffedPlayers = {}
-PlayerStatus = {}
-Casings = {}
-BloodDrops = {}
-FingerDrops = {}
+local cuffedPlayers = {}
+local PlayerStatus = {}
+local Casings = {}
+local BloodDrops = {}
+local FingerDrops = {}
 local Objects = {}
 
 
@@ -14,6 +14,7 @@ Citizen.CreateThread(function()
         TriggerClientEvent("police:SetCopCount", -1, curCops)
     end
 end)
+
 
 RegisterServerEvent('police:server:TakeOutImpound')
 AddEventHandler('police:server:TakeOutImpound', function(plate)
@@ -372,14 +373,6 @@ AddEventHandler('police:server:Impound', function(plate, fullImpound, price, bod
             TriggerClientEvent('QBCore:Notify', src, "Vehicle completely seized!")
         end
     end
-end)
-
-RegisterServerEvent('police:server:TakeOutImpound')
-AddEventHandler('police:server:TakeOutImpound', function(plate)
-    local src = source       
-    exports['ghmattimysql']:execute('UPDATE player_vehicles SET state = @state WHERE plate = @plate', {['@state'] = 0, ['@plate'] = plate})
-    TriggerClientEvent('QBCore:Notify', src, "Vehicle is taken out of Impound!")
-      
 end)
 
 RegisterServerEvent('evidence:server:UpdateStatus')
@@ -760,7 +753,7 @@ QBCore.Commands.Add("grantlicense", "Grant a license to someone", {{name="id", h
     end
 end)
 
-QBCore.Commands.Add("revokelicense", "Grant a license to someone", {{name="id", help="ID of a person"},{name="license", help="License Type"}}, true, function(source, args)
+QBCore.Commands.Add("revokelicense", "Revoke a license from someone", {{name="id", help="ID of a person"},{name="license", help="License Type"}}, true, function(source, args)
     local source = source
     local Player = QBCore.Functions.GetPlayer(source)
     if Player.PlayerData.job.name == "police" and Player.PlayerData.job.grade.level >= 2 then

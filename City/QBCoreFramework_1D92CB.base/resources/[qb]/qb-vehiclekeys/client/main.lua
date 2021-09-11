@@ -254,7 +254,7 @@ function Hotwire()
         local ped = PlayerPedId()
         local vehicle = GetVehiclePedIsIn(ped, true)
         IsHotwiring = true
-        local hotwireTime = math.random(20000, 30000)
+        local hotwireTime = math.random(20000, 40000)
         SetVehicleAlarm(vehicle, true)
         SetVehicleAlarmTimeLeft(vehicle, hotwireTime)
         PoliceCall()
@@ -269,7 +269,7 @@ function Hotwire()
             flags = 16,
         }, {}, {}, function() -- Done
             StopAnimTask(ped, "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", 1.0)
-            if (math.random(0, 100) < 85) then
+            if (math.random(0, 100) < 10) then
                 lockpicked = false
                 TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
                 TriggerEvent('vehiclekeys:client:SetOwner', GetVehicleNumberPlateText(vehicle))
@@ -350,7 +350,7 @@ function RobVehicle(target)
     IsRobbing = true
     loadAnimDict('mp_am_hold_up')
     TaskPlayAnim(target, "mp_am_hold_up", "holdup_victim_20s", 8.0, -8.0, -1, 2, 0, false, false, false)
-    QBCore.Functions.Progressbar("rob_keys", "Attemping Robbery..", 6000, false, true, {}, {}, {}, {}, function()
+    QBCore.Functions.Progressbar("rob_keys", "Attempting Robbery..", 6000, false, true, {}, {}, {}, {}, function()
         local chance = math.random(1, 100)
         if chance > 85 then
             ClearPedTasksImmediately(target)

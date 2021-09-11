@@ -3,7 +3,7 @@ local housePlants = {}
 local insideHouse = false
 local currentHouse = nil
 
-QBWeed.DrawText3Ds = function(x, y, z, text)
+DrawText3Ds = function(x, y, z, text)
 	SetTextScale(0.35, 0.35)
     SetTextFont(4)
     SetTextProportional(1)
@@ -107,10 +107,10 @@ Citizen.CreateThread(function()
                         ClosestTarget = k
                         if plantData["plantStats"]["health"] > 0 then
                             if plantData["plantStage"] ~= plantData["plantStats"]["highestStage"] then
-                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'Sort: '..plantData["plantSort"]["label"]..'~w~ ['..plantData["plantStats"]["gender"]..'] | Nutrition: ~b~'..plantData["plantStats"]["food"]..'% ~w~ | Health: ~b~'..plantData["plantStats"]["health"]..'%')
+                                DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'Sort: '..plantData["plantSort"]["label"]..'~w~ ['..plantData["plantStats"]["gender"]..'] | Nutrition: ~b~'..plantData["plantStats"]["food"]..'% ~w~ | Health: ~b~'..plantData["plantStats"]["health"]..'%')
                             else
-                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"] + 0.2, "Press ~g~ E ~w~ to harvest plant.")
-                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'Sort: ~g~'..plantData["plantSort"]["label"]..'~w~ ['..plantData["plantStats"]["gender"]..'] | Nutrition: ~b~'..plantData["plantStats"]["food"]..'% ~w~ | Health: ~b~'..plantData["plantStats"]["health"]..'%')
+                                DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"] + 0.2, "Press ~g~ E ~w~ to harvest plant.")
+                                DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'Sort: ~g~'..plantData["plantSort"]["label"]..'~w~ ['..plantData["plantStats"]["gender"]..'] | Nutrition: ~b~'..plantData["plantStats"]["food"]..'% ~w~ | Health: ~b~'..plantData["plantStats"]["health"]..'%')
                                 if IsControlJustPressed(0, 38) then
                                     QBCore.Functions.Progressbar("remove_weed_plant", "Harvesting Plant", 8000, false, true, {
                                         disableMovement = true,
@@ -136,7 +136,7 @@ Citizen.CreateThread(function()
                                 end
                             end
                         elseif plantData["plantStats"]["health"] == 0 then
-                            QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'The plant has died. Press ~r~ E ~w~ to remove plant.')
+                            DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'The plant has died. Press ~r~ E ~w~ to remove plant.')
                             if IsControlJustPressed(0, 38) then
                                 QBCore.Functions.Progressbar("remove_weed_plant", "Removing The Plant", 8000, false, true, {
                                     disableMovement = true,
@@ -241,12 +241,7 @@ AddEventHandler('qb-weed:client:placePlant', function(type, item)
                 anim = "base",
                 flags = 16,
             }, {}, {}, function() -- Done
-                ClearPedTasks(ped)
-                plantObject = CreateObject(plantData["plantModel"], plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], false, false, false)
-                FreezeEntityPosition(plantObject, true)
-                SetEntityAsMissionEntity(plantObject, false, false)
-                PlaceObjectOnGroundProperly(plantObject)
-            
+                ClearPedTasks(ped)            
                 TriggerServerEvent('qb-weed:server:placePlant', json.encode(plantData["plantCoords"]), type, currentHouse)
                 TriggerServerEvent('qb-weed:server:removeSeed', item.slot, type)
             end, function() -- Cancel
