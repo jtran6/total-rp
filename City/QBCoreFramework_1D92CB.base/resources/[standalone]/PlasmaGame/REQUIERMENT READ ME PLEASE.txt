@@ -1,0 +1,21 @@
+This script is developped by Sarish for Patamods
+3D modele by Patatichette
+Thanks to xRxExTxRxOx who add the PlasmaGun in FiveM (Edited and corrected by Sarish)
+
+
+
+
+- Just simply drag and drop in your resource folder and start it !
+/!\ 3D model need to be launched BEFORE your connexion. So please, add this script in your server.cfg /!\ 
+
+- you need to buy a paintball map too, WE DO NOT PROVIDE THE MAPPING. You can buy the paintball Patoche's mapping here:  https://discord.gg/NvrTRdh
+
+- Standalone, so you don't need a special framework
+- You need to have a FiveM Argentum key minimum to stream our Mask
+- NativeUI reloaded lua version
+
+
+
+The code is not obfuscated and has no ip lock. 
+Feel free to edit it as you want to add more round, change position, pay for games ect...
+Remember that we don't give support if you modified it.

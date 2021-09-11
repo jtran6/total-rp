@@ -16,6 +16,10 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
+	while QB == nil do
+		TriggerEvent('QB:getSharedObject', function(obj) QB = obj end)
+		Citizen.Wait(0)
+	end
 	while true do
 		Citizen.Wait(60000)
         PlayerData = QBCore.Functions.GetPlayerData()

@@ -2,7 +2,7 @@
 -- Garage 2: Maze Bank Building
 
 exports('GetImportCEOGarage2Object', function()
-	return ImportCEOGarage2
+    return ImportCEOGarage2
 end)
 
 ImportCEOGarage2 = {

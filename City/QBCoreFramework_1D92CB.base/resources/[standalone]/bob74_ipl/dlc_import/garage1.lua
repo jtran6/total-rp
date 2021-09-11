@@ -2,7 +2,7 @@
 -- Garage 1: Arcadius Business Centre
 
 exports('GetImportCEOGarage1Object', function()
-	return ImportCEOGarage1
+    return ImportCEOGarage1
 end)
 
 ImportCEOGarage1 = {

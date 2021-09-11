@@ -89,7 +89,7 @@ SmugglerHangar = {
         end,
         Clear = function(refresh)
             SetIplPropState(SmugglerHangar.interiorId, SmugglerHangar.ModArea.mod, false, refresh)
-        end	
+        end    
     },
     Office = {
         basic = "set_office_basic", modern = "set_office_modern", traditional = "set_office_traditional",
@@ -99,7 +99,7 @@ SmugglerHangar = {
         end,
         Clear = function(refresh)
             SetIplPropState(SmugglerHangar.interiorId, {SmugglerHangar.Office.basic, SmugglerHangar.Office.modern, SmugglerHangar.Office.traditional}, false, refresh)
-        end	
+        end    
     },
     Bedroom = {
         Style = {
@@ -116,7 +116,7 @@ SmugglerHangar = {
             end,
             Clear = function(refresh)
                 SetIplPropState(SmugglerHangar.interiorId, {SmugglerHangar.Bedroom.Style.modern, SmugglerHangar.Bedroom.Style.traditional}, false, refresh)
-            end	
+            end    
         },
         Blinds = {
             none = "", opened = "set_bedroom_blinds_open", closed = "set_bedroom_blinds_closed",
@@ -130,7 +130,7 @@ SmugglerHangar = {
             end,
             Clear = function(refresh)
                 SetIplPropState(SmugglerHangar.interiorId, {SmugglerHangar.Bedroom.Blinds.opened, SmugglerHangar.Bedroom.Blinds.closed}, false, refresh)
-            end	
+            end    
         }
     },
     Lighting = {
@@ -147,7 +147,7 @@ SmugglerHangar = {
             end,
             Clear = function(refresh)
                 SetIplPropState(SmugglerHangar.interiorId, "set_lighting_tint_props", false, refresh)
-            end	
+            end    
         },
         Ceiling = {
             none = "", yellow = "set_lighting_hangar_a", blue = "set_lighting_hangar_b", white = "set_lighting_hangar_c",
@@ -161,7 +161,7 @@ SmugglerHangar = {
             end,
             Clear = function(refresh)
                 SetIplPropState(SmugglerHangar.interiorId, {SmugglerHangar.Lighting.Ceiling.yellow, SmugglerHangar.Lighting.Ceiling.blue, SmugglerHangar.Lighting.Ceiling.white}, false, refresh)
-            end	
+            end    
         },
         Walls = {
             none = "", neutral = "set_lighting_wall_neutral", blue = "set_lighting_wall_tint01", orange = "set_lighting_wall_tint02",
@@ -181,7 +181,7 @@ SmugglerHangar = {
                     SmugglerHangar.Lighting.Walls.lightYellow, SmugglerHangar.Lighting.Walls.lightYellow2, SmugglerHangar.Lighting.Walls.dimmed,
                     SmugglerHangar.Lighting.Walls.strongYellow, SmugglerHangar.Lighting.Walls.white, SmugglerHangar.Lighting.Walls.lightGreen,
                     SmugglerHangar.Lighting.Walls.yellow}, false, refresh)
-            end	
+            end    
         }
     },
     Details = {
