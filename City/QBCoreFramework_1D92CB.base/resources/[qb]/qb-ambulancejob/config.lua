@@ -9,7 +9,7 @@ Config.Locations = {
         [2] = vector4(-254.88, 6324.5, 32.58, 0.0),
     },    
     ["vehicle"] = {
-        [1] = vector4(294.578, -574.761, 43.179, 35.792),
+        [1] = vector4(332.55, -577.43, 28.8, 337.05),
         [2] = vector4(-234.28, 6329.16, 32.15, 222.5),
     },
     ["helicopter"] = {
@@ -48,6 +48,7 @@ Config.Vehicles = {
 
 Config.Whitelist = {
     "GAA35566",
+    "HFY44136",
 }
 
 Config.Helicopter = "polmav"

@@ -140,4 +140,17 @@ Config.Teleports = {
             drawText = '[E] Leave Arena'
         },
     },
+    -- PillBox Lower Floor
+    [5] = {
+        [1] = {
+            coords = vector4(344.31, -586.17, 28.8, 252.1),
+            ["AllowVehicle"] = false, 
+            drawText = '[E] Go to Main Floor'
+        },
+        [2] = {
+            coords = vector4(330.34, -601.23, 43.28, 68.19),
+            ["AllowVehicle"] = false,
+            drawText = '[E] Go to Lower Floor'
+        },
+    },
 }

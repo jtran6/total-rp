@@ -147,7 +147,7 @@ Citizen.CreateThread(function()
            return tostring(o)
         end
      end
-    print(dump(QB.VehicleShops[d]["ShowroomVehicles"]))
+    --print(dump(QB.VehicleShops[d]["ShowroomVehicles"]))
     
     for d = 1, #QB.VehicleShops do
         for i = 1, #QB.VehicleShops[d]["ShowroomVehicles"] do
