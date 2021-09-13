@@ -48,7 +48,7 @@ Citizen.CreateThread(function()
 				jailTime = jailTime - 1
 				if jailTime <= 0 then
 					jailTime = 0
-					QBCore.Functions.Notify("Your time is up! Call someone to come get you..", "success", 10000)
+					QBCore.Functions.Notify("Your time is up! Check yourself out at the visitors center", "success", 10000)
 				end
 				TriggerServerEvent("prison:server:SetJailStatus", jailTime)
 			end
@@ -80,7 +80,7 @@ Citizen.CreateThread(function()
                         ShopItems.label = "Prison Canteen"
                         ShopItems.items = Config.CanteenItems
                         ShopItems.slots = #Config.CanteenItems
-                        TriggerServerEvent("inventory:server:OpenInventory", "shop", "Kantineshop_"..math.random(1, 99), ShopItems)
+                        TriggerServerEvent("inventory:server:OpenInventory", "shop", "Canteenshop_"..math.random(1, 99), ShopItems)
 					end
 					DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22, 222, false, false, false, 1, false, false, false)
 				elseif #(pos - vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z)) < 2.5 then
@@ -129,7 +129,7 @@ end)
 RegisterNetEvent('prison:client:Leave')
 AddEventHandler('prison:client:Leave', function()
 	if jailTime > 0 then 
-		QBCore.Functions.Notify("You still have... "..jailTime.." month(s)..")
+		QBCore.Functions.Notify("You still have to... "..jailTime.." months..")
 	else
 		jailTime = 0
 		TriggerServerEvent("prison:server:SetJailStatus", 0)

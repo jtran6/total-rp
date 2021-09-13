@@ -4,8 +4,8 @@ local isLoggedIn = false
 local inKeyBinding = false
 local availableKeys = {
     {289, "F2"},
-    --{170, "F3"},
-    --{166, "F5"},
+    {170, "F3"},
+    {166, "F5"},
     {167, "F6"},
     {168, "F7"},
     {56, "F9"},
@@ -72,8 +72,8 @@ end
 RegisterNUICallback('save', function(data)
     local keyData = {
         ["F2"]  = {["command"] = data.keyData["F2"][1],  ["argument"] = data.keyData["F2"][2]},
-        --["F3"]  = {["command"] = data.keyData["F3"][1],  ["argument"] = data.keyData["F3"][2]},
-        --["F5"]  = {["command"] = data.keyData["F5"][1],  ["argument"] = data.keyData["F5"][2]},
+        ["F3"]  = {["command"] = data.keyData["F3"][1],  ["argument"] = data.keyData["F3"][2]},
+        ["F5"]  = {["command"] = data.keyData["F5"][1],  ["argument"] = data.keyData["F5"][2]},
         ["F6"]  = {["command"] = data.keyData["F6"][1],  ["argument"] = data.keyData["F6"][2]},
         ["F7"]  = {["command"] = data.keyData["F7"][1],  ["argument"] = data.keyData["F7"][2]},
         ["F9"]  = {["command"] = data.keyData["F9"][1],  ["argument"] = data.keyData["F9"][2]},

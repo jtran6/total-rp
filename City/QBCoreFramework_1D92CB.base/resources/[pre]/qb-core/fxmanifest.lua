@@ -42,6 +42,5 @@ files {
 
 dependencies {
 	'progressbar',
-	'connectqueue',
-	'ghmattimysql'
+	'connectqueue'
 }

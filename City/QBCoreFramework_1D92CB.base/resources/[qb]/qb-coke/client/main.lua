@@ -26,13 +26,14 @@ Citizen.CreateThread(function()
 
         local PlayerPed = PlayerPedId()
         local PlayerPos = GetEntityCoords(PlayerPed)
-        local distance = #(PlayerPos - vector3(93.02, 3755.3, 40.77))
+
+        local distance = #(PlayerPos - vector3(-331.77, -2444.70, 7.36))
         
         if distance < 6 then
             inRange = true
 
             if distance < 2 then
-                DrawText3Ds((93.02, 3755.3, 40.77, "[G] Process Coca Leaf")
+                DrawText3Ds(-331.77, -2444.70, 7.36, "[G] Process Coca Leaf")
                 if IsControlJustPressed(0, 47) then
                     TriggerServerEvent("qb-coke:server:grindleaves")
 

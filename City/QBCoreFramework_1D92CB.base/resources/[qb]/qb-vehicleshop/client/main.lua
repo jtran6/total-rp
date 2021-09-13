@@ -135,20 +135,6 @@ end)
 
 Citizen.CreateThread(function()
     Citizen.Wait(1000)
-    function dump(o)
-        if type(o) == 'table' then
-           local s = '{ '
-           for k,v in pairs(o) do
-              if type(k) ~= 'number' then k = '"'..k..'"' end
-              s = s .. '['..k..'] = ' .. dump(v) .. ','
-           end
-           return s .. '} '
-        else
-           return tostring(o)
-        end
-     end
-    --print(dump(QB.VehicleShops[d]["ShowroomVehicles"]))
-    
     for d = 1, #QB.VehicleShops do
         for i = 1, #QB.VehicleShops[d]["ShowroomVehicles"] do
             local oldVehicle = GetClosestVehicle(QB.VehicleShops[d]["ShowroomVehicles"][i].coords.x, QB.VehicleShops[d]["ShowroomVehicles"][i].coords.y, QB.VehicleShops[d]["ShowroomVehicles"][i].coords.z, 3.0, 0, 70)

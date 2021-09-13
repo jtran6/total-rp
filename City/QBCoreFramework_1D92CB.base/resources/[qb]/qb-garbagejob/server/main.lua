@@ -56,12 +56,16 @@ AddEventHandler('qb-garbagejob:server:PayShit', function(amount, location)
 
     if amount > 0 then
         Player.Functions.AddMoney('bank', amount)
-        for i = 1, math.random(5, 7), 1 do
-            local item = Materials[math.random(1, #Materials)]
-            Player.Functions.AddItem(item, math.random(15, 50))
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
-            Citizen.Wait(500)
+
+        if location == #Config.Locations["trashcan"] then
+            for i = 1, math.random(3, 5), 1 do
+                local item = Materials[math.random(1, #Materials)]
+                Player.Functions.AddItem(item, math.random(4, 7))
+                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
+                Citizen.Wait(500)
+            end
         end
+
         TriggerClientEvent('QBCore:Notify', src, "You have $"..amount..",- got paid to your bank account!", "success")
     else
         TriggerClientEvent('QBCore:Notify', src, "You have earned nothing..", "error")

@@ -17,12 +17,12 @@
     <div class="container p-2" id="cardSelector" style="max-width:500px; min-height:900px; display:none">
         <div class="row" style="position: relative; top: 54px;">
                 <div class="col-12 text-center p-2">
-                    <img src="images/logo1.png" class="img-fluid" style="width: 150px;">
+                    <img src="images/logo1.png" class="img-fluid" style="width: 150px;"> 
                 </div>
             </div>
     <div class="row" style="position: relative; top: 54px; left: 2%;">
         <div class="col-12" id="cardsDisplay">
-            <div class="card mb-3 mx-auto" style="width:100%; background:rgba(51, 51, 51, 0.8); color: #007bff">
+            <div class="card mb-3 mx-auto" style="width:100%; background:#505050; box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); color: #dcdcdc">
                 <div class="row no-gutters">
                     <div class="col-2 my-auto">
                         <img src="images/visa.png" class="card-img" alt="">
@@ -42,7 +42,7 @@
     </div>
     <div class="row" style="position: relative; top: 54px;">
         <div class="col-12 text-center">
-            <button class="btn" id="cancelTransaction" style="background-color: #a7000b; color: white">Cancel Transaction</button>
+            <button class="btn btn-danger" id="cancelTransaction" style=" color: white">Cancel Transaction</button>
         </div>
     </div>
 </div>
@@ -106,7 +106,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-12">
-                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #007bff">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #ffffff">
                                         <div class="card-header">Account Information</div>
                                             <div class="card-body">
                                                 <p class="card-text"><small>
@@ -140,19 +140,19 @@
                                     </div>
                                 <div class="row" style="position: relative; top: 15px;">
                                     <div class="col-6">
-                                        <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #00af17">
+                                        <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #fff">
                                             <div class="card-header"><i class="fad fa-fw fa-money-bill-wave"></i> Current Account Balance</div>
                                             <div class="card-body">
-                                              <h5 class="card-title" id="currentBalanceATM"></h5>
+                                              <h5 class="card-title" id="currentBalanceATM" style=" color: #28a745"></h5>
                                               <p class="card-text">This is currently how much is avaliable to spend in your account.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #00c3ff">
+                                        <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #fff">
                                             <div class="card-header"><i class="fad fa-fw fa-coin"></i> Current Cash Balance</div>
                                             <div class="card-body">
-                                              <h5 class="card-title" id="currentCashBalanceATM"></h5>
+                                              <h5 class="card-title" id="currentCashBalanceATM" style=" color: #28a745"></h5>
                                               <p class="card-text">This is currently how much cash you have on your person.</p>
                                             </div>
                                         </div>
@@ -166,8 +166,8 @@
                                             <div class="card-body">
                                                 <div class="container-fluid">
                                                     <div class="row m-1">
-                                                        <div class="col-6"><button class="btn btn-secondary btn-block" data-action="ATMwithdraw" data-amount="100">Withdrawal $100</button></div>
-                                                        <div class="col-6"><button class="btn btn-secondary btn-block" data-action="ATMwithdraw" data-amount="1000">Withdrawal $1000</button></div>
+                                                        <div class="col-6"><button class="btn btn-secondary2 btn-block" data-action="ATMwithdraw" data-amount="100">Withdrawal $100</button></div>
+                                                        <div class="col-6"><button class="btn btn-secondary2 btn-block" data-action="ATMwithdraw" data-amount="1000">Withdrawal $1000</button></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -190,19 +190,19 @@
                                     </div>
                                     <div class="row" style="position: relative; top: 15px;">
                                         <div class="col-6">
-                                            <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #00af17">
+                                            <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #fff">
                                                 <div class="card-header"><i class="fad fa-fw fa-money-bill-wave"></i> Current Account Balance</div>
                                                 <div class="card-body">
-                                                  <h5 class="card-title" id="currentBalanceATM1"></h5>
+                                                  <h5 class="card-title" id="currentBalanceATM1" style=" color: #28a745"></h5>
                                                   <p class="card-text">This is currently how much is avaliable to spend in your account.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #00c3ff">
+                                            <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #fff">
                                                 <div class="card-header"><i class="fad fa-fw fa-coin"></i> Current Cash Balance</div>
                                                 <div class="card-body">
-                                                  <h5 class="card-title" id="currentCashBalance1ATM"></h5>
+                                                  <h5 class="card-title" id="currentCashBalance1ATM" style=" color: #28a745"></h5>
                                                   <p class="card-text">This is currently how much cash you have on your person.</p>
                                                 </div>
                                             </div>
@@ -234,7 +234,7 @@
                                         </div>
                                     </div>
                                     <div class="row" style="position: relative; top: 15px;">
-                                        <div class="col-12 text-center"><button class="btn" id="initiateWithdrawATM" style="background-color: #a7000b; color: white">Complete Withdrawal</button></div>
+                                        <div class="col-12 text-center"><button class="btn btn-secondary2" id="initiateWithdrawATM">Complete Withdrawal</button></div>
                                     </div>
                                 </div>
                             </div>

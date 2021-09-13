@@ -4,7 +4,7 @@ QBCore.Player = {}
 QBCore.Player.Login = function(source, citizenid, newData)
 	if source ~= nil then
 		if citizenid then
-			local result = exports['ghmattimysql']:executeSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = citizenid})
+			local result = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = citizenid})
 			local PlayerData = result[1]
 			if PlayerData ~= nil then
 				PlayerData.money = json.decode(PlayerData.money)
@@ -196,7 +196,9 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 
 			self.Functions.UpdatePlayerData()
 			TriggerClientEvent("QBCore:Client:OnGangUpdate", self.PlayerData.source, self.PlayerData.gang)
+			return true
 		end
+		return false
 	end
 
 	self.Functions.SetJobDuty = function(onDuty)
@@ -319,6 +321,8 @@ QBCore.Player.CreatePlayer = function(PlayerData)
 					end
 				end
 			end
+		else
+			TriggerClientEvent('QBCore:Notify', self.PlayerData.source, "Your inventory is too heavy!", "error")
 		end
 		return false
 	end
@@ -435,9 +439,9 @@ end
 QBCore.Player.Save = function(source)
 	local PlayerData = QBCore.Players[source].PlayerData
 	if PlayerData ~= nil then
-		local result = exports.ghmattimysql:executeSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = PlayerData.citizenid})
+		local result = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = PlayerData.citizenid})
 		if result[1] == nil then
-			exports.ghmattimysql:execute('INSERT INTO players (citizenid, cid, license, name, money, charinfo, job, gang, position, metadata) VALUES (@citizenid, @cid, @license, @name, @money, @charinfo, @job, @gang, @position, @metadata)', {
+			exports.oxmysql:insert('INSERT INTO players (citizenid, cid, license, name, money, charinfo, job, gang, position, metadata) VALUES (@citizenid, @cid, @license, @name, @money, @charinfo, @job, @gang, @position, @metadata)', {
 				['@citizenid'] = PlayerData.citizenid,
 				['@cid'] = tonumber(PlayerData.cid),
 				['@license'] = PlayerData.license,
@@ -450,7 +454,7 @@ QBCore.Player.Save = function(source)
 				['@metadata'] = json.encode(PlayerData.metadata)
 			})
 		else
-			exports.ghmattimysql:execute('UPDATE players SET license=@license, name=@name, money=@money, charinfo=@charinfo, job=@job, gang=@gang, position=@position, metadata=@metadata WHERE citizenid=@citizenid', {
+			exports.oxmysql:execute('UPDATE players SET license=@license, name=@name, money=@money, charinfo=@charinfo, job=@job, gang=@gang, position=@position, metadata=@metadata WHERE citizenid=@citizenid', {
 				['@citizenid'] = PlayerData.citizenid,
 				['@license'] = PlayerData.license,
 				['@name'] = PlayerData.name,
@@ -494,10 +498,10 @@ local playertables = {
 
 QBCore.Player.DeleteCharacter = function(source, citizenid)
 	local license = QBCore.Functions.GetIdentifier(source, 'license')
-	local result = exports.ghmattimysql:scalarSync('SELECT license FROM players where citizenid = ?', {citizenid})
+	local result = exports.oxmysql:scalarSync('SELECT license FROM players where citizenid = ?', {citizenid})
 	if license == result then
 		for k,v in pairs(playertables) do
-			exports.ghmattimysql:execute('DELETE FROM '..v.table..' WHERE citizenid = ?', {citizenid})
+			exports.oxmysql:execute('DELETE FROM '..v.table..' WHERE citizenid = ?', {citizenid})
 		end
 		TriggerEvent("qb-log:server:CreateLog", "joinleave", "Character Deleted", "red", "**".. GetPlayerName(source) .. "** ("..QBCore.Functions.GetIdentifier(source, 'license')..") deleted **"..citizenid.."**..")
 	else
@@ -508,7 +512,7 @@ end
 
 QBCore.Player.LoadInventory = function(PlayerData)
 	PlayerData.items = {}
-	local result = exports['ghmattimysql']:executeSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = PlayerData.citizenid})
+	local result = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = PlayerData.citizenid})
 	if result[1] ~= nil then 
 		if result[1].inventory ~= nil then
 			plyInventory = json.decode(result[1].inventory)
@@ -558,9 +562,9 @@ QBCore.Player.SaveInventory = function(source)
 					})
 				end
 			end
-			exports.ghmattimysql:execute('UPDATE players SET inventory=@inventory WHERE citizenid=@citizenid', {['@inventory'] = json.encode(ItemsJson), ['@citizenid'] = PlayerData.citizenid})
+			exports.oxmysql:execute('UPDATE players SET inventory=@inventory WHERE citizenid=@citizenid', {['@inventory'] = json.encode(ItemsJson), ['@citizenid'] = PlayerData.citizenid})
 		else
-			exports.ghmattimysql:execute('UPDATE players SET inventory=@inventory WHERE citizenid=@citizenid', {['@inventory'] = '[]', ['@citizenid'] = PlayerData.citizenid})
+			exports.oxmysql:execute('UPDATE players SET inventory=@inventory WHERE citizenid=@citizenid', {['@inventory'] = '[]', ['@citizenid'] = PlayerData.citizenid})
 		end
 	end
 end
@@ -604,7 +608,7 @@ QBCore.Player.CreateCitizenId = function()
 
 	while not UniqueFound do
 		CitizenId = tostring(QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(5)):upper()
-		local result = exports.ghmattimysql:executeSync('SELECT COUNT(*) as count FROM players WHERE citizenid=@citizenid', {['@citizenid'] = CitizenId})
+		local result = exports.oxmysql:fetchSync('SELECT COUNT(*) as count FROM players WHERE citizenid=@citizenid', {['@citizenid'] = CitizenId})
 		if result[1].count == 0 then
 			UniqueFound = true
 		end
@@ -618,7 +622,7 @@ QBCore.Player.CreateFingerId = function()
 	while not UniqueFound do
 		FingerId = tostring(QBCore.Shared.RandomStr(2) .. QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(1) .. QBCore.Shared.RandomInt(2) .. QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(4))
 		local query = '%'..FingerId..'%'
-		local result = exports.ghmattimysql:executeSync('SELECT COUNT(*) as count FROM `players` WHERE `metadata` LIKE @query', {['@query'] = query})
+		local result = exports.oxmysql:fetchSync('SELECT COUNT(*) as count FROM `players` WHERE `metadata` LIKE @query', {['@query'] = query})
 		if result[1].count == 0 then
 			UniqueFound = true
 		end
@@ -632,7 +636,7 @@ QBCore.Player.CreateWalletId = function()
 	while not UniqueFound do
 		WalletId = "QB-"..math.random(11111111, 99999999)
 		local query = '%'..WalletId..'%'
-		local result = exports.ghmattimysql:executeSync('SELECT COUNT(*) as count FROM players WHERE metadata LIKE @query', {['@query'] = query})
+		local result = exports.oxmysql:fetchSync('SELECT COUNT(*) as count FROM players WHERE metadata LIKE @query', {['@query'] = query})
 		if result[1].count == 0 then
 			UniqueFound = true
 		end
@@ -647,7 +651,7 @@ QBCore.Player.CreateSerialNumber = function()
     while not UniqueFound do
         SerialNumber = math.random(11111111, 99999999)
 		local query = '%'..SerialNumber..'%'
-		local result = exports.ghmattimysql:executeSync('SELECT COUNT(*) as count FROM players WHERE metadata LIKE @query', {['@query'] = query})
+		local result = exports.oxmysql:fetchSync('SELECT COUNT(*) as count FROM players WHERE metadata LIKE @query', {['@query'] = query})
 		if result[1].count == 0 then
 			UniqueFound = true
 		end

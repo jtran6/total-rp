@@ -280,17 +280,16 @@ Citizen.CreateThread(function()
                                                 -- Checks if you've delivered all the bags
                                                 if (AmountOfBags - 1) == 0 then
                                                     -- Delivered all the bags
-                                                    Earnings = Earnings + math.random(2500, 4000)
+                                                    Earnings = Earnings + math.random(60, 90)
                                                     if (GarbageLocation + 1) <= AmountOfLocations then
                                                         -- Here he puts your next location and you are not finished working yet.
                                                         GarbageLocation = GarbageLocation + 1
                                                         local chance = math.random(1,100)
-                                                        local stopsLeft = AmountOfLocations - (GarbageLocation + 1);
-                                                        if chance < 10 then
+                                                        if chance < 26 then
                                                             TriggerServerEvent('qb-garbagejob:server:nano')
                                                         end
                                                         SetGarbageRoute()
-                                                        QBCore.Functions.Notify("All garbage bags are done, proceed to the next location! Your total earnings are : $"..Earnings.."! "..stopsLeft.." stops left. Finish your route to cash out!")
+                                                        QBCore.Functions.Notify("All garbage bags are done, proceed to the next location!")
                                                     else
                                                         -- Finished work
                                                         QBCore.Functions.Notify("You are done working! Go back to the depot.")
@@ -304,9 +303,9 @@ Citizen.CreateThread(function()
                                                     -- Didn't deliver all the bags yet
                                                     AmountOfBags = AmountOfBags - 1
                                                     if AmountOfBags > 1 then
-                                                        QBCore.Functions.Notify("There are still "..AmountOfBags.." bag(s) left!")
+                                                        QBCore.Functions.Notify("There are still "..AmountOfBags.." bags left!")
                                                     else
-                                                        QBCore.Functions.Notify("There is still "..AmountOfBags.." bag(s) over there!")
+                                                        QBCore.Functions.Notify("There is still "..AmountOfBags.." bags over there!")
                                                     end
                                                     hasGarbageBag = false
                                                 end

@@ -188,7 +188,7 @@ Config.CraftingItems = {
         },
         type = "item",
         slot = 5,
-        threshold = 0,
+        threshold = 120,
         points = 5,
     },
     [6] = {
@@ -202,7 +202,7 @@ Config.CraftingItems = {
         },
         type = "item",
         slot = 6,
-        threshold = 0,
+        threshold = 160,
         points = 6,
     },
     [7] = {
@@ -216,7 +216,7 @@ Config.CraftingItems = {
         },
         type = "item",
         slot = 7,
-        threshold = 0,
+        threshold = 200,
         points = 7,
     },
     [8] = {
@@ -230,7 +230,7 @@ Config.CraftingItems = {
         },
         type = "item",
         slot = 8,
-        threshold = 0,
+        threshold = 250,
         points = 8,
     },
     [9] = {
@@ -243,7 +243,7 @@ Config.CraftingItems = {
         },
         type = "item",
         slot = 9,
-        threshold = 0,
+        threshold = 300,
         points = 9,
     },
     [10] = {
@@ -256,7 +256,7 @@ Config.CraftingItems = {
         },
         type = "item",
         slot = 10,
-        threshold = 0,
+        threshold = 300,
         points = 10,
     },
     [11] = {
@@ -271,7 +271,7 @@ Config.CraftingItems = {
         },
         type = "item",
         slot = 11,
-        threshold = 0,
+        threshold = 350,
         points = 11,
     },
     [12] = {
@@ -286,22 +286,7 @@ Config.CraftingItems = {
         },
         type = "item",
         slot = 12,
-        threshold = 0,
-        points = 12,
-    },
-    [13] = {
-        name = "cryptostick",
-        amount = 50,
-        info = {},
-        costs = {
-            ["iron"] = 33,
-            ["steel"] = 44,
-            ["plastic"] = 55,
-            ["aluminum"] = 22,
-        },
-        type = "item",
-        slot = 13,
-        threshold = 0,
+        threshold = 1750,
         points = 12,
     },
 }

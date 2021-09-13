@@ -16,7 +16,7 @@ end
 local currentGarage = 1
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(1)
+        sleep = 1000
         if isLoggedIn and QBCore ~= nil then
             local ped = PlayerPedId()
             local pos = GetEntityCoords(ped)
@@ -25,6 +25,7 @@ Citizen.CreateThread(function()
                     local dist = #(pos - vector3(v.x, v.y, v.z))
                     if dist < 5 then
                         if dist < 1.5 then
+                            sleep = 7
                             if onDuty then
                                 DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Go Off Duty")
                             else
@@ -46,6 +47,7 @@ Citizen.CreateThread(function()
                     if dist < 4.5 then
                         if onDuty then
                             if dist < 1.5 then
+                                sleep = 7
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Armory")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerServerEvent("inventory:server:OpenInventory", "shop", "hospital", Config.Items)
@@ -60,6 +62,7 @@ Citizen.CreateThread(function()
                 for k, v in pairs(Config.Locations["vehicle"]) do
                     local dist = #(pos - vector3(v.x, v.y, v.z))
                     if dist < 4.5 then
+                        sleep = 7
                         DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                         if dist < 1.5 then
                             if IsPedInAnyVehicle(ped, false) then
@@ -85,6 +88,7 @@ Citizen.CreateThread(function()
                     local dist = #(pos - vector3(v.x, v.y, v.z))
                     if dist < 7.5 then
                         if onDuty then
+                            sleep = 7
                             DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                             if dist < 1.5 then
                                 if IsPedInAnyVehicle(ped, false) then
@@ -120,6 +124,7 @@ Citizen.CreateThread(function()
             for k, v in pairs(Config.Locations["main"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
                 if dist < 1.5 then
+                    sleep = 7
                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Take the elevator to the roof")
                     if IsControlJustReleased(0, 38) then
                         DoScreenFadeOut(500)
@@ -143,6 +148,7 @@ Citizen.CreateThread(function()
             for k, v in pairs(Config.Locations["roof"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
                 if dist < 1.5 then
+                    sleep = 7
                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Take the elevator down")
                     if IsControlJustReleased(0, 38) then
                         DoScreenFadeOut(500)
@@ -162,15 +168,14 @@ Citizen.CreateThread(function()
                     end
                 end
             end
-        else
-            Citizen.Wait(1000)
         end
+        Wait(sleep)
     end
 end)
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(1)
+        Citizen.Wait(10)
         if isStatusChecking then
             for k, v in pairs(statusChecks) do
                 local x,y,z = table.unpack(GetPedBoneCoords(statusCheckPed, v.bone))
@@ -257,46 +262,32 @@ function MakeCall(ped, male, street1, street2)
         sprite = 280,
         color = 4,
         scale = 0.9,
-        text = "Injured person"
+        text = "Injured Person"
     }
-
     if math.random(10) > 5 then
         rand = 0.0 - rand
     end
-
     if math.random(10) > 5 then
         rand2 = 0.0 - rand2
     end
-
     local moveto = GetOffsetFromEntityInWorldCoords(player, rand, rand2, 0.0)
-
     TaskGoStraightToCoord(ped, moveto, 2.5, -1, 0.0, 0.0)
     SetPedKeepTask(ped, true) 
-
-    local dist = #(moveto - pedcoords)
-
+    local dist = #(moveto - GetEntityCoords(ped))
     while dist > 3.5 and isDead do
         TaskGoStraightToCoord(ped, moveto, 2.5, -1, 0.0, 0.0)
-        dist = #(moveto - pedcoords)
+        dist = #(moveto - GetEntityCoords(ped))
         Citizen.Wait(100)
     end
-
     ClearPedTasksImmediately(ped)
     TaskLookAtEntity(ped, player, 5500.0, 2048, 3)
     TaskTurnPedToFaceEntity(ped, player, 5500)
-
     Citizen.Wait(3000)
-
-    --TaskStartScenarioInPlace(ped,"WORLD_HUMAN_STAND_MOBILE", 0, 1)
     loadAnimDict(callAnimDict)
     TaskPlayAnim(ped, callAnimDict, callAnim, 1.0, 1.0, -1, 49, 0, 0, 0, 0)
-
     SetPedKeepTask(ped, true) 
-
     Citizen.Wait(5000)
-
     TriggerServerEvent("hospital:server:MakeDeadCall", blipsettings, male, street1, street2)
-
     SetEntityAsNoLongerNeeded(ped)
     ClearPedTasks(ped)
 end

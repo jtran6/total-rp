@@ -387,6 +387,15 @@ Config.Products = {
             slot = 6,
             requiresLicense = true
         },
+        [7] = {
+            name = "pistol_ammo",
+            price = 250,
+            amount = 250,
+            info = {},
+            type = "item",
+            slot = 7,
+            requiresLicense = true
+        },
     },
     ["coffeeplace"] = {
         [1] = {
@@ -461,7 +470,7 @@ Config.Locations = {
         ["label"] = "Casino Bar",
         ["type"] = "normal",
         ["coords"] = {
-            [1] = vector3(964.24298, 33.837673, 74.876853)
+            [1] = vector3(936.1185, 28.61719, 71.833)
         },
         ["products"] = Config.Products["normal"],
         ["showblip"] = true,
@@ -794,7 +803,7 @@ Config.Locations = {
         },
         ["products"] = Config.Products["mustapha"],
         ["showblip"] = true,
-    },  
+    },   
     ["cookies"] = {
         ["label"] = "Cookies",
         ["type"] = "hardware",
@@ -848,5 +857,5 @@ Config.Locations = {
         },
         ["products"] = Config.Products["normal"],
         ["showblip"] = false,
-    }
+    } 
 }
