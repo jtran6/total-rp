@@ -109,9 +109,9 @@ BikerCounterfeit = {
             A = "counterfeit_cashpile100a", B = "counterfeit_cashpile100b",
             C = "counterfeit_cashpile100c", D = "counterfeit_cashpile100d",
         },
-        chairs = "special_chairs",							-- Brown chairs at the end of the room
-        cutter = "money_cutter",							-- Money cutting machine
-        furnitures = "counterfeit_setup",				-- Paper, counting machines, cups
+        chairs = "special_chairs",                            -- Brown chairs at the end of the room
+        cutter = "money_cutter",                            -- Money cutting machine
+        furnitures = "counterfeit_setup",                -- Paper, counting machines, cups
 
         Enable = function (details, state, refresh)
             SetIplPropState(BikerCounterfeit.interiorId, details, state, refresh)

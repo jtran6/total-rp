@@ -3,16 +3,22 @@ local RainbowNeon = false
 
 LastEngineMultiplier = 1.0
 
-function setVehData(veh,data)
+function setVehData(veh, data)
     local multp = 0.12
     local dTrain = 0.0
-    if tonumber(data.drivetrain) == 2 then dTrain = 0.5 elseif tonumber(data.drivetrain) == 3 then dTrain = 1.0 end
-    if not DoesEntityExist(veh) or not data then return nil end
+    if tonumber(data.drivetrain) == 2 then
+        dTrain = 0.5
+    elseif tonumber(data.drivetrain) == 3 then
+        dTrain = 1.0
+    end
+    if not DoesEntityExist(veh) or not data then
+        return nil
+    end
     SetVehicleHandlingFloat(veh, "CHandlingData", "fInitialDriveForce", data.boost * multp)
     SetVehicleHandlingFloat(veh, "CHandlingData", "fDriveInertia", data.acceleration * multp)
     SetVehicleEnginePowerMultiplier(veh, data.gearchange * multp)
     LastEngineMultiplier = data.gearchange * multp
-    SetVehicleHandlingFloat(veh, "CHandlingData", "fDriveBiasFront", dTrain*1.0)
+    SetVehicleHandlingFloat(veh, "CHandlingData", "fDriveBiasFront", dTrain * 1.0)
     SetVehicleHandlingFloat(veh, "CHandlingData", "fBrakeBiasFront", data.breaking * multp)
 end
 
@@ -48,9 +54,16 @@ AddEventHandler('qb-tunerchip:server:TuneStatus', function()
 
     QBCore.Functions.TriggerCallback('qb-tunerchip:server:GetStatus', function(status)
         if status then
-            TriggerEvent("chatMessage", "Vehicle Status", "warning", displayName..": Chiptuned: Yes")
+
+            TriggerEvent('chat:addMessage', {
+                template = '<div class="chat-message warning"> Vehicle Status: {1}: Chiptuned: Yes</div>',
+                args = {src, displayName}
+            });
         else
-            TriggerEvent("chatMessage", "Vehicle Status", "warning", displayName..": Chiptuned: No")
+            TriggerEvent('chat:addMessage', {
+                template = '<div class="chat-message warning"> Vehicle Status: {1}: Chiptuned: No</div>',
+                args = {src, displayName}
+            });
         end
     end, plate)
 end)
@@ -82,11 +95,11 @@ AddEventHandler('qb-tunerchip:client:openChip', function()
             disableMovement = true,
             disableCarMovement = true,
             disableMouse = false,
-            disableCombat = true,
+            disableCombat = true
         }, {
             animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
             anim = "machinic_loop_mechandplayer",
-            flags = 16,
+            flags = 16
         }, {}, {}, function() -- Done
             StopAnimTask(PlayerPedId(), "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", 1.0)
             openTunerLaptop(true)
@@ -137,7 +150,7 @@ local RainbowNeonColors = {
         r = 238,
         g = 130,
         b = 238
-    },
+    }
 }
 
 RegisterNUICallback('saveNeon', function(data)
@@ -181,10 +194,14 @@ RegisterNUICallback('saveNeon', function(data)
                                 if RainbowNeon then
                                     if (LastRainbowNeonColor + 1) ~= 7 then
                                         LastRainbowNeonColor = LastRainbowNeonColor + 1
-                                        SetVehicleNeonLightsColour(veh, RainbowNeonColors[LastRainbowNeonColor].r, RainbowNeonColors[LastRainbowNeonColor].g, RainbowNeonColors[LastRainbowNeonColor].b)
+                                        SetVehicleNeonLightsColour(veh, RainbowNeonColors[LastRainbowNeonColor].r,
+                                            RainbowNeonColors[LastRainbowNeonColor].g,
+                                            RainbowNeonColors[LastRainbowNeonColor].b)
                                     else
                                         LastRainbowNeonColor = 1
-                                        SetVehicleNeonLightsColour(veh, RainbowNeonColors[LastRainbowNeonColor].r, RainbowNeonColors[LastRainbowNeonColor].g, RainbowNeonColors[LastRainbowNeonColor].b)
+                                        SetVehicleNeonLightsColour(veh, RainbowNeonColors[LastRainbowNeonColor].r,
+                                            RainbowNeonColors[LastRainbowNeonColor].g,
+                                            RainbowNeonColors[LastRainbowNeonColor].b)
                                     end
                                 else
                                     break
@@ -235,7 +252,7 @@ RegisterNUICallback('saveHeadlights', function(data)
                         end
                         Citizen.Wait(300)
                     end
-                end)                
+                end)
                 ToggleVehicleMod(veh, 22, true)
                 SetVehicleHeadlightsColour(veh, value)
             else
@@ -273,7 +290,6 @@ RegisterNUICallback('SetStancer', function(data, cb)
 
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped)
-    
-    exports["vstancer"]:SetWheelPreset(veh, -fOffset, -fRotation, -rOffset, -rRotation)
-end)
 
+    exports["vstancer"]:SetVstancerPreset(veh, -fOffset, -fRotation, -rOffset, -rRotation)
+end)

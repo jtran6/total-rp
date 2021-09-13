@@ -5,18 +5,18 @@ description 'vSyncRevamped'
 version '1.0.2'
 
 shared_scripts { 
-	'@qb-core/import.lua',
-	'config.lua',
+    '@qb-core/import.lua',
+    'config.lua',
 }
 
 server_scripts {
-	'locale.lua',
-	'locales/en.lua',
-	'server/server.lua'
+    'locale.lua',
+    'locales/en.lua',
+    'server/server.lua'
 }
 
 client_scripts {
-	'locale.lua',
-	'locales/en.lua',
-	'client/client.lua'
+    'locale.lua',
+    'locales/en.lua',
+    'client/client.lua'
 }
