@@ -51,7 +51,7 @@ Config.BlacklistedVehs = {
     [`BLIMP`] = true,
     [`BLIMP2`] = true,
     [`AIRTUG`] = true,
-    [`CAMPER`] = true, 
+    [`CAMPER`] = true,    
     [`KHANJALI`] = true, 
     [`CARGOPLANE`] = true, 
     [`MILJET`] = true, 
@@ -138,6 +138,19 @@ Config.Teleports = {
             coords = vector4(5579.38, 254.75, 20.07, 354.4),
             ["AllowVehicle"] = false,
             drawText = '[E] Leave Arena'
+        },
+    },
+    -- PillBox Lower Floor
+    [5] = {
+        [1] = {
+            coords = vector4(344.31, -586.17, 28.8, 252.1),
+            ["AllowVehicle"] = false, 
+            drawText = '[E] Go to Main Floor'
+        },
+        [2] = {
+            coords = vector4(330.34, -601.23, 43.28, 68.19),
+            ["AllowVehicle"] = false,
+            drawText = '[E] Go to Lower Floor'
         },
     },
 }

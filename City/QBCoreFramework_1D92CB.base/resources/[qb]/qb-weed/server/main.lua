@@ -31,7 +31,7 @@ end)
 
 RegisterServerEvent('qb-weed:server:removeDeathPlant')
 AddEventHandler('qb-weed:server:removeDeathPlant', function(building, plantId)
-    exports.ghmattimysql:execute('DELETE FROM house_plants WHERE plantid=@plantid AND building=@buildling', {['@plantid'] = plantId, ['@building'] = building})
+    exports.ghmattimysql:execute('DELETE FROM house_plants WHERE plantid=@plantid AND building=@building', {['@plantid'] = plantId, ['@building'] = building})
     TriggerClientEvent('qb-weed:client:refreshHousePlants', -1, building)
 end)
 
@@ -65,9 +65,9 @@ Citizen.CreateThread(function()
         local housePlants = exports.ghmattimysql:executeSync('SELECT * FROM house_plants')
         for k, v in pairs(housePlants) do
             if housePlants[k].health > 50 then
-                local Grow = math.random(1, 3)
+                local Grow = math.random(1, 10)
                 if housePlants[k].progress + Grow < 100 then
-                    exports.ghmattimysql:execute('UPDATE house_plants SET progress=@progress WHERE plantid=@plantid', {['@progress'] = (housePlants[k].progress + 1), ['@plantid'] = housePlants[k].plantid})
+                    exports.ghmattimysql:execute('UPDATE house_plants SET progress=@progress WHERE plantid=@plantid', {['@progress'] = (housePlants[k].progress + Grow), ['@plantid'] = housePlants[k].plantid})
                 elseif housePlants[k].progress + Grow >= 100 then
                     if housePlants[k].stage ~= QBWeed.Plants[housePlants[k].sort]["highestStage"] then
                         if housePlants[k].stage == "stage-a" then
@@ -89,7 +89,7 @@ Citizen.CreateThread(function()
             end
         end
         TriggerClientEvent('qb-weed:client:refreshPlantStats', -1)
-        Citizen.Wait((60 * 1000) * 9.6)
+        Citizen.Wait(60 * 1000)
     end
 end)
 
@@ -149,7 +149,7 @@ AddEventHandler('qb-weed:server:harvestPlant', function(house, amount, plantName
                     Player.Functions.AddItem('weed_'..plantName..'_seed', amount)
                     Player.Functions.AddItem('weed_'..plantName, sndAmount)
                     Player.Functions.RemoveItem('empty_weed_bag', 1)
-                    exports.ghmattimysql:execute('DELETE FROM house_plants WHERE plantid=@plantid AND building=@buildling', {['@plantid'] = plantId, ['@building'] = house})
+                    exports.ghmattimysql:execute('DELETE FROM house_plants WHERE plantid=@plantid AND building=@building', {['@plantid'] = plantId, ['@building'] = house})
                     TriggerClientEvent('QBCore:Notify', src, 'The plant has been harvested', 'success', 3500)
                     TriggerClientEvent('qb-weed:client:refreshHousePlants', -1, house)
                 else

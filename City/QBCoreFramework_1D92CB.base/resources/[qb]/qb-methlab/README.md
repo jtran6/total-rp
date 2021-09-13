@@ -1,2 +1,3 @@
 # qb-methlab
-Meth Creation For QB-Core
+
+Meth Creation for QBCore

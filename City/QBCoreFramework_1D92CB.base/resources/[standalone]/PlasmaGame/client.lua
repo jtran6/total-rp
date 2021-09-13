@@ -1,4 +1,3 @@
--- Leaked By: Leaking Hub | J. Snow | leakinghub.com
 -- You can modify this to use your own Notification system
 function notification(msg,typeOfNotif)
     if typeOfNotif == "success" then
@@ -128,8 +127,6 @@ local MaskHomme = {
 [1]={model = 107, colorA = 7, colorB = 1},
 [2]={model = 108, colorA = 0, colorB = 1}
 }
-
-
 
 
 Citizen.CreateThread(function()
@@ -312,30 +309,32 @@ RegisterNUICallback('escape', function(data, cb)
 end)
 
 RegisterNUICallback('validate', function(data, cb)
-    -- if hasIdentity then
-    local reason = ""
-    EnableGui(false)
-    for theData, value in pairs(data) do
-        if theData == "sessionname" then
-            if value == "" or value == nil then
-                reason = "Invalid session name !"
-                break
-            end
-        elseif theData == "creatorname" then
-            if value == "" or value == nil then
-                reason = "Invalid Pseudo !"
-                break
-            end
-        end
-    end
-    if reason == "" then
-        TriggerServerEvent("PaintBall:NewSession",data)
-        notification("Lobby created ! will be deleted in 3 minutes if not launched","success")
-        
-    else
-        notification(reason,"error")
-        -- TriggerEvent("pNotify:SendNotification", {text = reason, type = "error", timeout = 3000, layout = "bottomLeft"})
-    end
+	-- if hasIdentity then
+	local reason = ""
+	EnableGui(false)
+	for theData, value in pairs(data) do
+		if theData == "sessionname" then
+			if value == "" or value == nil then
+				reason = "Invalid session name !"
+				break
+			end
+		elseif theData == "creatorname" then
+			if value == "" or value == nil then
+				reason = "Invalid Pseudo !"
+				break
+			end
+		end
+	end
+	if reason == "" then
+		TriggerServerEvent("PaintBall:NewSession",data)
+		--QBCore.Functions.Notify("Lobby created, it will be deleted in 3 minutes if not launched", "success", 10000)
+		notification("Lobby created, it will be deleted in 3 minutes if not launched","success")
+		
+	else
+		notification(reason,"error")
+		--QBCore.Functions.Notify("Error", "success", 10000)
+		--TriggerEvent("pNotify:SendNotification", {text = reason, type = "error", timeout = 3000, layout = "bottomLeft"})
+	end
 end)
 
 
@@ -666,60 +665,61 @@ end
 
 
 function startNextGame(color,idx,manche)
-    isCurrentlyOutInGame = false
-    isLockWaiting = true
-    local activity = {}
-    FreezeEntityPosition(PlayerPedId(),true)
-    if color == "red" then
-        activity.x = redCoords.x
-        activity.y = redCoords.y
-        activity.z = redCoords.z
-    elseif color == "blue" then
-        activity.x = blueCoords.x
-        activity.y = blueCoords.y
-        activity.z = blueCoords.z
-    end
-    DoScreenFadeOut(1000)
-    
-    Citizen.Wait(2000)
-    -- switchTenu(color)
-    -- SetEntityCoords(PlayerPedId(),activity.x,activity.y,activity.z+1)
-    teleport(activity)
-    GiveWeaponToPed(PlayerPedId(),GetHashKey(GunName),250,false,true)
-    ClearPedBloodDamage(PlayerPedId())
-    ResetPedVisibleDamage(PlayerPedId())
-    Citizen.Wait(1000)
-    DoScreenFadeIn(1000)
-    
-    isCurrentlyInGame = true
-    isCurrentlyOutInGame = false
-    currentTeam = color
-    currentPartie = idx
-    
-    Citizen.CreateThread(function()
-        function Initialize(scaleform)
-            local scaleform = RequestScaleformMovie(scaleform)
+	isCurrentlyOutInGame = false
+	isLockWaiting = true
+	local activity = {}
+	FreezeEntityPosition(PlayerPedId(),true)
+	if color == "red" then
+		activity.x = redCoords.x
+		activity.y = redCoords.y
+		activity.z = redCoords.z
+	elseif color == "blue" then
+		activity.x = blueCoords.x
+		activity.y = blueCoords.y
+		activity.z = blueCoords.z
+	end
+	DoScreenFadeOut(1000)
+	
+	Citizen.Wait(2000)
+	-- switchTenu(color)
+	-- SetEntityCoords(PlayerPedId(),activity.x,activity.y,activity.z+1)
+	teleport(activity)
+	GiveWeaponToPed(PlayerPedId(),GetHashKey(GunName),250,false,true)
+	ClearPedBloodDamage(PlayerPedId())
+	ResetPedVisibleDamage(PlayerPedId())
+	Citizen.Wait(1000)
+	DoScreenFadeIn(1000)
+	
+	isCurrentlyInGame = true
+	isCurrentlyOutInGame = false
+	currentTeam = color
+	currentPartie = idx
+	
+	Citizen.CreateThread(function()
+		function Initialize(scaleform)
+			local scaleform = RequestScaleformMovie(scaleform)
 
-            while not HasScaleformMovieLoaded(scaleform) do
-                Citizen.Wait(0)
-            end
-            PushScaleformMovieFunction(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
-            PushScaleformMovieFunctionParameterString("~g~Round : "..tostring(manche))
-            PushScaleformMovieFunctionParameterString("Don't shoot your allies !")
-            PopScaleformMovieFunctionVoid()
-            return scaleform
-        end
-        scaleform = Initialize("mp_big_message_freemode")
-        local temps = 0
-        while temps < 500 do
-            Citizen.Wait(0)
-            DrawScaleformMovieFullscreen(scaleform, 255, 255, 255, 255, 0)
-            temps = temps + 1
-        end
-        Citizen.Wait(500)
-        FreezeEntityPosition(PlayerPedId(),false)
-        isLockWaiting = false
-    end)
+			while not HasScaleformMovieLoaded(scaleform) do
+				Citizen.Wait(0)
+			end
+			PushScaleformMovieFunction(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+			PushScaleformMovieFunctionParameterString("~g~Round : "..tostring(manche))
+			PushScaleformMovieFunctionParameterString("Friendly Fire is on! Don't shoot your allies!")
+			PopScaleformMovieFunctionVoid()
+			return scaleform
+		end
+		scaleform = Initialize("mp_big_message_freemode")
+		local temps = 0
+		while temps < 500 do
+			Citizen.Wait(0)
+			DrawScaleformMovieFullscreen(scaleform, 255, 255, 255, 255, 0)
+			temps = temps + 1
+		end
+		Citizen.Wait(500)
+		FreezeEntityPosition(PlayerPedId(),false)
+		isLockWaiting = false
+	end)
+
 end
 
 
@@ -923,49 +923,49 @@ end)
 
 RegisterNetEvent('PaintBall:GoToNextMancheMSG')
 AddEventHandler('PaintBall:GoToNextMancheMSG', function(winner)
-    -- print("GoToNextMancheMSG winner :"..tostring(winner).. "currentTeam : "..tostring(currentTeam)) 
-    FreezeEntityPosition(PlayerPedId(),true)
-    isLockWaiting = true
-    local message = "Dumb Message 1"
-    local message2 = "Dumb Message 2"
-    
-    if winner == "tie" then
-        message = "~y~Tie !"
-        message2 = "Surprising."
-    else
-        if winner == currentTeam then
-            message = "~g~You win !"
-            message2 = "Continue like that !"
-        else
-            message = "~r~You loose !"
-            message2 = "Wake up ! "
-        end
-    end
-    
-    
-    
-    Citizen.CreateThread(function()
-        function Initialize(scaleform)
-            local scaleform = RequestScaleformMovie(scaleform)
+	-- print("GoToNextMancheMSG winner :"..tostring(winner).. "currentTeam : "..tostring(currentTeam)) 
+	FreezeEntityPosition(PlayerPedId(),true)
+	isLockWaiting = true
+	local message = "Dumb Message 1"
+	local message2 = "Dumb Message 2"
+	
+	if winner == "tie" then
+		message = "~y~Tie !"
+		message2 = "Surprising."
+	else
+		if winner == currentTeam then
+			message = "~g~You win !"
+			message2 = "Keep it up!"
+		else
+			message = "~r~You lose!"
+			message2 = "Wake up! "
+		end
+	end
+	
+	
+	
+	Citizen.CreateThread(function()
+		function Initialize(scaleform)
+			local scaleform = RequestScaleformMovie(scaleform)
 
-            while not HasScaleformMovieLoaded(scaleform) do
-                Citizen.Wait(0)
-            end
-            PushScaleformMovieFunction(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
-            PushScaleformMovieFunctionParameterString(message)
-            PushScaleformMovieFunctionParameterString(message2)
-            PopScaleformMovieFunctionVoid()
-            return scaleform
-        end
-        scaleform = Initialize("mp_big_message_freemode")
-        local temps = 0
-        while temps < 500 do
-            Citizen.Wait(0)
-            DrawScaleformMovieFullscreen(scaleform, 255, 255, 255, 255, 0)
-            temps = temps + 1
-        end
-        FreezeEntityPosition(PlayerPedId(),false)
-    end)
+			while not HasScaleformMovieLoaded(scaleform) do
+				Citizen.Wait(0)
+			end
+			PushScaleformMovieFunction(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
+			PushScaleformMovieFunctionParameterString(message)
+			PushScaleformMovieFunctionParameterString(message2)
+			PopScaleformMovieFunctionVoid()
+			return scaleform
+		end
+		scaleform = Initialize("mp_big_message_freemode")
+		local temps = 0
+		while temps < 500 do
+			Citizen.Wait(0)
+			DrawScaleformMovieFullscreen(scaleform, 255, 255, 255, 255, 0)
+			temps = temps + 1
+		end
+		FreezeEntityPosition(PlayerPedId(),false)
+	end)
 end)
 
 RegisterNetEvent('PaintBall:GoForTheNextGame')

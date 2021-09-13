@@ -86,15 +86,14 @@ function CreateOxyVehicle()
     oxyVehicle = CreateVehicle(car, carspawns[spawnpoint]['coords']["x"], carspawns[spawnpoint]['coords']["y"], carspawns[spawnpoint]['coords']["z"], carspawns[spawnpoint]['coords']["w"], true, false)
     local plt = GetVehicleNumberPlateText(oxyVehicle)
     SetVehicleHasBeenOwnedByPlayer(oxyVehicle,true)
-
+    TriggerEvent('vehiclekeys:client:SetOwner', plt)
     while true do
-    	Citizen.Wait(1)
-    	 DrawText3Ds(carspawns[spawnpoint]['coords']["x"], carspawns[spawnpoint]['coords']["y"], carspawns[spawnpoint]['coords']["z"], "Your Delivery Car (Stolen).")
-    	 if #(GetEntityCoords(PlayerPedId()) - vector3(carspawns[spawnpoint]['coords']["x"], carspawns[spawnpoint]['coords']["y"], carspawns[spawnpoint]['coords']["z"])) < 8.0 then
-    	 	return
-    	 end
+		Citizen.Wait(1)
+		DrawText3Ds(carspawns[spawnpoint]['coords']["x"], carspawns[spawnpoint]['coords']["y"], carspawns[spawnpoint]['coords']["z"], "Your Delivery Car (Stolen).")
+		if #(GetEntityCoords(PlayerPedId()) - vector3(carspawns[spawnpoint]['coords']["x"], carspawns[spawnpoint]['coords']["y"], carspawns[spawnpoint]['coords']["z"])) < 8.0 then
+			return
+		end
     end
-
 end
 
 function CreateOxyPed()
@@ -288,7 +287,7 @@ AddEventHandler("oxydelivery:client", function()
 		toolong = toolong - 1
 		if toolong < 0 then
 
-		    SetVehicleHasBeenOwnedByPlayer(oxyVehicle,false)
+			SetVehicleHasBeenOwnedByPlayer(oxyVehicle,false)
 			SetEntityAsNoLongerNeeded(oxyVehicle)
 			tasking = false
 			OxyRun = false
@@ -321,8 +320,8 @@ Citizen.CreateThread(function()
 
     while true do
 
-	    Citizen.Wait(1)
-	    local dropOff6 = #(GetEntityCoords(PlayerPedId()) - vector3(pillWorker['coords']["x"],pillWorker['coords']["y"],pillWorker['coords']["z"]))
+		Citizen.Wait(1)
+		local dropOff6 = #(GetEntityCoords(PlayerPedId()) - vector3(pillWorker['coords']["x"],pillWorker['coords']["y"],pillWorker['coords']["z"]))
 
 		if dropOff6 < 1.6 and not OxyRun then
 
@@ -337,109 +336,29 @@ Citizen.CreateThread(function()
 
 end)
 
-local firstdeal = false
+
 Citizen.CreateThread(function()
-
-
-    while true do
-
-        if drugdealer then
-
-	        Citizen.Wait(1000)
-
-	        if firstdeal then
-	        	Citizen.Wait(10000)
-	        end
-
-	        TriggerEvent("drugdelivery:client")  
-
-		    salecount = salecount + 1
-		    if salecount == 12 then
-		    	Citizen.Wait(600000)
-		    	drugdealer = false
-		    end
-
-		    Citizen.Wait(150000)
-		    firstdeal = false
-
-		elseif OxyRun then
-
+	while true do
+		Citizen.Wait(5)
+		if OxyRun then
 			if not DoesEntityExist(oxyVehicle) or GetVehicleEngineHealth(oxyVehicle) < 200.0 or GetVehicleBodyHealth(oxyVehicle) < 200.0 then
 				OxyRun = false
 				tasking = false
-				QBCore.Functions.Notify('The Car Is Too Damaged', 'error')
+				QBCore.Functions.Notify("The dealer isn't giving you anymore locations due to the state of his car", "error")
 			else
 				if tasking then
-			        Citizen.Wait(30000)
-			    else
-			        TriggerEvent("oxydelivery:client")  
-				    salecount = salecount + 1
-				    if salecount == Config.RunAmount then
-				    	Citizen.Wait(300000)
-				    	OxyRun = false
-				    end
+					Citizen.Wait(30000)
+				else
+					TriggerEvent("oxydelivery:client")  
+					salecount = salecount + 1
+					if salecount == Config.RunAmount then
+						Citizen.Wait(300000)
+						OxyRun = false
+					end
 				end
 			end
-
-	    else
-
-	    	local close = false
-
-	    	for i = 1, #drugLocs do
-
-				local plycoords = GetEntityCoords(PlayerPedId())
-
-				local dstcheck = #(plycoords - vector3(drugLocs[i]['coords']["x"],drugLocs[i]['coords']["y"],drugLocs[i]['coords']["z"])) 
-
-			
-
-				if dstcheck < 5.0 then
-
-					close = true
-
-					local job = QBCore.Functions.GetPlayerData().job.name
-
-					if job ~= "police" then
-
-						local price = 100
-
-			    		DrawText3Ds(drugLocs[i]['coords']["x"],drugLocs[i]['coords']["y"],drugLocs[i]['coords']["z"], "[E] $" .. price .. " offer to sell stolen goods (12).") 
-				    	
-				    	if IsControlJustReleased(0,38) then
-
-				    		local countpolice = exports["isPed"]:isPed("countpolice")
-				    		local daytime = exports["isPed"]:isPed("daytime")
-
-							if not daytime then
-								QBCore.Functions.Notify('Come Back During The Day', 'error')
-		            		else
-		            			mygang = drugLocs[i]["gang"]
-					    		TriggerServerEvent("drugdelivery:server",price,"robbery",50)
-					    		Citizen.Wait(1500)
-					    	end
-
-				    	end
-
-			    	else
-
-			    		Citizen.Wait(60000)
-
-			    	end
-
-			    	Citizen.Wait(1)
-
-			    end
-
-			end
-
-			if not close then
-				Citizen.Wait(2000)
-			end
-
-	    end
-
-    end
-
+		end
+	end
 end)
 
 RegisterNetEvent("oxydelivery:startDealing")
@@ -448,8 +367,8 @@ AddEventHandler("oxydelivery:startDealing", function()
 
 	PlayAmbientSpeech1(NearNPC, "Chat_Resp", "SPEECH_PARAMS_FORCE", 1)
 	salecount = 0
+	CreateOxyVehicle()
 	OxyRun = true
 	firstdeal = true
-	CreateOxyVehicle()
 	QBCore.Functions.Notify('A Car Has Been Provided. Your GPS Will Be Updated With Locations Soon', 'success')
 end)

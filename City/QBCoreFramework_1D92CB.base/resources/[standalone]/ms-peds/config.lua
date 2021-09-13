@@ -325,129 +325,142 @@ Config.PedList = {
         coords = vector4(309.63, -593.85, 43.28, 8.63),
         gender = 'female'
     },
-    -----------------------------
-    -- START TOTAL RP MLO PEDS --
-    -----------------------------
+	-----------------------------
+	-- START TOTAL RP MLO PEDS --
+	-----------------------------
 
-    -- Cookies --
-    -- Cashier
-    {
-        model = `a_f_m_beach_01`,
-        coords = vector4(-931.23, -1179.74, 5.02, 116.28),
-        gender = 'female',
-    },
-    -- Greeter
-    {
-        model = `a_f_m_beach_01`,
-        coords = vector4(-939.2, -1186.2, 4.93, 24.63),
-        gender = 'female',
-    },
-    -- Customer
-    {
-        model = `a_f_y_beach_01`,
-        coords = vector4(-942.29, -1168.13, 5.01, 25.43),
-        gender = 'female',
-    },
-    
-    -- Hot Dog Stand --
-    {
-        model = `s_m_m_migrant_01`,
-        coords = vector4(38.89, -1003.96, 29.48, 64.14),
-        gender = 'male',
-    },
+	-- Cookies --
+	-- Cashier
+	{
+		model = `a_f_m_beach_01`,
+		coords = vector4(-931.23, -1179.74, 5.02, 116.28),
+		gender = 'female',
+	},
+	-- Greeter
+	{
+		model = `a_f_m_beach_01`,
+		coords = vector4(-939.2, -1186.2, 4.93, 24.63),
+		gender = 'female',
+	},
+	-- Customer
+	{
+		model = `a_f_y_beach_01`,
+		coords = vector4(-942.29, -1168.13, 5.01, 25.43),
+		gender = 'female',
+	},
+	
+	-- Hot Dog Stand --
+	{
+		model = `s_m_m_migrant_01`,
+		coords = vector4(38.89, -1003.96, 29.48, 64.14),
+		gender = 'male',
+	},
 
-    -- Italian Restaurant --
-    -- Top Level Bartender
-    {
-        model = `s_f_y_bartender_01`,
-        coords = vector4(125.8, -1034.99, 29.28, 81.1),
-        gender = 'female',
-    },
-    -- Singer
-    {
-        model = `cs_gurk`,
-        coords = vector4(142.23, -1046.34, 23.35, 42.32),
-        gender = 'female',
-    },
-    -- Bottom Bartender
-    {
-        model = `s_f_y_bartender_01`,
-        coords = vector4(131.48, -1055.06, 22.96, 341.85),
-        gender = 'female',
-    },
-    -- Cook
-    {
-        model = `s_m_m_linecook`,
-        coords = vector4(134.28, -1061.97, 22.96, 282.19),
-        gender = 'male',
-    },
+	-- Italian Restaurant --
+	-- Top Level Bartender
+	{
+		model = `s_f_y_bartender_01`,
+		coords = vector4(125.8, -1034.99, 29.28, 81.1),
+		gender = 'female',
+	},
+	-- Singer
+	{
+		model = `cs_gurk`,
+		coords = vector4(142.23, -1046.34, 23.35, 42.32),
+		gender = 'female',
+	},
+	-- Bottom Bartender
+	{
+		model = `s_f_y_bartender_01`,
+		coords = vector4(131.48, -1055.06, 22.96, 341.85),
+		gender = 'female',
+	},
+	-- Cook
+	{
+		model = `s_m_m_linecook`,
+		coords = vector4(134.28, -1061.97, 22.96, 282.19),
+		gender = 'male',
+	},
 
-    -- Vanilla Unicorn Strip Club --
-    -- Cashier 1 
-    {
-        model = `s_f_y_bartender_01`,
-        coords = vector4(131.0, -1287.28, 29.26, 117.33),
-        gender = 'female',
-    },
-    -- Cashier 2
-    {
-        model = `s_f_y_bartender_01`,
-        coords = vector4(128.62, -1283.28, 29.26, 114.64),
-        gender = 'female',
-    },
-    -- Main Stripper
-    {
-        model = `csb_stripper_02`,
-        coords = vector4(109.43, -1286.55, 28.45, 294.47),
-        gender = 'female',
-    },
-    
-    -- Dealers --
-    -- Mandarin
-    {
-        model = `g_m_m_chicold_01`,
-        coords = vector4(388.25, -2026.7, 23.4, 64.61),
-        gender = 'male',
-    },
-    -- Scooby
-    {
-        model = `a_c_pug`,
-        coords = vector4(32.9, 856.05, 197.73, 42.51),
-        gender = 'male',
-    },
-    -- Skateshop --
-    -- Cashier
-    {
-        model = `a_f_y_yoga_01`,
-        coords = vector4(-1126.59, -1439.12, 5.23, 297.66),
-        gender = 'female',
-    },
-    -- LA Fitness --
-    -- Tyrone
-    {
-        model = `a_m_y_beach_03`,
-        coords = vector4(257.09, -271.07, 53.96, 333.47),
-        gender = 'male',
-    },
-    -- Shawty
-    {
-        model = `a_f_y_yoga_01`,
-        coords = vector4(259.6, -271.96, 53.96, 336.14),
-        gender = 'female',
-    },
+	-- Vanilla Unicorn Strip Club --
+	-- Cashier 1 
+	{
+		model = `s_f_y_bartender_01`,
+		coords = vector4(131.0, -1287.28, 29.26, 117.33),
+		gender = 'female',
+	},
+	-- Cashier 2
+	{
+		model = `s_f_y_bartender_01`,
+		coords = vector4(128.62, -1283.28, 29.26, 114.64),
+		gender = 'female',
+	},
+	-- Main Stripper
+	{
+		model = `csb_stripper_02`,
+		coords = vector4(109.43, -1286.55, 28.45, 294.47),
+		gender = 'female',
+	},
+	
+	-- Dealers --
+	-- Mandarin
+	{
+		model = `g_m_m_chicold_01`,
+		coords = vector4(388.25, -2026.7, 23.4, 64.61),
+		gender = 'male',
+	},
+	-- Scooby
+	{
+		model = `a_c_pug`,
+		coords = vector4(32.9, 856.05, 197.73, 42.51),
+		gender = 'male',
+	},
+	-- Skateshop --
+	-- Cashier
+	{
+		model = `a_f_y_yoga_01`,
+		coords = vector4(-1126.59, -1439.12, 5.23, 297.66),
+		gender = 'female',
+	},
+	-- LA Fitness --
+	-- Tyrone
+	{
+		model = `a_m_y_beach_03`,
+		coords = vector4(257.09, -271.07, 53.96, 333.47),
+		gender = 'male',
+	},
+	-- Shawty
+	{
+		model = `a_f_y_yoga_01`,
+		coords = vector4(259.6, -271.96, 53.96, 336.14),
+		gender = 'female',
+	},
 
-    -- Go Cart Stadium
-    -- Mechanic
-    {
-        model = `mp_m_waremech_01`,
-        
-        coords = vector4(5474.17, 254.19, 20.07, 354.22),
-        gender = 'male',
-    },
-    -- Food Vendor
-    {
-        model = `a_f_y_yoga_01`,
-        coords = vector4(5471.83, 254.41, 20.07, 357.32),
-        gender = 'female',
-    },
+	-- Go Cart Stadium
+	-- Mechanic
+	{
+		model = `mp_m_waremech_01`,
+		coords = vector4(5474.17, 254.19, 20.07, 354.22),
+		gender = 'male',
+	},
+	-- Food Vendor
+	{
+		model = `a_f_y_yoga_01`,
+		coords = vector4(5471.83, 254.41, 20.07, 357.32),
+		gender = 'female',
+	},
+	-- TrapHouse --
+	-- Vespucci Beach Traphouse
+	-- inside 1
+	{
+		model = `g_m_m_chicold_01`,
+		coords = vector4(-1353.53, -1163.03, -28.04, 80.98),
+		gender = 'male',
+	},
+	-- outside 1
+	{
+		model = `g_m_m_chicold_01`,
+		coords = vector4(-1352.47, -1163.09, 4.44, 87.2),
+		gender = 'male',
+	},
 }

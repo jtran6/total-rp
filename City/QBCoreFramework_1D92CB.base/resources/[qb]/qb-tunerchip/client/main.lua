@@ -293,4 +293,3 @@ RegisterNUICallback('SetStancer', function(data, cb)
 
     exports["vstancer"]:SetVstancerPreset(veh, -fOffset, -fRotation, -rOffset, -rRotation)
 end)
-

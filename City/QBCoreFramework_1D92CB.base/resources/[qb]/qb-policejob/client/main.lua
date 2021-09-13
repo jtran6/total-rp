@@ -542,10 +542,7 @@ RegisterNetEvent('police:server:SendEmergencyMessageCheck')
 AddEventHandler('police:server:SendEmergencyMessageCheck', function(MainPlayer, message, coords)
     local PlayerData = QBCore.Functions.GetPlayerData()
     if ((PlayerData.job.name == "police" or PlayerData.job.name == "ambulance" or PlayerData.job.name == "doctor") and onDuty) then
-        TriggerEvent('chat:addMessage', {
-            template = '<div class="chat-message emergency">911 ALERT: {1}-{2} ({3}) - {4} </div>',
-            args = {MainPlayer.PlayerData.charinfo.firstname, MainPlayer.PlayerData.charinfo.lastname, MainPlayer.PlayerData.source, message}
-            })
+        TriggerEvent('chatMessage', "911 ALERT - " .. MainPlayer.PlayerData.charinfo.firstname .. " " .. MainPlayer.PlayerData.charinfo.lastname .. " ("..MainPlayer.PlayerData.source..")", "warning", message)
         TriggerEvent("police:client:EmergencySound")
         local transG = 250
         local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
@@ -556,7 +553,7 @@ AddEventHandler('police:server:SendEmergencyMessageCheck', function(MainPlayer, 
         SetBlipScale(blip, 0.9)
         SetBlipAsShortRange(blip, false)
         BeginTextCommandSetBlipName('STRING')
-        AddTextComponentString("911 Alert")
+        AddTextComponentString("911 alert")
         EndTextCommandSetBlipName(blip)
         while transG ~= 0 do
             Wait(180 * 4)
@@ -575,10 +572,7 @@ RegisterNetEvent('police:client:Send112AMessage')
 AddEventHandler('police:client:Send112AMessage', function(message)
     local PlayerData = QBCore.Functions.GetPlayerData()
     if ((PlayerData.job.name == "police" or PlayerData.job.name == "ambulance") and onDuty) then
-        TriggerEvent('chat:addMessage', {
-        template = '<div class="chat-message nonemergency">Anonymous Caller: {0}</div>',
-        args = {message}
-        });
+        TriggerEvent('chatMessage', "ANONYMOUS REPORT", "warning", message)
         TriggerEvent("police:client:EmergencySound")
     end
 end)
