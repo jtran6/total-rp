@@ -440,7 +440,6 @@ Config.PedList = {
 	-- Mechanic
 	{
 		model = `mp_m_waremech_01`,
-		
 		coords = vector4(5474.17, 254.19, 20.07, 354.22),
 		gender = 'male',
 	},
@@ -449,5 +448,19 @@ Config.PedList = {
 		model = `a_f_y_yoga_01`,
 		coords = vector4(5471.83, 254.41, 20.07, 357.32),
 		gender = 'female',
+	},
+	-- TrapHouse --
+	-- Vespucci Beach Traphouse
+	-- inside 1
+	{
+		model = `g_m_m_chicold_01`,
+		coords = vector4(-1353.53, -1163.03, -28.04, 80.98),
+		gender = 'male',
+	},
+	-- outside 1
+	{
+		model = `g_m_m_chicold_01`,
+		coords = vector4(-1352.47, -1163.09, 4.44, 87.2),
+		gender = 'male',
 	},
 }
