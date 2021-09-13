@@ -3,7 +3,7 @@
 -- Be careful, ImportCEOGarage4.Part.Garage1 and ImportCEOGarage4.Part.Garage3 overlaps with FinanceOffice4
 
 exports('GetImportCEOGarage4Object', function()
-	return ImportCEOGarage4
+    return ImportCEOGarage4
 end)
 
 ImportCEOGarage4 = {

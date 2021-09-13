@@ -99,7 +99,7 @@ Citizen.CreateThread(function()
     -- ====================================================================
     -- =-------------------------- [DLC: Bikers] -------------------------=
     -- ====================================================================
-    BikerCocaine.LoadDefault()	        -- Cocaine lockup: 1093.6, -3196.6, -38.99841
+    BikerCocaine.LoadDefault()            -- Cocaine lockup: 1093.6, -3196.6, -38.99841
     BikerCounterfeit.LoadDefault()      -- Counterfeit cash factory: 1121.897, -3195.338, -40.4025
     BikerDocumentForgery.LoadDefault()  -- Document forgery: 1165, -3196.6, -39.01306
     BikerMethLab.LoadDefault()          -- Meth lab: 1009.5, -3196.6, -38.99682

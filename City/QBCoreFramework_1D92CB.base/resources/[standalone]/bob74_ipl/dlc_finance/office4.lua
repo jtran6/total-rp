@@ -2,7 +2,7 @@
 -- Office 4: -1392.667, -480.4736, 72.04217 (Maze Bank West)
 
 exports('GetFinanceOffice4Object', function()
-	return FinanceOffice4
+    return FinanceOffice4
 end)
 
 FinanceOffice4 = {

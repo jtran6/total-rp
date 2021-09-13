@@ -70,23 +70,23 @@ function GeneratePlate()
 end
 
 function GetRandomNumber(length)
-	Citizen.Wait(1)
-	math.randomseed(GetGameTimer())
-	if length > 0 then
-		return GetRandomNumber(length - 1) .. NumberCharset[math.random(1, #NumberCharset)]
-	else
-		return ''
-	end
+    Citizen.Wait(1)
+    math.randomseed(GetGameTimer())
+    if length > 0 then
+        return GetRandomNumber(length - 1) .. NumberCharset[math.random(1, #NumberCharset)]
+    else
+        return ''
+    end
 end
 
 function GetRandomLetter(length)
-	Citizen.Wait(1)
-	math.randomseed(GetGameTimer())
-	if length > 0 then
-		return GetRandomLetter(length - 1) .. Charset[math.random(1, #Charset)]
-	else
-		return ''
-	end
+    Citizen.Wait(1)
+    math.randomseed(GetGameTimer())
+    if length > 0 then
+        return GetRandomLetter(length - 1) .. Charset[math.random(1, #Charset)]
+    else
+        return ''
+    end
 end
 
 RegisterServerEvent('qb-vehicleshop:server:setShowroomCarInUse')

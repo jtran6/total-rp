@@ -127,7 +127,7 @@ AddEventHandler('animations:client:SmokeWeed', function()
   Citizen.CreateThread(function()
     while SmokingWeed do
       Citizen.Wait(10000)
-      TriggerServerEvent('hud:Server:RelieveStress', math.random(15, 18))
+      TriggerServerEvent('hud:server:RelieveStress', math.random(15, 18))
       RelieveCount = RelieveCount + 1
       if RelieveCount == 6 then
         if ChosenDict == "MaleScenario" and IsInAnimation then
@@ -208,9 +208,15 @@ end
 
 function EmoteChatMessage(args)
   if args == display then
-    TriggerEvent("chatMessage", "^5Help^0", {0,0,0}, string.format(""))
+    TriggerEvent('chat:addMessage', {
+      template = '<div class="chat-message status"> 5Help^0: {1}</div>',
+      args = {src, string.format("")}
+  });
   else
-    TriggerEvent("chatMessage", "^5Help^0", {0,0,0}, string.format(""..args..""))
+    TriggerEvent('chat:addMessage', {
+      template = '<div class="chat-message status"> 5Help^0: {1}</div>',
+      args = {src, string.format(""..args.."")}
+  });
   end
 end
 

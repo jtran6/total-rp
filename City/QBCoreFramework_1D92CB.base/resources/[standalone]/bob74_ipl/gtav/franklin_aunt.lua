@@ -18,8 +18,8 @@ FranklinAunt = {
         Clear = function(refresh) SetIplPropState(FranklinAunt.interiorId, {FranklinAunt.Style.franklinStuff, FranklinAunt.Style.franklinLeft}, false, refresh) end
     },
     Details = {
-        bandana = "V_57_GangBandana",				-- Bandana on the bed
-        bag = "V_57_Safari",						-- Bag in the closet
+        bandana = "V_57_GangBandana",                -- Bandana on the bed
+        bag = "V_57_Safari",                        -- Bag in the closet
         Enable = function (details, state, refresh) SetIplPropState(FranklinAunt.interiorId, details, state, refresh) end
     },
 

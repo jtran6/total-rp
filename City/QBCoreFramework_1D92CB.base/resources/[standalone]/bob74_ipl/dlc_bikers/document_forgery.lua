@@ -53,9 +53,9 @@ BikerDocumentForgery = {
             A = "chair01", B = "chair02", C = "chair03", D = "chair04",
             E = "chair05", F = "chair06", G = "chair07",
         },
-        production = "production",			-- Papers, pencils
-        furnitures = "set_up",				-- Printers, shredders
-        clutter = "clutter",				-- Pizza boxes, cups
+        production = "production",            -- Papers, pencils
+        furnitures = "set_up",                -- Printers, shredders
+        clutter = "clutter",                -- Pizza boxes, cups
 
         Enable = function (details, state, refresh)
             SetIplPropState(BikerDocumentForgery.interiorId, details, state, refresh)

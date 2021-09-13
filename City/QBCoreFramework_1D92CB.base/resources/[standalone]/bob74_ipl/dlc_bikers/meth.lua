@@ -43,7 +43,7 @@ BikerMethLab = {
         end
     },
     Details = {
-        production = "meth_lab_production",			-- Products
+        production = "meth_lab_production",            -- Products
         Enable = function (details, state, refresh)
             SetIplPropState(BikerMethLab.interiorId, details, state, refresh)
         end

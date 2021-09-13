@@ -37,7 +37,7 @@ end
 ---@param source number the player to set the call off
 ---@param callChannel number the channel to set the player to (or 0 to remove them from any call channel)
 function setPlayerCall(source, callChannel)
-	if GetConvarInt('voice_enablePhones', 1) ~= 1 then return end
+    if GetConvarInt('voice_enablePhones', 1) ~= 1 then return end
     if GetInvokingResource() then
         -- got set in a export, need to update the client to tell them that their radio
         -- changed
@@ -63,7 +63,7 @@ RegisterNetEvent('pma-voice:setPlayerCall', function(callChannel)
 end)
 
 function setTalkingOnCall(talking)
-	if GetConvarInt('voice_enablePhones', 1) ~= 1 then return end
+    if GetConvarInt('voice_enablePhones', 1) ~= 1 then return end
     local source = source
     voiceData[source] = voiceData[source] or defaultTable(source)
     local plyVoice = voiceData[source]

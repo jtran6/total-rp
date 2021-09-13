@@ -39,7 +39,10 @@ end)
 RegisterNetEvent('police:client:TrackerMessage')
 AddEventHandler('police:client:TrackerMessage', function(msg, coords)
     PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-    TriggerEvent("chatMessage", "911-ALERT", "error", msg)
+    TriggerEvent('chat:addMessage', {
+        template = '<div class="chat-message emergency"> 911-ALERT: {1}</div>',
+        args = {src, msg}
+    });
     local transG = 250
     local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
     SetBlipSprite(blip, 458)

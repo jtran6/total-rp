@@ -479,6 +479,13 @@ Config.JobInteractions = {
             event = 'hospital:client:CheckStatus',
             shouldClose = true
         }, {
+            id = 'revive',
+            title = 'Revive',
+            icon = 'user-md',
+            type = 'client',
+            event = 'hospital:client:RevivePlayer',
+            shouldClose = true
+        }, {
             id = 'treatwounds',
             title = 'Heal wounds',
             icon = 'band-aid',

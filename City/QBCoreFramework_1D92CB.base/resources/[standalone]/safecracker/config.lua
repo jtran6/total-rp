@@ -13,25 +13,25 @@ Keys = {
 }
 
 SafeCracker.Config = {
-	LockTolerance	= 10,								-- How many clicks past the pin can the player go before the lock fails?							
+    LockTolerance    = 10,                                -- How many clicks past the pin can the player go before the lock fails?                            
 
-	AudioBankName 	= "SAFE_CRACK",						
-	TextureDict 	= "MFSCTextureDict",
+    AudioBankName     = "SAFE_CRACK",                        
+    TextureDict     = "MFSCTextureDict",
 
-	SafeSoundset 	= "SAFE_CRACK_SOUNDSET",
-	SafeTurnSound	= "tumbler_turn",
-	SafePinSound	= "tumbler_pin_fall",
-	SafeFinalSound	= "tumbler_pin_fall_final",
-	SafeResetSound	= "tumbler_reset",
-	SafeOpenSound	= "safe_door_open",
+    SafeSoundset     = "SAFE_CRACK_SOUNDSET",
+    SafeTurnSound    = "tumbler_turn",
+    SafePinSound    = "tumbler_pin_fall",
+    SafeFinalSound    = "tumbler_pin_fall_final",
+    SafeResetSound    = "tumbler_reset",
+    SafeOpenSound    = "safe_door_open",
 }
 
 SafeCracker.SafeModels = {
-	Safe  	= "bkr_prop_biker_safebody_01a",
-	Door  	= "bkr_prop_biker_safedoor_01a",
+    Safe      = "bkr_prop_biker_safebody_01a",
+    Door      = "bkr_prop_biker_safedoor_01a",
 }
 
 SafeCracker.SafeObjects = {
-	safeObj  = { ModelName = SafeCracker.SafeModels.Safe,  Pos 	= vector3(   0.0,   0.0,   -0.1 ), Heading =  3.7,   Rot = vector3(   0.0,   0.0,    0.0), 			Frozen = false },
-	doorObj  = { ModelName = SafeCracker.SafeModels.Door,  Pos 	= vector3(   0.0,   0.0,    0.0 ), Heading =  3.7,   Rot = vector3(   0.0,   0.0,    0.0), 			Frozen = true  },
+    safeObj  = { ModelName = SafeCracker.SafeModels.Safe,  Pos     = vector3(   0.0,   0.0,   -0.1 ), Heading =  3.7,   Rot = vector3(   0.0,   0.0,    0.0),             Frozen = false },
+    doorObj  = { ModelName = SafeCracker.SafeModels.Door,  Pos     = vector3(   0.0,   0.0,    0.0 ), Heading =  3.7,   Rot = vector3(   0.0,   0.0,    0.0),             Frozen = true  },
 }

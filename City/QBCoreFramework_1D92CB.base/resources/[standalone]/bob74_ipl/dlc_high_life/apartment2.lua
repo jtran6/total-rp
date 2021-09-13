@@ -2,7 +2,7 @@
 -- Apartment 2: -914.90260000, -374.87310000, 112.6748
 
 exports('GetHLApartment2Object', function()
-	return HLApartment2
+    return HLApartment2
 end)
 
 HLApartment2 = {

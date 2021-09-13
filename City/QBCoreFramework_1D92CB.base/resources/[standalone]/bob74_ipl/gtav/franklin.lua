@@ -26,10 +26,10 @@ Franklin = {
         Clear = function(refresh) SetIplPropState(Franklin.interiorId, {Franklin.GlassDoor.opened, Franklin.GlassDoor.closed}, false, refresh) end
     },
     Details = {
-        flyer = "progress_flyer",					-- Mountain flyer on the kitchen counter
-        tux = "progress_tux",						-- Tuxedo suit in the wardrobe
-        tshirt = "progress_tshirt",					-- "I <3 LS" tshirt on the bed
-        bong = "bong_and_wine",						-- Bong on the table
+        flyer = "progress_flyer",                    -- Mountain flyer on the kitchen counter
+        tux = "progress_tux",                        -- Tuxedo suit in the wardrobe
+        tshirt = "progress_tshirt",                    -- "I <3 LS" tshirt on the bed
+        bong = "bong_and_wine",                        -- Bong on the table
         Enable = function (details, state, refresh) SetIplPropState(Franklin.interiorId, details, state, refresh) end
     },
 

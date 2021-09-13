@@ -8,7 +8,7 @@
           <OrderNumber value="296" />
           <Entry>SLOT_SPRINGFIELD</Entry>
         </Item>
-		<Item>
+        <Item>
           <OrderNumber value="361" />
           <Entry>SLOT_PLASMA</Entry>
         </Item>
@@ -20,7 +20,7 @@
           <OrderNumber value="296" />
           <Entry>SLOT_SPRINGFIELD</Entry>
         </Item>
-		<Item>
+        <Item>
           <OrderNumber value="361" />
           <Entry>SLOT_PLASMA</Entry>
         </Item>
@@ -42,7 +42,7 @@
   <Infos>
     <Item>
       <Infos>
-	    <Item type="CAmmoProjectileInfo">
+        <Item type="CAmmoProjectileInfo">
           <Name>AMMO_PLASMAP</Name>
           <Model>w_pi_plasma_bullet</Model>
           <Audio />
@@ -133,7 +133,7 @@
     </Item>
     <Item>
       <Infos>
-	    <Item type="CWeaponInfo">
+        <Item type="CWeaponInfo">
           <Name>WEAPON_PLASMAP</Name>
           <Model>W_PI_PLASMAPISTOL</Model>
           <Audio>AUDIO_ITEM_RAYCARBINE</Audio>
@@ -217,7 +217,7 @@
           <BulletBendingNearRadius value="0.000000" />
           <BulletBendingFarRadius value="0.750000" />
           <BulletBendingZoomedRadius value="0.375000" />
-		  <FirstPersonBulletBendingNearRadius value="0.000000" />
+          <FirstPersonBulletBendingNearRadius value="0.000000" />
           <FirstPersonBulletBendingFarRadius value="0.750000" />
           <FirstPersonBulletBendingZoomedRadius value="0.375000" />
           <Fx>
@@ -227,13 +227,13 @@
             <FlashFxFP>muz_xs_sr_carbine</FlashFxFP>
             <FlashFxAltFP />
             <MuzzleSmokeFx>muz_smoking_barrel</MuzzleSmokeFx>
-			<MuzzleSmokeFxFP>muz_smoking_barrel_fp</MuzzleSmokeFxFP>
+            <MuzzleSmokeFxFP>muz_smoking_barrel_fp</MuzzleSmokeFxFP>
             <MuzzleSmokeFxMinLevel value="0.300000" />
             <MuzzleSmokeFxIncPerShot value="0.100000" />
             <MuzzleSmokeFxDecPerSec value="0.275000" />
             <MuzzleOverrideOffset x="0.000000" y="0.000000" z="0.000000" />
             <ShellFx>eject_pistol</ShellFx>
-			<ShellFxFP>eject_pistol_fp</ShellFxFP>
+            <ShellFxFP>eject_pistol_fp</ShellFxFP>
             <TracerFx>bullet_tracer_xs_sr</TracerFx>
             <PedDamageHash>BulletSmall</PedDamageHash>
             <TracerFxChanceSP value="0.200000" />
