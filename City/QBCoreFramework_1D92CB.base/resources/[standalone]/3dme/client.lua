@@ -34,7 +34,7 @@ function Display(mePlayer, text, offset)
             local dist = GetDistanceBetweenCoords(coordsMe['x'], coordsMe['y'], coordsMe['z'], coords['x'], coords['y'], coords['z'], true)
             if dist < 30 then
                 --DrawText3D(coordsMe['x'], coordsMe['y'], coordsMe['z']+offset, text)
-				DrawText3Ds(coordsMe['x'],coordsMe['y'],coordsMe['z']+offset, text, 3.0, 7)
+                DrawText3Ds(coordsMe['x'],coordsMe['y'],coordsMe['z']+offset, text, 3.0, 7)
             end
         end
         nbrDisplaying = nbrDisplaying - 1

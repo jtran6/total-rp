@@ -2,7 +2,7 @@
 -- Office 2: -75.8466, -826.9893, 243.3859 (Maze Bank Building)
 
 exports('GetFinanceOffice2Object', function()
-	return FinanceOffice2
+    return FinanceOffice2
 end)
 
 FinanceOffice2 = {

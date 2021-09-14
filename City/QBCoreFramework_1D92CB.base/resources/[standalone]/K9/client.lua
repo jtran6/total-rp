@@ -495,22 +495,22 @@ end
 
 -- Checks Ped Restriction
 function CheckPedRestriction(ped, PedList)
-	for i = 1, #PedList do
-		if GetHashKey(PedList[i]) == GetEntityModel(ped) then
-			return true
-		end
-	end
-	return false
+    for i = 1, #PedList do
+        if GetHashKey(PedList[i]) == GetEntityModel(ped) then
+            return true
+        end
+    end
+    return false
 end
 
 -- Checks Vehicle Restriction
 function CheckVehicleRestriction(vehicle, VehicleList)
-	for i = 1, #VehicleList do
-		if GetHashKey(VehicleList[i]) == GetEntityModel(vehicle) then
-			return true
-		end
-	end
-	return false
+    for i = 1, #VehicleList do
+        if GetHashKey(VehicleList[i]) == GetEntityModel(vehicle) then
+            return true
+        end
+    end
+    return false
 end
 
 -- Gets Vehicle Ahead Of Player
@@ -531,9 +531,9 @@ end
 -- Gets Closest Door To Player
 function GetClosestVehicleDoor(vehicle)
     local plyCoords = GetEntityCoords(GetLocalPed(), false)
-	local backleft = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "door_dside_r"))
-	local backright = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "door_pside_r"))
-	local bldistance = GetDistanceBetweenCoords(backleft['x'], backleft['y'], backleft['z'], plyCoords.x, plyCoords.y, plyCoords.z, 1)
+    local backleft = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "door_dside_r"))
+    local backright = GetWorldPositionOfEntityBone(vehicle, GetEntityBoneIndexByName(vehicle, "door_pside_r"))
+    local bldistance = GetDistanceBetweenCoords(backleft['x'], backleft['y'], backleft['z'], plyCoords.x, plyCoords.y, plyCoords.z, 1)
     local brdistance = GetDistanceBetweenCoords(backright['x'], backright['y'], backright['z'], plyCoords.x, plyCoords.y, plyCoords.z, 1)
 
     local found_door = false
@@ -549,8 +549,8 @@ end
 
 -- Displays Notification
 function Notification(message)
-	SetNotificationTextEntry("STRING")
-	AddTextComponentString(message)
-	DrawNotification(0, 1)
+    SetNotificationTextEntry("STRING")
+    AddTextComponentString(message)
+    DrawNotification(0, 1)
 end
 --]]

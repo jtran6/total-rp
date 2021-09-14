@@ -5,8 +5,8 @@ description 'QB-VehicleFailure'
 version '1.0.0'
 
 shared_scripts { 
-	'@qb-core/import.lua',
-	'config.lua'
+    '@qb-core/import.lua',
+    'config.lua'
 }
 
 client_script 'client.lua'

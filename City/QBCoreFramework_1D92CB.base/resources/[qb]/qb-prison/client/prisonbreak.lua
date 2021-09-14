@@ -70,11 +70,11 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(7)
-		local pos = GetEntityCoords(PlayerPedId(), true)
+    while true do
+        Citizen.Wait(7)
+        local pos = GetEntityCoords(PlayerPedId(), true)
         if #(pos - vector3(Config.Locations["middle"].coords.x, Config.Locations["middle"].coords.y, Config.Locations["middle"].coords.z)) > 200 and inJail then
-			inJail = false
+            inJail = false
             jailTime = 0
             RemoveBlip(currentBlip)
             RemoveBlip(CellsBlip)
@@ -86,8 +86,8 @@ Citizen.CreateThread(function()
             TriggerServerEvent("prison:server:SecurityLockdown")
             TriggerEvent('prison:client:PrisonBreakAlert')
             QBCore.Functions.Notify("You escaped... Get the hell out of here.!", "error")
-		end
-	end
+        end
+    end
 end)
 
 RegisterNetEvent('electronickit:UseElectronickit')
@@ -124,13 +124,21 @@ RegisterNetEvent('prison:client:SetLockDown')
 AddEventHandler('prison:client:SetLockDown', function(isLockdown)
     securityLockdown = isLockdown
     if securityLockDown and inJail then
-        TriggerEvent("chatMessage", "HOSTAGE", "error", "Highest security level is active, stay with the cell blocks!")
+        
+	TriggerEvent('chat:addMessage', {
+        template = '<div class="chat-message emergency"> BPCO: {1}</div>',
+        args = {src, "Highest security level is active, stay with the cell blocks!"}
+    });
     end
 end)
 
 RegisterNetEvent('prison:client:PrisonBreakAlert')
 AddEventHandler('prison:client:PrisonBreakAlert', function()
-    -- TriggerEvent("chatMessage", "ALERT", "error", "Attentie alle eenheden! Poging tot uitbraak in de gevangenis!")
+            
+	TriggerEvent('chat:addMessage', {
+        template = '<div class="chat-message emergency"> BPCO: {1}</div>',
+        args = {src, "There has been a prison break!"}
+    });
     TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
         timeOut = 10000,
         alertTitle = "Prison outbreak",
@@ -149,10 +157,10 @@ AddEventHandler('prison:client:PrisonBreakAlert', function()
 
     local BreakBlip = AddBlipForCoord(Config.Locations["middle"].coords.x, Config.Locations["middle"].coords.y, Config.Locations["middle"].coords.z)
     TriggerServerEvent('prison:server:JailAlarm')
-	SetBlipSprite(BreakBlip , 161)
-	SetBlipScale(BreakBlip , 3.0)
-	SetBlipColour(BreakBlip, 3)
-	PulseBlip(BreakBlip)
+    SetBlipSprite(BreakBlip , 161)
+    SetBlipScale(BreakBlip , 3.0)
+    SetBlipColour(BreakBlip, 3)
+    PulseBlip(BreakBlip)
     PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
     Citizen.Wait(100)
     PlaySoundFrontend( -1, "Beep_Red", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1 )
@@ -172,12 +180,12 @@ end)
 function OnHackDone(success, timeremaining)
     if success then
         TriggerServerEvent("prison:server:SetGateHit", currentGate)
-		TriggerServerEvent('qb-doorlock:server:updateState', Gates[currentGate].gatekey, false)
-		TriggerEvent('mhacking:hide')
+        TriggerServerEvent('qb-doorlock:server:updateState', Gates[currentGate].gatekey, false)
+        TriggerEvent('mhacking:hide')
     else
         TriggerServerEvent("prison:server:SecurityLockdown")
-		TriggerEvent('mhacking:hide')
-	end
+        TriggerEvent('mhacking:hide')
+    end
 end
 
 RegisterNetEvent('prison:client:JailAlarm')

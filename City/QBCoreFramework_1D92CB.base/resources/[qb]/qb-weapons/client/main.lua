@@ -4,7 +4,7 @@ local PlayerData = {}
 local CanShoot = true
 
 function DrawText3Ds(x, y, z, text)
-	SetTextScale(0.35, 0.35)
+    SetTextScale(0.35, 0.35)
     SetTextFont(4)
     SetTextProportional(1)
     SetTextColour(255, 255, 255, 215)
@@ -37,7 +37,7 @@ Citizen.CreateThread(function()
                             end
                         end
                     else
-			            local weapon = GetSelectedPedWeapon(ped)
+                        local weapon = GetSelectedPedWeapon(ped)
                         if weapon ~= -1569615261 then
                             TriggerEvent('inventory:client:CheckWeapon', QBCore.Shared.Weapons[weapon]["name"])
                             QBCore.Functions.Notify("This weapon is broken and can not be used..", "error")
@@ -66,7 +66,7 @@ Citizen.CreateThread(function()
             end
         else
             EnableControlAction(0, 24, true) -- Attack
-			EnableControlAction(0, 257, true) -- Attack 2
+            EnableControlAction(0, 257, true) -- Attack 2
             if IsPedInAnyVehicle(ped, true) then
                 SetPlayerCanDoDriveBy(player, true)
             end

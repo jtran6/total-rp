@@ -55,7 +55,7 @@
     <Item key="Default">
       <Fallback />
       <WeaponAnimations>
-	    <Item key="WEAPON_PLASMAP">
+        <Item key="WEAPON_PLASMAP">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash>cover@move@ai@base@1h</CoverAlternateMovementClipSetHash>
@@ -189,10 +189,10 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
-	<Item key="WEAPON_BRIEFCASE">
+    <Item key="WEAPON_BRIEFCASE">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash />
@@ -233,10 +233,10 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
-	<Item key="WEAPON_BRIEFCASE_02">
+    <Item key="WEAPON_BRIEFCASE_02">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash />
@@ -277,8 +277,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
       </WeaponAnimations>
     </Item>
@@ -326,8 +326,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_VESPER">
           <CoverMovementClipSetHash />
@@ -370,8 +370,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_GLOCK">
           <CoverMovementClipSetHash />
@@ -414,8 +414,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_NAMBU">
           <CoverMovementClipSetHash />
@@ -458,8 +458,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_BLASTER">
           <CoverMovementClipSetHash />
@@ -502,8 +502,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_PISTOL">
           <CoverMovementClipSetHash />
@@ -546,8 +546,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_LUGER">
           <CoverMovementClipSetHash />
@@ -590,8 +590,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_DEAGLE">
           <CoverMovementClipSetHash />
@@ -634,8 +634,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_UMP45">
           <CoverMovementClipSetHash />
@@ -678,8 +678,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_VECTOR">
           <CoverMovementClipSetHash />
@@ -771,8 +771,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_PETROLCAN">
           <CoverMovementClipSetHash />
@@ -815,10 +815,10 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
-	<Item key="WEAPON_BRIEFCASE">
+    <Item key="WEAPON_BRIEFCASE">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash />
@@ -859,10 +859,10 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
-	<Item key="WEAPON_BRIEFCASE_02">
+    <Item key="WEAPON_BRIEFCASE_02">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash />
@@ -903,8 +903,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
       </WeaponAnimations>
     </Item>
@@ -1001,8 +1001,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_BRIEFCASE">
           <CoverMovementClipSetHash />
@@ -1045,8 +1045,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
         <Item key="WEAPON_BRIEFCASE_02">
           <CoverMovementClipSetHash />
@@ -1089,15 +1089,15 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
         </Item>
       </WeaponAnimations>
     </Item>
-	<Item key="Hillbilly">
+    <Item key="Hillbilly">
       <Fallback>Default</Fallback>
       <WeaponAnimations>
-	  <Item key="WEAPON_PISTOL">
+      <Item key="WEAPON_PISTOL">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash>cover@move@ai@base@1h</CoverAlternateMovementClipSetHash>
@@ -1138,21 +1138,21 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
-		  <GestureBeckonOverrideClipSetHash>combat_gestures_beckon_pistol_1h_hillbilly</GestureBeckonOverrideClipSetHash>
-		  <GestureOverThereOverrideClipSetHash>combat_gestures_overthere_pistol_1h_hillbilly</GestureOverThereOverrideClipSetHash>
-		  <GestureHaltOverrideClipSetHash>combat_gestures_halt_pistol_1h_hillbilly</GestureHaltOverrideClipSetHash>
-		  <GestureGlancesOverrideClipSetHash>combat_gestures_glances_pistol_1h_hillbilly</GestureGlancesOverrideClipSetHash>
-		  <CombatReactionOverrideClipSetHash>combat_reactions_pistol_1h_hillbilly</CombatReactionOverrideClipSetHash>
-		  <UseLeftHandIKAllowTags value="true" />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
+          <GestureBeckonOverrideClipSetHash>combat_gestures_beckon_pistol_1h_hillbilly</GestureBeckonOverrideClipSetHash>
+          <GestureOverThereOverrideClipSetHash>combat_gestures_overthere_pistol_1h_hillbilly</GestureOverThereOverrideClipSetHash>
+          <GestureHaltOverrideClipSetHash>combat_gestures_halt_pistol_1h_hillbilly</GestureHaltOverrideClipSetHash>
+          <GestureGlancesOverrideClipSetHash>combat_gestures_glances_pistol_1h_hillbilly</GestureGlancesOverrideClipSetHash>
+          <CombatReactionOverrideClipSetHash>combat_reactions_pistol_1h_hillbilly</CombatReactionOverrideClipSetHash>
+          <UseLeftHandIKAllowTags value="true" />
       </Item>
       </WeaponAnimations>
     </Item>
-	<Item key="Gang1H">
+    <Item key="Gang1H">
       <Fallback>Gang</Fallback>
       <WeaponAnimations>
-	  <Item key="WEAPON_PISTOL">
+      <Item key="WEAPON_PISTOL">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash>cover@move@ai@base@1h</CoverAlternateMovementClipSetHash>
@@ -1193,21 +1193,21 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />	
-		  <GestureBeckonOverrideClipSetHash>combat_gestures_beckon_pistol_1h_gang</GestureBeckonOverrideClipSetHash> 
-		  <GestureOverThereOverrideClipSetHash>combat_gestures_overthere_pistol_1h_gang</GestureOverThereOverrideClipSetHash>
-		  <GestureHaltOverrideClipSetHash>combat_gestures_halt_pistol_1h_gang</GestureHaltOverrideClipSetHash>
-		  <GestureGlancesOverrideClipSetHash>combat_gestures_glances_pistol_1h_gang</GestureGlancesOverrideClipSetHash>
-		  <CombatReactionOverrideClipSetHash>combat_reactions_pistol_1h_gang</CombatReactionOverrideClipSetHash>
-		  <UseLeftHandIKAllowTags value="true" />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />    
+          <GestureBeckonOverrideClipSetHash>combat_gestures_beckon_pistol_1h_gang</GestureBeckonOverrideClipSetHash> 
+          <GestureOverThereOverrideClipSetHash>combat_gestures_overthere_pistol_1h_gang</GestureOverThereOverrideClipSetHash>
+          <GestureHaltOverrideClipSetHash>combat_gestures_halt_pistol_1h_gang</GestureHaltOverrideClipSetHash>
+          <GestureGlancesOverrideClipSetHash>combat_gestures_glances_pistol_1h_gang</GestureGlancesOverrideClipSetHash>
+          <CombatReactionOverrideClipSetHash>combat_reactions_pistol_1h_gang</CombatReactionOverrideClipSetHash>
+          <UseLeftHandIKAllowTags value="true" />
       </Item>
       </WeaponAnimations>
     </Item>
     <Item key="FirstPerson">
       <Fallback>Default</Fallback>
       <WeaponAnimations>
-	    <Item key="WEAPON_PLASMAP">
+        <Item key="WEAPON_PLASMAP">
           <MovementOverrideClipSetHash>move_m@generic</MovementOverrideClipSetHash>
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
@@ -1329,7 +1329,7 @@
     <Item key="FirstPersonAiming">
       <Fallback>Default</Fallback>
       <WeaponAnimations>
-	    <Item key="WEAPON_PLASMAP">
+        <Item key="WEAPON_PLASMAP">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash>cover@move@ai@base@1h</CoverAlternateMovementClipSetHash>
@@ -1439,10 +1439,10 @@
         </Item>
       </WeaponAnimations>
     </Item>
-	<Item key="FirstPersonRNG">
+    <Item key="FirstPersonRNG">
       <Fallback>Default</Fallback>
       <WeaponAnimations>
-	    <Item key="WEAPON_PLASMAP">
+        <Item key="WEAPON_PLASMAP">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash>cover@move@ai@base@1h</CoverAlternateMovementClipSetHash>
@@ -1556,10 +1556,10 @@
         </Item>
        </WeaponAnimations>
     </Item>
-	<Item key="FirstPersonScope">
+    <Item key="FirstPersonScope">
       <Fallback>Default</Fallback>
       <WeaponAnimations>
-	    <Item key="WEAPON_PLASMAP">
+        <Item key="WEAPON_PLASMAP">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash>cover@move@ai@base@1h</CoverAlternateMovementClipSetHash>
@@ -1663,9 +1663,9 @@
         </Item>
       </WeaponAnimations>
     </Item>
-	<Item key="FirstPersonMichael">
+    <Item key="FirstPersonMichael">
       <Fallback>FirstPerson</Fallback>
-	  <FPSStrafeClipSetHash>move_ped_strafing_firstperson_p_m_zero</FPSStrafeClipSetHash>
+      <FPSStrafeClipSetHash>move_ped_strafing_firstperson_p_m_zero</FPSStrafeClipSetHash>
       <WeaponAnimations>
         <Item key="WEAPON_UNARMED">
           <CoverMovementClipSetHash />
@@ -1691,7 +1691,7 @@
           <FiringVariationsCrouchingClipSetHash />
           <AimTurnStandingClipSetHash />
           <AimTurnCrouchingClipSetHash />
-		      <MeleeBaseClipSetHash>melee@unarmed@base</MeleeBaseClipSetHash>
+              <MeleeBaseClipSetHash>melee@unarmed@base</MeleeBaseClipSetHash>
           <MeleeClipSetHash>melee@unarmed@streamed_core</MeleeClipSetHash>
           <MeleeVariationClipSetHash>melee@unarmed@streamed_variations</MeleeVariationClipSetHash>
           <MeleeTauntClipSetHash>melee@unarmed@streamed_taunts</MeleeTauntClipSetHash>
@@ -1709,83 +1709,83 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
-      	  <MovementOverrideClipSetHash>move_m@generic</MovementOverrideClipSetHash>
-		  <FPSFidgetClipsetHashes>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
+            <MovementOverrideClipSetHash>move_m@generic</MovementOverrideClipSetHash>
+          <FPSFidgetClipsetHashes>
             <Item>clipset@weapons@first_person@aim_idle@p_m_zero@unarmed@fidgets@b</Item>
-			<Item>clipset@weapons@first_person@aim_idle@p_m_zero@unarmed@fidgets@c</Item>
-			<Item>clipset@weapons@first_person@aim_idle@p_m_zero@unarmed@fidgets@e</Item>
+            <Item>clipset@weapons@first_person@aim_idle@p_m_zero@unarmed@fidgets@c</Item>
+            <Item>clipset@weapons@first_person@aim_idle@p_m_zero@unarmed@fidgets@e</Item>
           </FPSFidgetClipsetHashes>
         </Item>
       </WeaponAnimations>
     </Item>
-	<Item key="FirstPersonMichaelAiming">
+    <Item key="FirstPersonMichaelAiming">
       <Fallback>FirstPersonAiming</Fallback>
       <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonMichaelRNG">
+    <Item key="FirstPersonMichaelRNG">
       <Fallback>FirstPersonRNG</Fallback>
       <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonMichaelScope">
+    <Item key="FirstPersonMichaelScope">
       <Fallback>FirstPersonScope</Fallback>
-	  <WeaponAnimations />
+      <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonFranklin">
+    <Item key="FirstPersonFranklin">
       <Fallback>FirstPerson</Fallback>
-	  <FPSStrafeClipSetHash>move_ped_strafing_firstperson_p_m_one</FPSStrafeClipSetHash>
+      <FPSStrafeClipSetHash>move_ped_strafing_firstperson_p_m_one</FPSStrafeClipSetHash>
       <WeaponAnimations>
-		<Item key="WEAPON_UNARMED">
-			<FPSFidgetClipsetHashes>
-				<Item>clipset@weapons@first_person@aim_idle@p_m_one@unarmed@fidgets@a</Item>
-				<Item>clipset@weapons@first_person@aim_idle@p_m_one@unarmed@fidgets@b</Item>
-				<Item>clipset@weapons@first_person@aim_idle@p_m_one@unarmed@fidgets@c</Item>
-				<Item>clipset@weapons@first_person@aim_idle@p_m_one@unarmed@fidgets@d</Item>
-			</FPSFidgetClipsetHashes>
-		</Item>
-	  </WeaponAnimations>
+        <Item key="WEAPON_UNARMED">
+            <FPSFidgetClipsetHashes>
+                <Item>clipset@weapons@first_person@aim_idle@p_m_one@unarmed@fidgets@a</Item>
+                <Item>clipset@weapons@first_person@aim_idle@p_m_one@unarmed@fidgets@b</Item>
+                <Item>clipset@weapons@first_person@aim_idle@p_m_one@unarmed@fidgets@c</Item>
+                <Item>clipset@weapons@first_person@aim_idle@p_m_one@unarmed@fidgets@d</Item>
+            </FPSFidgetClipsetHashes>
+        </Item>
+      </WeaponAnimations>
     </Item>
-	<Item key="FirstPersonFranklinAiming">
+    <Item key="FirstPersonFranklinAiming">
       <Fallback>FirstPersonAiming</Fallback>
       <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonFranklinRNG">
+    <Item key="FirstPersonFranklinRNG">
       <Fallback>FirstPersonRNG</Fallback>
       <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonFranklinScope">
+    <Item key="FirstPersonFranklinScope">
       <Fallback>FirstPersonScope</Fallback>
-	  <WeaponAnimations />
+      <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonTrevor">
+    <Item key="FirstPersonTrevor">
       <Fallback>FirstPerson</Fallback>
-	  <FPSStrafeClipSetHash>move_ped_strafing_firstperson_p_m_two</FPSStrafeClipSetHash>
+      <FPSStrafeClipSetHash>move_ped_strafing_firstperson_p_m_two</FPSStrafeClipSetHash>
       <WeaponAnimations>
-		<Item key="WEAPON_UNARMED">
-			<FPSFidgetClipsetHashes>
-				<Item>clipset@weapons@first_person@aim_idle@p_m_two@unarmed@fidgets@a</Item>
-				<Item>clipset@weapons@first_person@aim_idle@p_m_two@unarmed@fidgets@b</Item>
-				<Item>clipset@weapons@first_person@aim_idle@p_m_two@unarmed@fidgets@c</Item>
-			  </FPSFidgetClipsetHashes>
-		</Item>
-	  </WeaponAnimations>
+        <Item key="WEAPON_UNARMED">
+            <FPSFidgetClipsetHashes>
+                <Item>clipset@weapons@first_person@aim_idle@p_m_two@unarmed@fidgets@a</Item>
+                <Item>clipset@weapons@first_person@aim_idle@p_m_two@unarmed@fidgets@b</Item>
+                <Item>clipset@weapons@first_person@aim_idle@p_m_two@unarmed@fidgets@c</Item>
+              </FPSFidgetClipsetHashes>
+        </Item>
+      </WeaponAnimations>
     </Item>
-	<Item key="FirstPersonTrevorAiming">
+    <Item key="FirstPersonTrevorAiming">
       <Fallback>FirstPersonAiming</Fallback>
       <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonTrevorRNG">
+    <Item key="FirstPersonTrevorRNG">
       <Fallback>FirstPersonRNG</Fallback>
       <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonTrevorScope">
+    <Item key="FirstPersonTrevorScope">
       <Fallback>FirstPersonScope</Fallback>
-	  <WeaponAnimations />
+      <WeaponAnimations />
     </Item>
-	<Item key="FirstPersonMPFemale">
+    <Item key="FirstPersonMPFemale">
       <Fallback>FirstPerson</Fallback>
-	  <FPSStrafeClipSetHash>move_ped_strafing_firstperson_mp_female</FPSStrafeClipSetHash>
+      <FPSStrafeClipSetHash>move_ped_strafing_firstperson_mp_female</FPSStrafeClipSetHash>
       <WeaponAnimations />
     </Item>
     <Item key="Fat">
@@ -1832,9 +1832,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AKP">
           <CoverMovementClipSetHash />
@@ -1877,9 +1877,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AK47NEON">
           <CoverMovementClipSetHash />
@@ -1922,9 +1922,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_ASSAULTSHOTGUN">
           <CoverMovementClipSetHash />
@@ -1967,9 +1967,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_VESPER">
           <CoverMovementClipSetHash />
@@ -2012,9 +2012,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_BULLPUPSHOTGUN">
           <CoverMovementClipSetHash />
@@ -2057,9 +2057,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_M16">
           <CoverMovementClipSetHash />
@@ -2102,9 +2102,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_M60">
           <CoverMovementClipSetHash />
@@ -2147,9 +2147,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_GRENADELAUNCHER">
           <CoverMovementClipSetHash />
@@ -2192,9 +2192,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_GRENADELAUNCHER_SMOKE">
           <CoverMovementClipSetHash />
@@ -2237,9 +2237,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_HEAVYSNIPER">
           <CoverMovementClipSetHash />
@@ -2282,9 +2282,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_HEAVYRAYGUN">
           <CoverMovementClipSetHash />
@@ -2327,9 +2327,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_WINCHESTER">
           <CoverMovementClipSetHash />
@@ -2372,9 +2372,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_BOW">
           <CoverMovementClipSetHash />
@@ -2417,9 +2417,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_SAWNOFFSHOTGUN">
           <CoverMovementClipSetHash />
@@ -2462,9 +2462,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_UMP45">
           <CoverMovementClipSetHash />
@@ -2507,9 +2507,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_AWP">
           <CoverMovementClipSetHash />
@@ -2552,9 +2552,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_STINGER">
           <CoverMovementClipSetHash />
@@ -2597,11 +2597,11 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_fat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
-		<Item key="WEAPON_MINIGUN">
+        <Item key="WEAPON_MINIGUN">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash />
@@ -2642,8 +2642,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
       </WeaponAnimations>
     </Item>
@@ -2691,9 +2691,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AKP">
           <CoverMovementClipSetHash />
@@ -2736,9 +2736,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AK47NEON">
           <CoverMovementClipSetHash />
@@ -2781,9 +2781,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_ASSAULTSHOTGUN">
           <CoverMovementClipSetHash />
@@ -2826,9 +2826,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_VESPER">
           <CoverMovementClipSetHash />
@@ -2871,9 +2871,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_BULLPUPSHOTGUN">
           <CoverMovementClipSetHash />
@@ -2916,9 +2916,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_M16">
           <CoverMovementClipSetHash />
@@ -2961,9 +2961,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_M60">
           <CoverMovementClipSetHash />
@@ -3006,9 +3006,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_GRENADELAUNCHER">
           <CoverMovementClipSetHash />
@@ -3051,9 +3051,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_GRENADELAUNCHER_SMOKE">
           <CoverMovementClipSetHash />
@@ -3096,9 +3096,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_HEAVYSNIPER">
           <CoverMovementClipSetHash />
@@ -3141,9 +3141,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_HEAVYRAYGUN">
           <CoverMovementClipSetHash />
@@ -3186,9 +3186,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_WINCHESTER">
           <CoverMovementClipSetHash />
@@ -3231,9 +3231,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_BOW">
           <CoverMovementClipSetHash />
@@ -3276,9 +3276,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_SAWNOFFSHOTGUN">
           <CoverMovementClipSetHash />
@@ -3321,9 +3321,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_UMP45">
           <CoverMovementClipSetHash />
@@ -3366,9 +3366,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_AWP">
           <CoverMovementClipSetHash />
@@ -3411,9 +3411,9 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_STINGER">
           <CoverMovementClipSetHash />
@@ -3456,11 +3456,11 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <WeaponSwapClipSetHash>weapons@holster_superfat_2h</WeaponSwapClipSetHash>
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
-		<Item key="WEAPON_MINIGUN">
+        <Item key="WEAPON_MINIGUN">
           <CoverMovementClipSetHash />
           <CoverMovementExtraClipSetHash />
           <CoverAlternateMovementClipSetHash />
@@ -3501,8 +3501,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
       </WeaponAnimations>
     </Item>
@@ -3550,8 +3550,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AKP">
           <CoverMovementClipSetHash />
@@ -3594,8 +3594,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AK47NEON">
           <CoverMovementClipSetHash />
@@ -3638,8 +3638,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_ASSAULTSHOTGUN">
           <CoverMovementClipSetHash />
@@ -3682,8 +3682,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_VESPER">
           <CoverMovementClipSetHash />
@@ -3726,8 +3726,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_BALL">
           <CoverMovementClipSetHash />
@@ -3770,8 +3770,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_BULLPUPSHOTGUN">
           <CoverMovementClipSetHash />
@@ -3814,8 +3814,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_BZGAS">
           <CoverMovementClipSetHash />
@@ -3858,8 +3858,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_M16">
           <CoverMovementClipSetHash />
@@ -3902,8 +3902,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_M60">
           <CoverMovementClipSetHash />
@@ -3946,8 +3946,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_FLARE">
           <CoverMovementClipSetHash />
@@ -3990,8 +3990,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_GRENADE">
           <CoverMovementClipSetHash />
@@ -4034,8 +4034,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_GRENADELAUNCHER">
           <CoverMovementClipSetHash />
@@ -4078,8 +4078,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_GRENADELAUNCHER_SMOKE">
           <CoverMovementClipSetHash />
@@ -4122,8 +4122,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_HEAVYSNIPER">
           <CoverMovementClipSetHash />
@@ -4166,8 +4166,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_MG">
           <CoverMovementClipSetHash />
@@ -4210,8 +4210,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_MOLOTOV">
           <CoverMovementClipSetHash />
@@ -4254,8 +4254,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_WINCHESTER">
           <CoverMovementClipSetHash />
@@ -4298,8 +4298,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_SAWNOFFSHOTGUN">
           <CoverMovementClipSetHash />
@@ -4342,8 +4342,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_UMP45">
           <CoverMovementClipSetHash />
@@ -4386,8 +4386,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_SMOKEGRENADE">
           <CoverMovementClipSetHash />
@@ -4430,8 +4430,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AWP">
           <CoverMovementClipSetHash />
@@ -4474,8 +4474,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_STICKYBOMB">
           <CoverMovementClipSetHash />
@@ -4518,11 +4518,11 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
-	  </WeaponAnimations>
-	</Item>
+      </WeaponAnimations>
+    </Item>
     <Item key="GangFemale">
       <Fallback>Gang</Fallback>
       <WeaponAnimations>
@@ -4567,8 +4567,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AKP">
           <CoverMovementClipSetHash />
@@ -4611,8 +4611,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AK47NEON">
           <CoverMovementClipSetHash />
@@ -4655,8 +4655,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_ASSAULTSHOTGUN">
           <CoverMovementClipSetHash />
@@ -4699,8 +4699,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_VESPER">
           <CoverMovementClipSetHash />
@@ -4743,8 +4743,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_BALL">
           <CoverMovementClipSetHash />
@@ -4787,8 +4787,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_BULLPUPSHOTGUN">
           <CoverMovementClipSetHash />
@@ -4831,8 +4831,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_BZGAS">
           <CoverMovementClipSetHash />
@@ -4875,8 +4875,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_M16">
           <CoverMovementClipSetHash />
@@ -4919,8 +4919,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_M60">
           <CoverMovementClipSetHash />
@@ -4963,8 +4963,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_FLARE">
           <CoverMovementClipSetHash />
@@ -5007,8 +5007,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_GRENADE">
           <CoverMovementClipSetHash />
@@ -5051,8 +5051,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_GRENADELAUNCHER">
           <CoverMovementClipSetHash />
@@ -5095,8 +5095,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_GRENADELAUNCHER_SMOKE">
           <CoverMovementClipSetHash />
@@ -5139,8 +5139,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_HEAVYSNIPER">
           <CoverMovementClipSetHash />
@@ -5183,8 +5183,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_MG">
           <CoverMovementClipSetHash />
@@ -5227,8 +5227,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_MOLOTOV">
           <CoverMovementClipSetHash />
@@ -5271,8 +5271,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_WINCHESTER">
           <CoverMovementClipSetHash />
@@ -5315,8 +5315,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_SAWNOFFSHOTGUN">
           <CoverMovementClipSetHash />
@@ -5359,8 +5359,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_UMP45">
           <CoverMovementClipSetHash />
@@ -5403,8 +5403,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_SMOKEGRENADE">
           <CoverMovementClipSetHash />
@@ -5447,8 +5447,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
         <Item key="WEAPON_AWP">
           <CoverMovementClipSetHash />
@@ -5491,8 +5491,8 @@
           <UseFromStrafeUpperBodyAimNetwork value="true" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="NULL" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />		  
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />          
         </Item>
         <Item key="WEAPON_STICKYBOMB">
           <CoverMovementClipSetHash />
@@ -5535,10 +5535,10 @@
           <UseFromStrafeUpperBodyAimNetwork value="false" />
           <AimingDownTheBarrel value="true" />
           <WeaponSwapData ref="SWAP_DEFAULT" />
-		  <AimGrenadeThrowNormalClipsetHash />
-		  <AimGrenadeThrowAlternateClipsetHash />
+          <AimGrenadeThrowNormalClipsetHash />
+          <AimGrenadeThrowAlternateClipsetHash />
         </Item>
-	  </WeaponAnimations>
-	</Item>
+      </WeaponAnimations>
+    </Item>
   </WeaponAnimationsSets>
 </CWeaponAnimationsSets>

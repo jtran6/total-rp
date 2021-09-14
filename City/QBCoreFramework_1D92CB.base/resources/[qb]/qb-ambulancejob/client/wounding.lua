@@ -1,60 +1,60 @@
 WeaponDamageList = {
-	["WEAPON_UNARMED"] = "Fist prints",
-	["WEAPON_ANIMAL"] = "Bite wound of an animal",
-	["WEAPON_COUGAR"] = "Bite wound of an animal",
-	["WEAPON_KNIFE"] = "Stab wound",
-	["WEAPON_NIGHTSTICK"] = "Bump from a stick or something similar",
-	["WEAPON_BREAD"] = "Dent in your head from a baguette!",
-	["WEAPON_HAMMER"] = "Bump from a stick or something similar",
-	["WEAPON_BAT"] = "Bump from a stick or something similar",
-	["WEAPON_GOLFCLUB"] = "Bump from a stick or something similar",
-	["WEAPON_CROWBAR"] = "Bump from a stick or something similar",
-	["WEAPON_PISTOL"] = "Pistol bullets in the body",
-	["WEAPON_COMBATPISTOL"] = "Pistol bullets in the body",
-	["WEAPON_APPISTOL"] = "Pistol bullets in the body",
-	["WEAPON_PISTOL50"] = "50 Cal Pistol bullets in the body",
-	["WEAPON_MICROSMG"] = "SMG bullets in the body",
-	["WEAPON_SMG"] = "SMG bullets in the body",
-	["WEAPON_ASSAULTSMG"] = "SMG bullets in the body",
-	["WEAPON_ASSAULTRIFLE"] = "Rifle bullets in the body",
-	["WEAPON_CARBINERIFLE"] = "Rifle bullets in the body",
-	["WEAPON_ADVANCEDRIFLE"] = "Rifle bullets in the body",
-	["WEAPON_MG"] = "Machine Gun bullets in the body",
-	["WEAPON_COMBATMG"] = "Machine Gun bullets in the body",
-	["WEAPON_PUMPSHOTGUN"] = "Shotgun bullets in the body",
-	["WEAPON_SAWNOFFSHOTGUN"] = "Shotgun bullets in the body",
-	["WEAPON_ASSAULTSHOTGUN"] = "Shotgun bullets in the body",
-	["WEAPON_BULLPUPSHOTGUN"] = "Shotgun bullets in the body",
-	["WEAPON_STUNGUN"] = "Taser prints",
-	["WEAPON_SNIPERRIFLE"] = "Sniper bullets in the body",
-	["WEAPON_HEAVYSNIPER"] = "Sniper bullets in the body",
-	["WEAPON_REMOTESNIPER"] = "Sniper bullets in the body",
-	["WEAPON_GRENADELAUNCHER"] = "Burns and fragments",
-	["WEAPON_GRENADELAUNCHER_SMOKE"] = "Smoke Damage",
-	["WEAPON_RPG"] = "Burns and fragments",
-	["WEAPON_STINGER"] = "Burns and fragments",
-	["WEAPON_MINIGUN"] = "Very much bullets in the body",
-	["WEAPON_GRENADE"] = "Burns and fragments",
-	["WEAPON_STICKYBOMB"] = "Burns and fragments",
-	["WEAPON_SMOKEGRENADE"] = "Smoke Damage",
-	["WEAPON_BZGAS"] = "Gas Damage",
-	["WEAPON_MOLOTOV"] = "Heavy Burns",
-	["WEAPON_FIREEXTINGUISHER"] = "Sprayed on :)",
-	["WEAPON_PETROLCAN"] = "Petrol Can Damage",
-	["WEAPON_FLARE"] = "Flare Damage",
-	["WEAPON_BARBED_WIRE"] = "Barbed Wire Damage",
-	["WEAPON_DROWNING"] = "Drowned",
-	["WEAPON_DROWNING_IN_VEHICLE"] = "Drowned",
-	["WEAPON_BLEEDING"] = "Lost a lot of blood",
-	["WEAPON_ELECTRIC_FENCE"] = "Electric Fence Wounds",
-	["WEAPON_EXPLOSION"] = "Many burns (from explosives)",
-	["WEAPON_FALL"] = "Broken bones",
-	["WEAPON_EXHAUSTION"] = "Died of Exhaustion",
-	["WEAPON_HIT_BY_WATER_CANNON"] = "Water Cannon Pelts",
-	["WEAPON_RAMMED_BY_CAR"] = "Car accident",
-	["WEAPON_RUN_OVER_BY_CAR"] = "Hit by a vehicle",
-	["WEAPON_HELI_CRASH"] = "Helicopter crash",
-	["WEAPON_FIRE"] = "Many burns",
+    ["WEAPON_UNARMED"] = "Fist prints",
+    ["WEAPON_ANIMAL"] = "Bite wound of an animal",
+    ["WEAPON_COUGAR"] = "Bite wound of an animal",
+    ["WEAPON_KNIFE"] = "Stab wound",
+    ["WEAPON_NIGHTSTICK"] = "Bump from a stick or something similar",
+    ["WEAPON_BREAD"] = "Dent in your head from a baguette!",
+    ["WEAPON_HAMMER"] = "Bump from a stick or something similar",
+    ["WEAPON_BAT"] = "Bump from a stick or something similar",
+    ["WEAPON_GOLFCLUB"] = "Bump from a stick or something similar",
+    ["WEAPON_CROWBAR"] = "Bump from a stick or something similar",
+    ["WEAPON_PISTOL"] = "Pistol bullets in the body",
+    ["WEAPON_COMBATPISTOL"] = "Pistol bullets in the body",
+    ["WEAPON_APPISTOL"] = "Pistol bullets in the body",
+    ["WEAPON_PISTOL50"] = "50 Cal Pistol bullets in the body",
+    ["WEAPON_MICROSMG"] = "SMG bullets in the body",
+    ["WEAPON_SMG"] = "SMG bullets in the body",
+    ["WEAPON_ASSAULTSMG"] = "SMG bullets in the body",
+    ["WEAPON_ASSAULTRIFLE"] = "Rifle bullets in the body",
+    ["WEAPON_CARBINERIFLE"] = "Rifle bullets in the body",
+    ["WEAPON_ADVANCEDRIFLE"] = "Rifle bullets in the body",
+    ["WEAPON_MG"] = "Machine Gun bullets in the body",
+    ["WEAPON_COMBATMG"] = "Machine Gun bullets in the body",
+    ["WEAPON_PUMPSHOTGUN"] = "Shotgun bullets in the body",
+    ["WEAPON_SAWNOFFSHOTGUN"] = "Shotgun bullets in the body",
+    ["WEAPON_ASSAULTSHOTGUN"] = "Shotgun bullets in the body",
+    ["WEAPON_BULLPUPSHOTGUN"] = "Shotgun bullets in the body",
+    ["WEAPON_STUNGUN"] = "Taser prints",
+    ["WEAPON_SNIPERRIFLE"] = "Sniper bullets in the body",
+    ["WEAPON_HEAVYSNIPER"] = "Sniper bullets in the body",
+    ["WEAPON_REMOTESNIPER"] = "Sniper bullets in the body",
+    ["WEAPON_GRENADELAUNCHER"] = "Burns and fragments",
+    ["WEAPON_GRENADELAUNCHER_SMOKE"] = "Smoke Damage",
+    ["WEAPON_RPG"] = "Burns and fragments",
+    ["WEAPON_STINGER"] = "Burns and fragments",
+    ["WEAPON_MINIGUN"] = "Very much bullets in the body",
+    ["WEAPON_GRENADE"] = "Burns and fragments",
+    ["WEAPON_STICKYBOMB"] = "Burns and fragments",
+    ["WEAPON_SMOKEGRENADE"] = "Smoke Damage",
+    ["WEAPON_BZGAS"] = "Gas Damage",
+    ["WEAPON_MOLOTOV"] = "Heavy Burns",
+    ["WEAPON_FIREEXTINGUISHER"] = "Sprayed on :)",
+    ["WEAPON_PETROLCAN"] = "Petrol Can Damage",
+    ["WEAPON_FLARE"] = "Flare Damage",
+    ["WEAPON_BARBED_WIRE"] = "Barbed Wire Damage",
+    ["WEAPON_DROWNING"] = "Drowned",
+    ["WEAPON_DROWNING_IN_VEHICLE"] = "Drowned",
+    ["WEAPON_BLEEDING"] = "Lost a lot of blood",
+    ["WEAPON_ELECTRIC_FENCE"] = "Electric Fence Wounds",
+    ["WEAPON_EXPLOSION"] = "Many burns (from explosives)",
+    ["WEAPON_FALL"] = "Broken bones",
+    ["WEAPON_EXHAUSTION"] = "Died of Exhaustion",
+    ["WEAPON_HIT_BY_WATER_CANNON"] = "Water Cannon Pelts",
+    ["WEAPON_RAMMED_BY_CAR"] = "Car accident",
+    ["WEAPON_RUN_OVER_BY_CAR"] = "Hit by a vehicle",
+    ["WEAPON_HELI_CRASH"] = "Helicopter crash",
+    ["WEAPON_FIRE"] = "Many burns"
 }
 
 onPainKillers = false
@@ -63,22 +63,22 @@ painkillerAmount = 0
 CurrentDamageList = {}
 
 Citizen.CreateThread(function()
-	while true do
-		if #injured > 0 then
-			local level = 0
-			for k, v in pairs(injured) do
-				if v.severity > level then
-					level = v.severity
-				end
-			end
+    while true do
+        if #injured > 0 then
+            local level = 0
+            for k, v in pairs(injured) do
+                if v.severity > level then
+                    level = v.severity
+                end
+            end
 
-			SetPedMoveRateOverride(PlayerPedId(), Config.MovementRate[level])
-			
-			Citizen.Wait(5)
-		else
-			Citizen.Wait(1000)
-		end
-	end
+            SetPedMoveRateOverride(PlayerPedId(), Config.MovementRate[level])
+
+            Citizen.Wait(5)
+        else
+            Citizen.Wait(1000)
+        end
+    end
 end)
 
 local prevPos = nil
@@ -103,7 +103,8 @@ Citizen.CreateThread(function()
 
                                 if not IsPedRagdoll(player) and IsPedOnFoot(player) and not IsPedSwimming(player) then
                                     ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.08) -- change this float to increase/decrease camera shake
-                                    SetPedToRagdollWithFall(player, 7500, 9000, 1, GetEntityForwardVector(player), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+                                    SetPedToRagdollWithFall(player, 7500, 9000, 1, GetEntityForwardVector(player), 1.0,
+                                        0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
                                 end
 
                                 Citizen.Wait(1500)
@@ -134,8 +135,11 @@ Citizen.CreateThread(function()
                         playerHealth = playerHealth - bleedDamage
                         local randX = math.random() + math.random(-1, 1)
                         local randY = math.random() + math.random(-1, 1)
-                        local coords = GetOffsetFromEntityInWorldCoords(GetPlayerPed(GetPlayerFromServerId(playerId)), randX, randY, 0)
-                        TriggerServerEvent("evidence:server:CreateBloodDrop", QBCore.Functions.GetPlayerData().citizenid, QBCore.Functions.GetPlayerData().metadata["bloodtype"], coords)
+                        local coords = GetOffsetFromEntityInWorldCoords(GetPlayerPed(GetPlayerFromServerId(playerId)),
+                            randX, randY, 0)
+                        TriggerServerEvent("evidence:server:CreateBloodDrop",
+                            QBCore.Functions.GetPlayerData().citizenid,
+                            QBCore.Functions.GetPlayerData().metadata["bloodtype"], coords)
 
                         if advanceBleedTimer >= Config.AdvanceBleedTimer then
                             ApplyBleed(1)
@@ -167,19 +171,22 @@ end)
 function ProcessDamage(ped)
     if not isDead and not InLaststand and not onPainKillers then
         for k, v in pairs(injured) do
-            if (v.part == 'LLEG' and v.severity > 1) or (v.part == 'RLEG' and v.severity > 1) or (v.part == 'LFOOT' and v.severity > 2) or (v.part == 'RFOOT' and v.severity > 2) then
+            if (v.part == 'LLEG' and v.severity > 1) or (v.part == 'RLEG' and v.severity > 1) or
+                (v.part == 'LFOOT' and v.severity > 2) or (v.part == 'RFOOT' and v.severity > 2) then
                 if legCount >= Config.LegInjuryTimer then
                     if not IsPedRagdoll(ped) and IsPedOnFoot(ped) then
                         local chance = math.random(100)
                         if (IsPedRunning(ped) or IsPedSprinting(ped)) then
                             if chance <= Config.LegInjuryChance.Running then
                                 ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.08) -- change this float to increase/decrease camera shake
-                                SetPedToRagdollWithFall(ped, 1500, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+                                SetPedToRagdollWithFall(ped, 1500, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0,
+                                    0.0, 0.0, 0.0, 0.0)
                             end
                         else
                             if chance <= Config.LegInjuryChance.Walking then
                                 ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.08) -- change this float to increase/decrease camera shake
-                                SetPedToRagdollWithFall(ped, 1500, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+                                SetPedToRagdollWithFall(ped, 1500, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0,
+                                    0.0, 0.0, 0.0, 0.0)
                             end
                         end
                     end
@@ -187,11 +194,14 @@ function ProcessDamage(ped)
                 else
                     legCount = legCount + 1
                 end
-            elseif (v.part == 'LARM' and v.severity > 1) or (v.part == 'LHAND' and v.severity > 1) or (v.part == 'LFINGER' and v.severity > 2) or (v.part == 'RARM' and v.severity > 1) or (v.part == 'RHAND' and v.severity > 1) or (v.part == 'RFINGER' and v.severity > 2) then
+            elseif (v.part == 'LARM' and v.severity > 1) or (v.part == 'LHAND' and v.severity > 1) or
+                (v.part == 'LFINGER' and v.severity > 2) or (v.part == 'RARM' and v.severity > 1) or
+                (v.part == 'RHAND' and v.severity > 1) or (v.part == 'RFINGER' and v.severity > 2) then
                 if armcount >= Config.ArmInjuryTimer then
                     local chance = math.random(100)
 
-                    if (v.part == 'LARM' and v.severity > 1) or (v.part == 'LHAND' and v.severity > 1) or (v.part == 'LFINGER' and v.severity > 2) then
+                    if (v.part == 'LARM' and v.severity > 1) or (v.part == 'LHAND' and v.severity > 1) or
+                        (v.part == 'LFINGER' and v.severity > 2) then
                         local isDisabled = 15
                         Citizen.CreateThread(function()
                             while isDisabled > 0 do
@@ -264,10 +274,14 @@ function CheckWeaponDamage(ped)
         if HasPedBeenDamagedByWeapon(ped, GetHashKey(k), 0) then
             detected = true
             if not IsInDamageList(k) then
-                TriggerEvent("chatMessage", "STATUS", "error", v)
+
+                TriggerEvent('chat:addMessage', {
+                    template = '<div class="chat-message status">PAGER: {1}</div>',
+                    args = {src, v}
+                });
                 table.insert(CurrentDamageList, k)
             end
-	end
+        end
     end
     if detected then
         TriggerServerEvent("hospital:server:SetWeaponDamage", CurrentDamageList)
@@ -277,7 +291,7 @@ end
 
 function IsInDamageList(damage)
     local retval = false
-    if CurrentDamageList ~= nil then 
+    if CurrentDamageList ~= nil then
         for k, v in pairs(CurrentDamageList) do
             if CurrentDamageList[k] == damage then
                 retval = true
@@ -289,7 +303,9 @@ function IsInDamageList(damage)
 end
 
 function CheckDamage(ped, bone, weapon, damageDone)
-    if weapon == nil then return end
+    if weapon == nil then
+        return
+    end
 
     if Config.Bones[bone] ~= nil and not isDead and not InLaststand then
         ApplyImmediateEffects(ped, bone, weapon, damageDone)
@@ -320,8 +336,8 @@ function CheckDamage(ped, bone, weapon, damageDone)
         })
 
         ProcessRunStuff(ped)
-        --DoLimbAlert()
-        --DoBleedAlert()
+        -- DoLimbAlert()
+        -- DoBleedAlert()
     end
 end
 
@@ -334,12 +350,14 @@ function ApplyImmediateEffects(ped, bone, weapon, damageDone)
             end
         end
 
-        if Config.StaggerAreas[Config.Bones[bone]] ~= nil and (Config.StaggerAreas[Config.Bones[bone]].armored or armor <= 0) then
+        if Config.StaggerAreas[Config.Bones[bone]] ~= nil and
+            (Config.StaggerAreas[Config.Bones[bone]].armored or armor <= 0) then
             if math.random(100) <= math.ceil(Config.StaggerAreas[Config.Bones[bone]].minor) then
                 SetPedToRagdoll(ped, 1500, 2000, 3, true, true, false)
             end
         end
-    elseif Config.MajorInjurWeapons[weapon] or (Config.MinorInjurWeapons[weapon] and damageDone >= Config.DamageMinorToMajor) then
+    elseif Config.MajorInjurWeapons[weapon] or
+        (Config.MinorInjurWeapons[weapon] and damageDone >= Config.DamageMinorToMajor) then
         if Config.CriticalAreas[Config.Bones[bone]] ~= nil then
             if armor > 0 and Config.CriticalAreas[Config.Bones[bone]].armored then
                 if math.random(100) <= math.ceil(Config.MajorArmoredBleedChance) then
@@ -360,7 +378,8 @@ function ApplyImmediateEffects(ped, bone, weapon, damageDone)
             end
         end
 
-        if Config.StaggerAreas[Config.Bones[bone]] ~= nil and (Config.StaggerAreas[Config.Bones[bone]].armored or armor <= 0) then
+        if Config.StaggerAreas[Config.Bones[bone]] ~= nil and
+            (Config.StaggerAreas[Config.Bones[bone]].armored or armor <= 0) then
             if math.random(100) <= math.ceil(Config.StaggerAreas[Config.Bones[bone]].major) then
                 SetPedToRagdoll(ped, 1500, 2000, 3, true, true, false)
             end
@@ -374,12 +393,12 @@ AddEventHandler('hospital:client:UseBandage', function()
     QBCore.Functions.Progressbar("use_bandage", "Using bandage..", 4000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
-		disableMouse = false,
-		disableCombat = true,
+        disableMouse = false,
+        disableCombat = true
     }, {
-		animDict = "anim@amb@business@weed@weed_inspecting_high_dry@",
-		anim = "weed_inspecting_high_base_inspector",
-		flags = 49,
+        animDict = "anim@amb@business@weed@weed_inspecting_high_dry@",
+        anim = "weed_inspecting_high_base_inspector",
+        flags = 49
     }, {}, {}, function() -- Done
         StopAnimTask(ped, "anim@amb@business@weed@weed_inspecting_high_dry@", "weed_inspecting_high_base_inspector", 1.0)
         TriggerServerEvent("QBCore:Server:RemoveItem", "bandage", 1)
@@ -403,12 +422,12 @@ AddEventHandler('hospital:client:UsePainkillers', function()
     QBCore.Functions.Progressbar("use_bandage", "Taking painkillers", 3000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
-		disableMouse = false,
-		disableCombat = true,
+        disableMouse = false,
+        disableCombat = true
     }, {
-		animDict = "mp_suicide",
-		anim = "pill",
-		flags = 49,
+        animDict = "mp_suicide",
+        anim = "pill",
+        flags = 49
     }, {}, {}, function() -- Done
         StopAnimTask(ped, "mp_suicide", "pill", 1.0)
         TriggerServerEvent("QBCore:Server:RemoveItem", "painkillers", 1)
@@ -424,7 +443,7 @@ AddEventHandler('hospital:client:UsePainkillers', function()
 end)
 
 Citizen.CreateThread(function()
-    while true do 
+    while true do
         Citizen.Wait(1)
         if onPainKillers then
             painkillerAmount = painkillerAmount - 1
@@ -445,7 +464,7 @@ function ProcessRunStuff(ped)
         while not HasAnimSetLoaded("move_m@injured") do
             Citizen.Wait(0)
         end
-        SetPedMovementClipset(ped, "move_m@injured", 1 )
+        SetPedMovementClipset(ped, "move_m@injured", 1)
         SetPlayerSprint(PlayerId(), false)
     end
 end

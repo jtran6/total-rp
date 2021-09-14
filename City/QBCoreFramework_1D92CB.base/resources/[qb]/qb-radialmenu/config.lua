@@ -478,14 +478,14 @@ Config.JobInteractions = {
             type = 'client',
             event = 'hospital:client:CheckStatus',
             shouldClose = true
-        },{
-            id = 'revivep',
+        }, {
+            id = 'revive',
             title = 'Revive',
             icon = 'user-md',
-            type = 'server',
-            event = 'hospital:server:RevivePlayer',
+            type = 'client',
+            event = 'hospital:client:RevivePlayer',
             shouldClose = true
-        },{
+        }, {
             id = 'treatwounds',
             title = 'Heal wounds',
             icon = 'band-aid',
@@ -507,19 +507,19 @@ Config.JobInteractions = {
             event = 'police:client:EscortPlayer',
             shouldClose = true
         }, {
-            id = 'stretcheroptions',
+            id = 'brancardoptions',
             title = 'Stretcher',
             icon = 'procedures',
             items = {
                 {
-                    id = 'spawnstretcher',
+                    id = 'spawnbrancard',
                     title = 'Spawn Stretcher',
                     icon = 'plus',
                     type = 'client',
                     event = 'qb-radialmenu:client:TakeStretcher',
                     shouldClose = false
                 }, {
-                    id = 'despawnstretcher',
+                    id = 'despawnbrancard',
                     title = 'Remove Stretcher',
                     icon = 'minus',
                     type = 'client',
@@ -904,3 +904,4 @@ Config.ExtraCommands = {
         OffsetY = 0.2
     }
 }
+
