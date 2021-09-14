@@ -6,12 +6,12 @@ end)
 
 AddEventHandler('playerDropped', function(reason) 
 	local src = source
-	print("Dropped: "..GetPlayerName(src))
-	TriggerEvent("qb-log:server:CreateLog", "joinleave", "Dropped", "red", "**".. GetPlayerName(src) .. "** ("..QBCore.Functions.GetIdentifier(src, 'license')..") left..")
-	if reason ~= "Reconnecting" and src > 60000 then return false end
-	if(src==nil or (QBCore.Players[src] == nil)) then return false end
-	QBCore.Players[src].Functions.Save()
-	QBCore.Players[src] = nil
+	if QBCore.Players[src] then
+		local Player = QBCore.Players[src]
+		TriggerEvent("qb-log:server:CreateLog", "joinleave", "Dropped", "red", "**".. GetPlayerName(src) .. "** ("..Player.PlayerData.license..") left..")
+		Player.Functions.Save()
+		QBCore.Players[src] = nil
+	end
 end)
 
 local function OnPlayerConnecting(name, setKickReason, deferrals)
@@ -93,8 +93,8 @@ AddEventHandler('QBCore:UpdatePlayer', function(data)
 	local Player = QBCore.Functions.GetPlayer(src)
 	if Player ~= nil then
 		Player.PlayerData.position = data.position
-		local newHunger = Player.PlayerData.metadata["hunger"] - 4.2
-		local newThirst = Player.PlayerData.metadata["thirst"] - 3.8
+		local newHunger = Player.PlayerData.metadata["hunger"] - QBCore.Config.Player.HungerRate
+		local newThirst = Player.PlayerData.metadata["thirst"] - QBCore.Config.Player.ThirstRate
 		if newHunger <= 0 then newHunger = 0 end
 		if newThirst <= 0 then newThirst = 0 end
 		Player.Functions.SetMetaData("thirst", newThirst)
@@ -232,7 +232,7 @@ AddEventHandler('QBCore:ToggleDuty', function()
 end)
 
 Citizen.CreateThread(function()
-	local result = exports['ghmattimysql']:executeSync('SELECT * FROM permissions')
+	local result = exports.oxmysql:fetchSync('SELECT * FROM permissions', {})
 	if result[1] ~= nil then
 		for k, v in pairs(result) do
 			QBCore.Config.Server.PermissionList[v.license] = {
@@ -306,9 +306,9 @@ end)
 RegisterServerEvent('QBCore:Command:CheckOwnedVehicle')
 AddEventHandler('QBCore:Command:CheckOwnedVehicle', function(VehiclePlate)
 	if VehiclePlate ~= nil then
-		local result = exports['ghmattimysql']:executeSync('SELECT * FROM player_vehicles WHERE plate=@plate', {['@plate'] = VehiclePlate})
+		local result = exports.oxmysql:fetchSync('SELECT * FROM player_vehicles WHERE plate=@plate', {['@plate'] = VehiclePlate})
 		if result[1] ~= nil then
-			exports.ghmattimysql:execute('UPDATE player_vehicles SET state=@state WHERE citizenid=@citizenid', {['@state'] = 1, ['@citizenid'] = result[1].citizenid})
+			exports.oxmysql:execute('UPDATE player_vehicles SET state=@state WHERE citizenid=@citizenid', {['@state'] = 1, ['@citizenid'] = result[1].citizenid})
 			TriggerEvent('qb-garages:server:RemoveVehicle', result[1].citizenid, VehiclePlate)
 		end
 	end

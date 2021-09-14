@@ -1,7 +1,7 @@
-PlayerJob = {}
-isLoggedIn = false
-isInMenu = false
-inRange = false
+local PlayerJob = {}
+local isLoggedIn = false
+local isInMenu = false
+local sleep
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
@@ -162,26 +162,22 @@ end)
 -- MAIN THREAD
 CreateThread(function()
     while true do
-        Citizen.Wait(7)
+        sleep = 1000
         if PlayerJob.name ~= nil then
             local pos = GetEntityCoords(PlayerPedId())
             for k, v in pairs(Config.Jobs) do
                 if k == PlayerJob.name and PlayerJob.isboss then
                     if #(pos - v) < 1.0 then
-                        inRange = true
+                        sleep = 7
                         DrawText3D(v, "~g~E~w~ - Boss Menu")
                         if IsControlJustReleased(0, 38) then
                             MenuV:OpenMenu(menu)
                         end
-                    else
-                        inRange = false
                     end
                 end
             end
         end
-        if not inRange then
-            Wait(5000)
-        end
+      Wait(sleep)
     end
 end)
 

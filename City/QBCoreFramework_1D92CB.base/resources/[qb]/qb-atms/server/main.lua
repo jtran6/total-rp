@@ -68,7 +68,7 @@ RegisterCommand('atm', function(source, args, rawCommand)
                     info.cardActive = false
                 end
             else
-                local player = exports.ghmattimysql:executeSync('SELECT charinfo FROM players WHERE citizenid=@citizenid', {['@citizenid'] = info.citizenid})
+                local player = exports.oxmysql:fetchSync('SELECT charinfo FROM players WHERE citizenid=@citizenid', {['@citizenid'] = info.citizenid})
                 local xCH = json.decode(player[1].charinfo)
                 if xCH.card ~= cardNum then
                     info.cardActive = false
@@ -86,7 +86,7 @@ RegisterCommand('atm', function(source, args, rawCommand)
                     info.cardActive = false
                 end
             else
-                local player = exports.ghmattimysql:executeSync('SELECT charinfo FROM players WHERE citizenid=@citizenid', {['@citizenid'] = info.citizenid})
+                local player = exports.oxmysql:fetchSync('SELECT charinfo FROM players WHERE citizenid=@citizenid', {['@citizenid'] = info.citizenid})
                 xCH = json.decode(player[1].charinfo)
                 if xCH.card ~= cardNum then
                     info.cardActive = false
@@ -120,7 +120,7 @@ AddEventHandler('qb-atms:server:doAccountWithdraw', function(data)
 
         local dailyWith = tonumber(dailyWithdraws[cardHolder]) + tonumber(data.amount)
 
-        if dailyWith < 5000 then
+        if dailyWith < Config.DailyLimit then
             local banking = {}
             if xCH ~= nil then
                 local bank = xCH.Functions.GetMoney('bank')
@@ -140,13 +140,13 @@ AddEventHandler('qb-atms:server:doAccountWithdraw', function(data)
                 banking['accountinfo'] = xCH.PlayerData.charinfo.account
                 banking['cash'] = xPlayer.Functions.GetMoney('cash')
             else
-                local player = exports.ghmattimysql:executeSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = cardHolder})
+                local player = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = cardHolder})
                 local xCH = json.decode(player[1])
                 local bankCount = tonumber(xCH.money.bank) - tonumber(data.amount)
                 if bankCount > 0  then
                     xPlayer.Functions.AddMoney('cash', tonumber(data.amount))
                     xCH.money.bank = bankCount
-                    exports.ghmattimysql:execute('UPDATE players SET money=@money WHERE citizenid=@citizenid', {['@money'] = xCH.money, ['@citizenid'] = cardHolder})
+                    exports.oxmysql:execute('UPDATE players SET money=@money WHERE citizenid=@citizenid', {['@money'] = xCH.money, ['@citizenid'] = cardHolder})
                     dailyWithdraws[cardHolder] = dailyWithdraws[cardHolder] + tonumber(data.amount)
                     TriggerClientEvent('QBCore:Notify', src, "Withdraw $" .. data.amount .. ' from credit card. Daily Withdraws: ' .. dailyWithdraws[cardHolder], "success")
                 else
@@ -181,7 +181,7 @@ QBCore.Functions.CreateCallback('qb-atms:server:loadBankAccount', function(sourc
         banking['accountinfo'] = xCH.PlayerData.charinfo.account
         banking['cash'] = xPlayer.Functions.GetMoney('cash')
     else
-        local player = exports.ghmattimysql:executeSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = cardHolder})
+        local player = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid=@citizenid', {['@citizenid'] = cardHolder})
         local xCH = json.decode(player[1])
         banking['online'] = false
         banking['name'] = xCH.charinfo.firstname .. ' ' .. xCH.charinfo.lastname

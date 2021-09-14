@@ -28,20 +28,20 @@ Config.Stock = {
         Label = "Perfect (A)",
         Price = {
             [1] = {
-                min = 150,
-                max = 300,
+                min = 8,
+                max = 12,
             },
             [2] = {
-                min = 300,
-                max = 600,
+                min = 9,
+                max = 13,
             },
             [3] = {
-                min = 450,
-                max = 700,
+                min = 10,
+                max = 14,
             },
             [4] = {
-                min = 600,
-                max = 1200,
+                min = 11,
+                max = 15,
             },
         }
     },
@@ -56,20 +56,20 @@ Config.Stock = {
         Label = "Rare (B)",
         Price = {
             [1] = {
-                min = 100,
-                max = 200,
+                min = 6,
+                max = 9,
             },
             [2] = {
-                min = 200,
-                max = 400,
+                min = 7,
+                max = 10,
             },
             [3] = {
-                min = 300,
-                max = 600,
+                min = 8,
+                max = 11,
             },
             [4] = {
-                min = 400,
-                max = 800,
+                min = 9,
+                max = 12,
             },
         }
     },
@@ -84,20 +84,20 @@ Config.Stock = {
         Label = "Common (C)",
         Price = {
             [1] = {
-                min = 50,
-                max = 100,
+                min = 4,
+                max = 6,
             },
             [2] = {
-                min = 100,
-                max = 200,
+                min = 5,
+                max = 7,
             },
             [3] = {
-                min = 150,
-                max = 300,
+                min = 6,
+                max = 9,
             },
             [4] = {
-                min = 200,
-                max = 400,
+                min = 7,
+                max = 9,
             },
         }
     },

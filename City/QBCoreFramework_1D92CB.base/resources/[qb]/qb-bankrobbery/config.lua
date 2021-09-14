@@ -2,10 +2,10 @@ Config = Config or {}
 
 Config.ItemTiers = 1
 
-Config.MinimumPaletoPolice = 0
-Config.MinimumPacificPolice = 0
-Config.MinimumFleecaPolice = 0
-Config.MinimumThermitePolice = 0
+Config.MinimumPaletoPolice = 4
+Config.MinimumPacificPolice = 5
+Config.MinimumFleecaPolice = 3
+Config.MinimumThermitePolice = 2
 
 Config.RewardTypes = {
     [1] = {

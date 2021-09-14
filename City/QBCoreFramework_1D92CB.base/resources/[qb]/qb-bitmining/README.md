@@ -15,3 +15,13 @@ Make sure to add the items in shared.lua
 ```
 
 Images are in the folder.. Make sure to add it to ```qb-inventory/html/images```
+
+Dependency - https://github.com/pushkart2/memorygame
+
+Memory game
+
+
+Use -
+1. Spawn the items or change the coords in config.lua for shop anywhere and buy the items.
+2. Teleport to Config.ExitCoords and go inside the crypto building and use the item. (can change the exitCoords)
+3. It will start mining and depending on the cpu, it will take 60, 120 or 180 secs. (can be changed through config)

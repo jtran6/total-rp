@@ -2,8 +2,8 @@ local ItemList = {
     ["casinochips"] = 1,
 }
 
-RegisterServerEvent("qb-casino:sharlock:sell")
-AddEventHandler("qb-casino:sharlock:sell", function()
+RegisterServerEvent("qb-casino:server:sell")
+AddEventHandler("qb-casino:server:sell", function()
     local src = source
     local price = 0
     local Player = QBCore.Functions.GetPlayer(src)

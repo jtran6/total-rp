@@ -10,6 +10,10 @@ AddEventHandler('qb-log:server:CreateLog', function(name, title, color, message,
                 ["text"] = os.date("%c"),
             },
             ["description"] = message,
+            ["author"] = {
+            ["name"] = 'QBCore Logs',
+            ["icon_url"] = "https://cdn.discordapp.com/attachments/870094209783308299/870104723338973224/Logotype_-_Display_Picture_-_Stylized_-_Red.png",
+                },
         }
     }
     PerformHttpRequest(webHook, function(err, text, headers) end, 'POST', json.encode({ username = "QB Logs",embeds = embedData}), { ['Content-Type'] = 'application/json' })

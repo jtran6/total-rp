@@ -6,25 +6,26 @@ function DrawText3D(x, y, z, text)
     SetTextEntry("STRING")
     SetTextCentre(true)
     AddTextComponentString(text)
-    SetDrawOrigin(x, y, z, 0)
+    SetDrawOrigin(x,y,z, 0)
     DrawText(0.0, 0.0)
     local factor = (string.len(text)) / 370
-    DrawRect(0.0, 0.0 + 0.0125, 0.017 + factor, 0.03, 0, 0, 0, 75)
+    DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
     ClearDrawOrigin()
 end
 
 local currentGarage = 1
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(1)
+        sleep = 1000
         if isLoggedIn and QBCore ~= nil then
             local ped = PlayerPedId()
             local pos = GetEntityCoords(ped)
-            if PlayerJob.name == "ambulance" or PlayerJob.name == "ambulance" then
+            if PlayerJob.name =="ambulance" or PlayerJob.name == "ambulance" then
                 for k, v in pairs(Config.Locations["duty"]) do
                     local dist = #(pos - vector3(v.x, v.y, v.z))
                     if dist < 5 then
                         if dist < 1.5 then
+                            sleep = 7
                             if onDuty then
                                 DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Go Off Duty")
                             else
@@ -37,7 +38,7 @@ Citizen.CreateThread(function()
                             end
                         elseif dist < 4.5 then
                             DrawText3D(v.x, v.y, v.z, "on/off duty")
-                        end
+                        end  
                     end
                 end
 
@@ -46,23 +47,23 @@ Citizen.CreateThread(function()
                     if dist < 4.5 then
                         if onDuty then
                             if dist < 1.5 then
+                                sleep = 7
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Armory")
                                 if IsControlJustReleased(0, 38) then
-                                    TriggerServerEvent("inventory:server:OpenInventory", "shop", "hospital",
-                                        Config.Items)
+                                    TriggerServerEvent("inventory:server:OpenInventory", "shop", "hospital", Config.Items)
                                 end
                             elseif dist < 2.5 then
                                 DrawText3D(v.x, v.y, v.z, "Armory")
-                            end
+                            end  
                         end
                     end
                 end
-
+        
                 for k, v in pairs(Config.Locations["vehicle"]) do
                     local dist = #(pos - vector3(v.x, v.y, v.z))
                     if dist < 4.5 then
-                        DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222,
-                            false, false, false, true, false, false, false)
+                        sleep = 7
+                        DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                         if dist < 1.5 then
                             if IsPedInAnyVehicle(ped, false) then
                                 DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Store vehicle")
@@ -82,13 +83,13 @@ Citizen.CreateThread(function()
                         end
                     end
                 end
-
+        
                 for k, v in pairs(Config.Locations["helicopter"]) do
                     local dist = #(pos - vector3(v.x, v.y, v.z))
                     if dist < 7.5 then
                         if onDuty then
-                            DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222,
-                                false, false, false, true, false, false, false)
+                            sleep = 7
+                            DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                             if dist < 1.5 then
                                 if IsPedInAnyVehicle(ped, false) then
                                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Store helicopter")
@@ -101,7 +102,7 @@ Citizen.CreateThread(function()
                                     else
                                         local coords = Config.Locations["helicopter"][k]
                                         QBCore.Functions.SpawnVehicle(Config.Helicopter, function(veh)
-                                            SetVehicleNumberPlateText(veh, "LIFE" .. tostring(math.random(1000, 9999)))
+                                            SetVehicleNumberPlateText(veh, "LIFE"..tostring(math.random(1000, 9999)))
                                             SetEntityHeading(veh, coords.w)
                                             SetVehicleLivery(veh, 1) -- Ambulance Livery
                                             exports['LegacyFuel']:SetFuel(veh, 100.0)
@@ -112,7 +113,7 @@ Citizen.CreateThread(function()
                                         end, coords, true)
                                     end
                                 end
-                            end
+                            end  
                         end
                     end
                 end
@@ -123,6 +124,7 @@ Citizen.CreateThread(function()
             for k, v in pairs(Config.Locations["main"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
                 if dist < 1.5 then
+                    sleep = 7
                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Take the elevator to the roof")
                     if IsControlJustReleased(0, 38) then
                         DoScreenFadeOut(500)
@@ -146,6 +148,7 @@ Citizen.CreateThread(function()
             for k, v in pairs(Config.Locations["roof"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
                 if dist < 1.5 then
+                    sleep = 7
                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Take the elevator down")
                     if IsControlJustReleased(0, 38) then
                         DoScreenFadeOut(500)
@@ -165,18 +168,17 @@ Citizen.CreateThread(function()
                     end
                 end
             end
-        else
-            Citizen.Wait(1000)
         end
+        Wait(sleep)
     end
 end)
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(1)
+        Citizen.Wait(10)
         if isStatusChecking then
             for k, v in pairs(statusChecks) do
-                local x, y, z = table.unpack(GetPedBoneCoords(statusCheckPed, v.bone))
+                local x,y,z = table.unpack(GetPedBoneCoords(statusCheckPed, v.bone))
                 DrawText3D(x, y, z, v.label)
             end
         end
@@ -184,7 +186,7 @@ Citizen.CreateThread(function()
         if isHealingPerson then
             local ped = PlayerPedId()
             if not IsEntityPlayingAnim(ped, healAnimDict, healAnim, 3) then
-                loadAnimDict(healAnimDict)
+                loadAnimDict(healAnimDict)	
                 TaskPlayAnim(ped, healAnimDict, healAnim, 3.0, 3.0, -1, 49, 0, 0, 0, 0)
             end
         end
@@ -194,10 +196,7 @@ end)
 RegisterNetEvent('hospital:client:SendAlert')
 AddEventHandler('hospital:client:SendAlert', function(msg)
     PlaySound(-1, "Menu_Accept", "Phone_SoundSet_Default", 0, 0, 1)
-    TriggerEvent('chat:addMessage', {
-        template = '<div class="chat-message status">PAGER: {1}</div>',
-        args = {src, msg}
-    });
+    TriggerEvent("chatMessage", "PAGER", "error", msg)
 end)
 
 RegisterNetEvent('112:client:SendAlert')
@@ -240,8 +239,7 @@ AddEventHandler('hospital:client:AiCall', function()
     local coords = GetEntityCoords(player)
     local closestPed, closestDistance = QBCore.Functions.GetClosestPed(coords, PlayerPeds)
     local gender = QBCore.Functions.GetPlayerData().gender
-    local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, coords.x, coords.y, coords.z, Citizen.PointerValueInt(),
-        Citizen.PointerValueInt())
+    local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, coords.x, coords.y, coords.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
     local street1 = GetStreetNameFromHashKey(s1)
     local street2 = GetStreetNameFromHashKey(s2)
     if closestDistance < 50.0 and closestPed ~= 0 then
@@ -252,8 +250,8 @@ end)
 function MakeCall(ped, male, street1, street2)
     local callAnimDict = "cellphone@"
     local callAnim = "cellphone_call_listen_base"
-    local rand = (math.random(6, 9) / 100) + 0.3
-    local rand2 = (math.random(6, 9) / 100) + 0.3
+    local rand = (math.random(6,9) / 100) + 0.3
+    local rand2 = (math.random(6,9) / 100) + 0.3
     local player = PlayerPedId()
     local coords = GetEntityCoords(player)
     local pedcoords = GetEntityCoords(ped)
@@ -264,46 +262,32 @@ function MakeCall(ped, male, street1, street2)
         sprite = 280,
         color = 4,
         scale = 0.9,
-        text = "Injured person"
+        text = "Injured Person"
     }
-
     if math.random(10) > 5 then
         rand = 0.0 - rand
     end
-
     if math.random(10) > 5 then
         rand2 = 0.0 - rand2
     end
-
     local moveto = GetOffsetFromEntityInWorldCoords(player, rand, rand2, 0.0)
-
     TaskGoStraightToCoord(ped, moveto, 2.5, -1, 0.0, 0.0)
-    SetPedKeepTask(ped, true)
-
-    local dist = #(moveto - pedcoords)
-
+    SetPedKeepTask(ped, true) 
+    local dist = #(moveto - GetEntityCoords(ped))
     while dist > 3.5 and isDead do
         TaskGoStraightToCoord(ped, moveto, 2.5, -1, 0.0, 0.0)
-        dist = #(moveto - pedcoords)
+        dist = #(moveto - GetEntityCoords(ped))
         Citizen.Wait(100)
     end
-
     ClearPedTasksImmediately(ped)
     TaskLookAtEntity(ped, player, 5500.0, 2048, 3)
     TaskTurnPedToFaceEntity(ped, player, 5500)
-
     Citizen.Wait(3000)
-
-    -- TaskStartScenarioInPlace(ped,"WORLD_HUMAN_STAND_MOBILE", 0, 1)
     loadAnimDict(callAnimDict)
     TaskPlayAnim(ped, callAnimDict, callAnim, 1.0, 1.0, -1, 49, 0, 0, 0, 0)
-
-    SetPedKeepTask(ped, true)
-
+    SetPedKeepTask(ped, true) 
     Citizen.Wait(5000)
-
     TriggerServerEvent("hospital:server:MakeDeadCall", blipsettings, male, street1, street2)
-
     SetEntityAsNoLongerNeeded(ped)
     ClearPedTasks(ped)
 end
@@ -318,22 +302,13 @@ AddEventHandler('hospital:client:CheckStatus', function()
             if result ~= nil then
                 for k, v in pairs(result) do
                     if k ~= "BLEED" and k ~= "WEAPONWOUNDS" then
-                        table.insert(statusChecks, {
-                            bone = Config.BoneIndexes[k],
-                            label = v.label .. " (" .. Config.WoundStates[v.severity] .. ")"
-                        })
+                        table.insert(statusChecks, {bone = Config.BoneIndexes[k], label = v.label .." (".. Config.WoundStates[v.severity] ..")"})
                     elseif result["WEAPONWOUNDS"] ~= nil then
                         for k, v in pairs(result["WEAPONWOUNDS"]) do
-                            TriggerEvent('chat:addMessage', {
-                                template = '<div class="chat-message status">STATUS CHECK: {1}</div>',
-                                args = {src, WeaponDamageList[v]}
-                            });
+                            TriggerEvent("chatMessage", "STATUS CHECK", "error", WeaponDamageList[v])
                         end
                     elseif result["BLEED"] > 0 then
-                        TriggerEvent('chat:addMessage', {
-                            template = '<div class="chat-message status">STATUS CHECK: Is {1}</div>',
-                            args = {src, Config.BleedingStates[v].label}
-                        });
+                        TriggerEvent("chatMessage", "STATUS CHECK", "error", "Is "..Config.BleedingStates[v].label)
                     else
                         QBCore.Functions.Notify('Player Is Healthy', 'success')
                     end
@@ -347,7 +322,7 @@ AddEventHandler('hospital:client:CheckStatus', function()
     end
 end)
 
-RegisterNetEvent('hospital:client:RevivePlayer')
+RegisterNetEvent('hospital:client:RevivePlayer') 
 AddEventHandler('hospital:client:RevivePlayer', function()
     QBCore.Functions.TriggerCallback('hospital:server:HasFirstAid', function(hasItem)
         if hasItem then
@@ -359,11 +334,11 @@ AddEventHandler('hospital:client:RevivePlayer', function()
                     disableMovement = false,
                     disableCarMovement = false,
                     disableMouse = false,
-                    disableCombat = true
+                    disableCombat = true,
                 }, {
                     animDict = healAnimDict,
                     anim = healAnim,
-                    flags = 16
+                    flags = 16,
                 }, {}, {}, function() -- Done
                     isHealingPerson = false
                     StopAnimTask(PlayerPedId(), healAnimDict, "exit", 1.0)
@@ -395,11 +370,11 @@ AddEventHandler('hospital:client:TreatWounds', function()
                     disableMovement = false,
                     disableCarMovement = false,
                     disableMouse = false,
-                    disableCombat = true
+                    disableCombat = true,
                 }, {
                     animDict = healAnimDict,
                     anim = healAnim,
-                    flags = 16
+                    flags = 16,
                 }, {}, {}, function() -- Done
                     isHealingPerson = false
                     StopAnimTask(PlayerPedId(), healAnimDict, "exit", 1.0)
@@ -423,24 +398,23 @@ function MenuGarage(isDown)
     MenuTitle = "Garage"
     ClearMenu()
     Menu.addButton("My vehicles", "VehicleList", isDown)
-    Menu.addButton("Close Menu", "closeMenuFull", nil)
+    Menu.addButton("Close Menu", "closeMenuFull", nil) 
 end
 
 function VehicleList(isDown)
     MenuTitle = "Vehicles:"
     ClearMenu()
     for k, v in pairs(Config.Vehicles) do
-        Menu.addButton(Config.Vehicles[k], "TakeOutVehicle", {k, isDown}, "Garage", " Engine: 100%", " Body: 100%",
-            " Fuel: 100%")
+        Menu.addButton(Config.Vehicles[k], "TakeOutVehicle", {k, isDown}, "Garage", " Engine: 100%", " Body: 100%", " Fuel: 100%")
     end
-
-    Menu.addButton("Back", "MenuGarage", nil)
+        
+    Menu.addButton("Back", "MenuGarage",nil)
 end
 
 function TakeOutVehicle(vehicleInfo)
     local coords = Config.Locations["vehicle"][currentGarage]
     QBCore.Functions.SpawnVehicle(vehicleInfo[1], function(veh)
-        SetVehicleNumberPlateText(veh, "AMBU" .. tostring(math.random(1000, 9999)))
+        SetVehicleNumberPlateText(veh, "AMBU"..tostring(math.random(1000, 9999)))
         SetEntityHeading(veh, coords.w)
         exports['LegacyFuel']:SetFuel(veh, 100.0)
         closeMenuFull()

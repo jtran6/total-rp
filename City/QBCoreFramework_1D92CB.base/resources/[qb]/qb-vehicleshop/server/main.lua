@@ -18,7 +18,7 @@ AddEventHandler('qb-vehicleshop:server:buyShowroomVehicle', function(vehicle)
     local plate = GeneratePlate()
 
     if (cash - vehiclePrice) >= 0 then
-        exports.ghmattimysql:execute('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (@license, @citizenid, @vehicle, @hash, @mods, @plate, @state)', {
+        exports.oxmysql:insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (@license, @citizenid, @vehicle, @hash, @mods, @plate, @state)', {
             ['@license'] = pData.PlayerData.license,
             ['@citizenid'] = cid,
             ['@vehicle'] = vehicle,
@@ -32,7 +32,7 @@ AddEventHandler('qb-vehicleshop:server:buyShowroomVehicle', function(vehicle)
         pData.Functions.RemoveMoney('cash', vehiclePrice, "vehicle-bought-in-showroom")
         TriggerEvent("qb-log:server:CreateLog", "vehicleshop", "Vehicle purchased (showroom)", "green", "**"..GetPlayerName(src) .. "** bought a " .. QBCore.Shared.Vehicles[vehicle]["name"] .. " for $" .. vehiclePrice .. " with cash")
     elseif (bank - vehiclePrice) >= 0 then
-        exports.ghmattimysql:execute('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (@license, @citizenid, @vehicle, @hash, @mods, @plate, @state)', {
+        exports.oxmysql:insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (@license, @citizenid, @vehicle, @hash, @mods, @plate, @state)', {
             ['@license'] = pData.PlayerData.license,
             ['@citizenid'] = cid,
             ['@vehicle'] = vehicle,
@@ -62,7 +62,7 @@ end
 
 function GeneratePlate()
     local plate = tostring(GetRandomNumber(1)) .. GetRandomLetter(2) .. tostring(GetRandomNumber(3)) .. GetRandomLetter(2)
-    local result = exports.ghmattimysql:scalarSync('SELECT plate FROM player_vehicles WHERE plate=@plate', {['@plate'] = plate})
+    local result = exports.oxmysql:scalarSync('SELECT plate FROM player_vehicles WHERE plate=@plate', {['@plate'] = plate})
     if result then
         plate = tostring(GetRandomNumber(1)) .. GetRandomLetter(2) .. tostring(GetRandomNumber(3)) .. GetRandomLetter(2)
     end
@@ -70,23 +70,23 @@ function GeneratePlate()
 end
 
 function GetRandomNumber(length)
-    Citizen.Wait(1)
-    math.randomseed(GetGameTimer())
-    if length > 0 then
-        return GetRandomNumber(length - 1) .. NumberCharset[math.random(1, #NumberCharset)]
-    else
-        return ''
-    end
+	Citizen.Wait(1)
+	math.randomseed(GetGameTimer())
+	if length > 0 then
+		return GetRandomNumber(length - 1) .. NumberCharset[math.random(1, #NumberCharset)]
+	else
+		return ''
+	end
 end
 
 function GetRandomLetter(length)
-    Citizen.Wait(1)
-    math.randomseed(GetGameTimer())
-    if length > 0 then
-        return GetRandomLetter(length - 1) .. Charset[math.random(1, #Charset)]
-    else
-        return ''
-    end
+	Citizen.Wait(1)
+	math.randomseed(GetGameTimer())
+	if length > 0 then
+		return GetRandomLetter(length - 1) .. Charset[math.random(1, #Charset)]
+	else
+		return ''
+	end
 end
 
 RegisterServerEvent('qb-vehicleshop:server:setShowroomCarInUse')

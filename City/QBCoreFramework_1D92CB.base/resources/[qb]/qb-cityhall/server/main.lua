@@ -18,7 +18,7 @@ AddEventHandler('qb-cityhall:server:requestId', function(identityData)
         info.firstname = Player.PlayerData.charinfo.firstname
         info.lastname = Player.PlayerData.charinfo.lastname
         info.birthdate = Player.PlayerData.charinfo.birthdate
-        info.type = "A1-A2-A | AM-B | C1-C-CE"
+        info.type = "Class C Driver License"
     elseif identityData.item == "weaponlicense" then
         info.firstname = Player.PlayerData.charinfo.firstname
         info.lastname = Player.PlayerData.charinfo.lastname
@@ -108,7 +108,7 @@ function GiveStarterItems(source)
             info.firstname = Player.PlayerData.charinfo.firstname
             info.lastname = Player.PlayerData.charinfo.lastname
             info.birthdate = Player.PlayerData.charinfo.birthdate
-            info.type = "A1-A2-A | AM-B | C1-C-CE"
+            info.type = "Class C Driver License"
         end
         Player.Functions.AddItem(v.item, 1, false, info)
     end
@@ -128,7 +128,7 @@ RegisterServerEvent('qb-cityhall:server:banPlayer')
 AddEventHandler('qb-cityhall:server:banPlayer', function()
     local src = source
     TriggerClientEvent('chatMessage', -1, "QB Anti-Cheat", "error", GetPlayerName(src).." has been banned for sending POST Request's ")
-    exports.ghmattimysql:execute('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (@name, @license, @discord, @ip, @reason, @expire, @bannedby)', {
+    exports.oxmysql:insert('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (@name, @license, @discord, @ip, @reason, @expire, @bannedby)', {
         ['@name'] = GetPlayerName(src),
         ['@license'] = QBCore.Functions.GetIdentifier(src, 'license'),
         ['@discord'] = QBCore.Functions.GetIdentifier(src, 'discord'),

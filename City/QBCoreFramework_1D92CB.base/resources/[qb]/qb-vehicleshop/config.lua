@@ -187,7 +187,7 @@ QB.VehicleShops = {
                 ["buttons"] = {}
             },
         },
-    },
+    }, 
     [3] = {
         -- Vehicle Shop options
         ["ShopName"] = "gocart", -- Name to get in the shared.lua

@@ -31,6 +31,11 @@ Config.Webhooks = {
     ["moneysafes"] = "",
     ["bennys"] = "",
     ["bossmenu"] = "",
+    ["robbery"] = "",
+    ["casino"] = "",
+    ["traphouse"] = "",
+    ["911"] = "",
+    ["palert"] = "",    
 }
 
 Config.Colors = {

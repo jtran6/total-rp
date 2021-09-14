@@ -1,18 +1,21 @@
-seatSideAngle = 30
-bet = 0
-hand = {}
-splitHand = {}
-timeLeft = 0
-satDownCallback = nil
-standUpCallback = nil
-leaveCheckCallback = nil
+local seatSideAngle = 30
+local bet = 0
+local hand = {}
+local splitHand = {}
+local timeLeft = 0
+local satDownCallback = nil
+local standUpCallback = nil
+local leaveCheckCallback = nil
 local _lambo = nil
-canSitDownCallback = nil
+local canSitDownCallback = nil
+
 Citizen.CreateThread(function()
-    while true do 
+    while true do
+		sleep = 1000
         local playerCoords = GetEntityCoords(PlayerPedId())
         local closestChairDist = #(playerCoords - vector3(948.54760742188, 32.051155090332, 76.101249084473))
-        if closestChairDist < 55.0 then 
+        if closestChairDist < 55.0 then
+			sleep = 10
             DisableControlAction(0, 140, true)        
             DisableControlAction(0, 135, true)        
             DisableControlAction(0, 122, true)        
@@ -24,7 +27,7 @@ Citizen.CreateThread(function()
             DisableControlAction(0, 19, true) 
 			FreezeEntityPosition(_lambo, true)			
         end
-        Wait(1)
+        Wait(sleep)
     end
 end)
 
@@ -1241,7 +1244,7 @@ end
 
 Citizen.CreateThread(function()
 	while true do 
-		Citizen.Wait(5)
+		sleep = 1000
 		local ped = PlayerPedId()
 		local pos = GetEntityCoords(ped)
 
@@ -1249,6 +1252,7 @@ Citizen.CreateThread(function()
 		local tploc_exit = elevator_roof_location
 		local dist = #(pos - vector3(tploc_enter.x, tploc_enter.y, tploc_enter.z))
 		if dist < 10 then
+			sleep = 7
 			DrawMarker(2, tploc_enter.x, tploc_enter.y, tploc_enter.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 255, 255, 155, 0, 0, 0, 1, 0, 0, 0)
 			if dist < 1 then
 				DrawText3Ds(tploc_enter.x, tploc_enter.y, tploc_enter.z + 0.15, '~g~E~w~ - Use the elevator')
@@ -1263,6 +1267,7 @@ Citizen.CreateThread(function()
 		local tploc_exit = elevator_entrance_location
 		local dist = #(pos - vector3(tploc_enter.x, tploc_enter.y, tploc_enter.z))
 		if dist < 10 then
+			sleep = 7
 			DrawMarker(2, tploc_enter.x, tploc_enter.y, tploc_enter.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 255, 255, 155, 0, 0, 0, 1, 0, 0, 0)
 			if dist < 1 then
 				DrawText3Ds(tploc_enter.x, tploc_enter.y, tploc_enter.z + 0.15, '~g~E~w~ - Use the elevator')
@@ -1272,6 +1277,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		Wait(sleep)
 	end
 end)
 

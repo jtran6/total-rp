@@ -40,22 +40,22 @@ end)
 
 Citizen.CreateThread(function()
     TriggerEvent('prison:client:JailAlarm', false)
-    while true do
-        Citizen.Wait(7)
-        if jailTime > 0 and inJail then
-            Citizen.Wait(1000 * 60)
-            if jailTime > 0 and inJail then
-                jailTime = jailTime - 1
-                if jailTime <= 0 then
-                    jailTime = 0
-                    QBCore.Functions.Notify("Your time is up! Call someone to come get you..", "success", 10000)
-                end
-                TriggerServerEvent("prison:server:SetJailStatus", jailTime)
-            end
-        else
-            Citizen.Wait(5000)
-        end
-    end
+	while true do 
+		Citizen.Wait(7)
+		if jailTime > 0 and inJail then 
+			Citizen.Wait(1000 * 60)
+			if jailTime > 0 and inJail then
+				jailTime = jailTime - 1
+				if jailTime <= 0 then
+					jailTime = 0
+					QBCore.Functions.Notify("Your time is up! Check yourself out at the visitors center", "success", 10000)
+				end
+				TriggerServerEvent("prison:server:SetJailStatus", jailTime)
+			end
+		else
+			Citizen.Wait(5000)
+		end
+	end
 end)
 
 Citizen.CreateThread(function()
@@ -89,32 +89,20 @@ Citizen.CreateThread(function()
                         ShopItems.label = "Prison Canteen"
                         ShopItems.items = Config.CanteenItems
                         ShopItems.slots = #Config.CanteenItems
-                        TriggerServerEvent("inventory:server:OpenInventory", "shop",
-                            "Kantineshop_" .. math.random(1, 99), ShopItems)
-                    end
-                    DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y,
-                        Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22,
-                        222, false, false, false, 1, false, false, false)
-                elseif #(pos -
-                    vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y,
-                        Config.Locations["shop"].coords.z)) < 2.5 then
-                    DrawText3D(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y,
-                        Config.Locations["shop"].coords.z, "Canteen")
-                    DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y,
-                        Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22,
-                        222, false, false, false, 1, false, false, false)
-                elseif #(pos -
-                    vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y,
-                        Config.Locations["shop"].coords.z)) < 10 then
-                    DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y,
-                        Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22,
-                        222, false, false, false, 1, false, false, false)
-                end
-            end
-        else
-            Citizen.Wait(5000)
-        end
-    end
+                        TriggerServerEvent("inventory:server:OpenInventory", "shop", "Canteenshop_"..math.random(1, 99), ShopItems)
+					end
+					DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22, 222, false, false, false, 1, false, false, false)
+				elseif #(pos - vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z)) < 2.5 then
+					DrawText3D(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, "Canteen")
+					DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22, 222, false, false, false, 1, false, false, false)
+				elseif #(pos - vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z)) < 10 then
+					DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22, 222, false, false, false, 1, false, false, false)
+				end  
+			end
+		else
+			Citizen.Wait(5000)
+		end
+	end
 end)
 
 RegisterNetEvent('prison:client:Enter')

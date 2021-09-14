@@ -31,7 +31,7 @@ Config.Locations = {
         },
     },
     ["freedom"] = {
-        coords = vector4(1781.76, 2566.68, 46.72, 354),
+        coords = vector4(1836.37, 2585.33, 45.89, 272.96),
     },
     ["outside"] = {
         coords = vector4(1848.13, 2586.05, 45.67, 269.5),
@@ -43,7 +43,7 @@ Config.Locations = {
         coords = vector4(1693.33, 2569.51, 45.55, 123.5),
     },
     ["shop"] = {
-        coords = vector4(1775.72, 2588.45, 45.89, 175.84),
+        coords = vector4(1786.19, 2557.77, 45.62, 0.5),
     },
     spawns = {
         [1] = {
@@ -63,15 +63,15 @@ Config.Locations = {
             coords = vector4(1697.106, 2525.558, 45.564, 187.208),
         },
         [5] = {
-            animation = "chair4",
+            animation = "sitchair4",
             coords = vector4(1673.084, 2519.823, 45.564, 229.542),
         },
         [6] = {
-            animation = "chair",
+            animation = "sitchair",
             coords = vector4(1666.029, 2511.367, 45.564, 233.888),
         },
         [7] = {
-            animation = "chair4",
+            animation = "sitchair4",
             coords = vector4(1691.229, 2509.635, 45.564, 52.432),
         },
         [8] = {
