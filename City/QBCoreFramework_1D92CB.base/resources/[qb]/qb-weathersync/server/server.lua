@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 local CurrentWeather = Config.StartWeather
 local baseTime = Config.BaseTime
 local timeOffset = Config.TimeOffset

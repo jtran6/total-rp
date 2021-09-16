@@ -8,10 +8,10 @@ end)
 
 RegisterServerEvent('qb-vineyard:server:loadIngredients') 
 AddEventHandler('qb-vineyard:server:loadIngredients', function()
-	local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
+    local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
     local grape = xPlayer.Functions.GetItemByName('grape')
 
-	if xPlayer.PlayerData.items ~= nil then 
+    if xPlayer.PlayerData.items ~= nil then 
         if grape ~= nil then 
             if grape.amount >= 23 then 
 
@@ -26,18 +26,18 @@ AddEventHandler('qb-vineyard:server:loadIngredients', function()
         else
             TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
         end
-	else
-		TriggerClientEvent('QBCore:Notify', source, "You Have Nothing...", "error")
-	end 
-	
+    else
+        TriggerClientEvent('QBCore:Notify', source, "You Have Nothing...", "error")
+    end 
+    
 end) 
 
 RegisterServerEvent('qb-vineyard:server:grapeJuice') 
 AddEventHandler('qb-vineyard:server:grapeJuice', function()
-	local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
+    local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
     local grape = xPlayer.Functions.GetItemByName('grape')
 
-	if xPlayer.PlayerData.items ~= nil then 
+    if xPlayer.PlayerData.items ~= nil then 
         if grape ~= nil then 
             if grape.amount >= 16 then 
 
@@ -52,26 +52,26 @@ AddEventHandler('qb-vineyard:server:grapeJuice', function()
         else
             TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
         end
-	else
-		TriggerClientEvent('QBCore:Notify', source, "You Have Nothing...", "error")
-	end 
-	
+    else
+        TriggerClientEvent('QBCore:Notify', source, "You Have Nothing...", "error")
+    end 
+    
 end) 
 
 RegisterServerEvent('qb-vineyard:server:receiveWine')
 AddEventHandler('qb-vineyard:server:receiveWine', function()
-	local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
+    local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
 
-	xPlayer.Functions.AddItem("wine", Config.WineAmount, false)
-	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['wine'], "add")
+    xPlayer.Functions.AddItem("wine", Config.WineAmount, false)
+    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['wine'], "add")
 end)
 
 RegisterServerEvent('qb-vineyard:server:receiveGrapeJuice')
 AddEventHandler('qb-vineyard:server:receiveGrapeJuice', function()
-	local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
+    local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
 
-	xPlayer.Functions.AddItem("grapejuice", Config.GrapeJuiceAmount, false)
-	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['grapejuice'], "add")
+    xPlayer.Functions.AddItem("grapejuice", Config.GrapeJuiceAmount, false)
+    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['grapejuice'], "add")
 end)
 
 

@@ -24,15 +24,15 @@ Michael = {
         Clear = function(refresh) SetIplPropState(Michael.interiorId, {Michael.Bed.tidy, Michael.Bed.messy}, false, refresh) end
     },
     Garage = {
-        scuba = "V_Michael_Scuba",					-- Scuba diver gear
+        scuba = "V_Michael_Scuba",                    -- Scuba diver gear
         Enable = function (scuba, state, refresh) SetIplPropState(Michael.garageId, scuba, state, refresh) end
     },
     Details = {
-        moviePoster = "Michael_premier",			-- Meltdown movie poster
-        fameShamePoste = "V_Michael_FameShame",		-- Next to Tracey's bed
-        planeTicket = "V_Michael_plane_ticket",		-- Plane ticket
-        spyGlasses = "V_Michael_JewelHeist",		-- On the shelf inside Michael's bedroom
-        bugershot = "burgershot_yoga",				-- Bag and cup in the kitchen, next to the sink
+        moviePoster = "Michael_premier",            -- Meltdown movie poster
+        fameShamePoste = "V_Michael_FameShame",        -- Next to Tracey's bed
+        planeTicket = "V_Michael_plane_ticket",        -- Plane ticket
+        spyGlasses = "V_Michael_JewelHeist",        -- On the shelf inside Michael's bedroom
+        bugershot = "burgershot_yoga",                -- Bag and cup in the kitchen, next to the sink
 
         Enable = function (details, state, refresh) SetIplPropState(Michael.interiorId, details, state, refresh) end
     },

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 local currentDealer = nil
 local knockingDoor = false
 local dealerIsHome = false

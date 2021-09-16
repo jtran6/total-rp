@@ -2,7 +2,7 @@
 -- Apartment 2: -773.22580000 322.82520000 194.88620000
 
 exports('GetExecApartment2Object', function()
-	return ExecApartment2
+    return ExecApartment2
 end)
 
 ExecApartment2 = {

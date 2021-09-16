@@ -30,7 +30,7 @@ end)
 
 RegisterNetEvent('qb-fitbit:use')
 AddEventHandler('qb-fitbit:use', function()
-  openWatch(true)
+    openWatch(true)
 end)
 
 RegisterNUICallback('setFoodWarning', function(data)
@@ -38,7 +38,7 @@ RegisterNUICallback('setFoodWarning', function(data)
 
     TriggerServerEvent('qb-fitbit:server:setValue', 'food', foodValue)
 
-    QBCore.Functions.Notify('Fitbit: Hunger warning set to '..foodValue..'%')
+    QBCore.Functions.Notify('Fitbit: Hunger warning set to ' .. foodValue .. '%')
 end)
 
 RegisterNUICallback('setThirstWarning', function(data)
@@ -46,28 +46,36 @@ RegisterNUICallback('setThirstWarning', function(data)
 
     TriggerServerEvent('qb-fitbit:server:setValue', 'thirst', thirstValue)
 
-    QBCore.Functions.Notify('Fitbit: Thirst warning set to '..thirstValue..'%')
+    QBCore.Functions.Notify('Fitbit: Thirst warning set to ' .. thirstValue .. '%')
 end)
 
 Citizen.CreateThread(function()
     while true do
 
         Citizen.Wait(5 * 60 * 1000)
-        
+
         if isLoggedIn then
             QBCore.Functions.TriggerCallback('qb-fitbit:server:HasFitbit', function(hasItem)
                 if hasItem then
                     local PlayerData = QBCore.Functions.GetPlayerData()
                     if PlayerData.metadata["fitbit"].food ~= nil then
                         if PlayerData.metadata["hunger"] < PlayerData.metadata["fitbit"].food then
-                            TriggerEvent("chatMessage", "FITBIT ", "warning", "Your hunger is "..round(PlayerData.metadata["hunger"], 2).."%")
+
+                            TriggerEvent('chat:addMessage', {
+                                template = '<div class="chat-message warning"> "Your hunger is {1}%</div>',
+                                args = {src, round(PlayerData.metadata["hunger"], 2)}
+                            });
                             PlaySound(-1, "Event_Start_Text", "GTAO_FM_Events_Soundset", 0, 0, 1)
                         end
                     end
-        
+
                     if PlayerData.metadata["fitbit"].thirst ~= nil then
-                        if PlayerData.metadata["thirst"] < PlayerData.metadata["fitbit"].thirst  then
-                            TriggerEvent("chatMessage", "FITBIT ", "warning", "Your thirst is "..round(PlayerData.metadata["thirst"], 2).."%")
+                        if PlayerData.metadata["thirst"] < PlayerData.metadata["fitbit"].thirst then
+
+                            TriggerEvent('chat:addMessage', {
+                                template = '<div class="chat-message warning"> "Your thirst is {1}%</div>',
+                                args = {src, round(PlayerData.metadata["thirst"], 2)}
+                            });
                             PlaySound(-1, "Event_Start_Text", "GTAO_FM_Events_Soundset", 0, 0, 1)
                         end
                     end
@@ -78,6 +86,6 @@ Citizen.CreateThread(function()
 end)
 
 function round(num, numDecimalPlaces)
-    local mult = 10^(numDecimalPlaces or 0)
+    local mult = 10 ^ (numDecimalPlaces or 0)
     return math.floor(num * mult + 0.5) / mult
 end

@@ -225,6 +225,10 @@ AddEventHandler('qb-admin:server:StaffChatMessage', function(name, msg)
 
     if QBCore.Functions.HasPermission(src, "admin") then
         if QBCore.Functions.IsOptin(src) then
+            TriggerClientEvent('chat:addMessage', {
+				template = '<div class="chat-message normal">Staffchate : {0} {1} {2}</div>',
+				args = {src, "STAFFCHAT - "..name, msg}
+			});
             TriggerClientEvent('chatMessage', src, "STAFFCHAT - "..name, "error", msg)
         end
     end

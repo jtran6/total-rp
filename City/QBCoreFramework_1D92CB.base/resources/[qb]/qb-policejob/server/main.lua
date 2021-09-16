@@ -317,6 +317,7 @@ AddEventHandler('police:server:RobPlayer', function(playerId)
         SearchedPlayer.Functions.RemoveMoney("cash", money, "police-player-robbed")
         TriggerClientEvent('QBCore:Notify', SearchedPlayer.PlayerData.source, "You have been robbed of $" .. money)
         TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, "You have stolen $" .. money)
+
     end
 end)
 

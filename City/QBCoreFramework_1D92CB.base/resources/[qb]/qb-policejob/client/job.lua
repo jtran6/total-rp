@@ -392,7 +392,10 @@ AddEventHandler('police:client:CheckStatus', function()
                 QBCore.Functions.TriggerCallback('police:GetPlayerStatus', function(result)
                     if result ~= nil then
                         for k, v in pairs(result) do
-                            TriggerEvent("chatMessage", "STATUS", "warning", v)
+                            TriggerEvent('chat:addMessage', {
+                                template = '<div class="chat-message warning"> STATUS: {1}</div>',
+                                args = {src, v}
+                            });
                         end
                     end
                 end, playerId)

@@ -11,26 +11,26 @@ author 'Sarish'
 ui_page 'html/index.html'
 
 files {
-	'html/index.html',
-	'html/*.jpg',
-	'html/script.js',
-	'html/style.css',
-	
-	'WeaponData/dlctext.meta',
-	'WeaponData/pedpersonalitySPR.meta',
-	'WeaponData/weaponarchetypesSPR.meta',
-	'WeaponData/weaponanimationsSPR.meta',
-	'WeaponData/weaponSPR.meta',
-	'WeaponData/weapons.meta'
+    'html/index.html',
+    'html/*.jpg',
+    'html/script.js',
+    'html/style.css',
+    
+    'WeaponData/dlctext.meta',
+    'WeaponData/pedpersonalitySPR.meta',
+    'WeaponData/weaponarchetypesSPR.meta',
+    'WeaponData/weaponanimationsSPR.meta',
+    'WeaponData/weaponSPR.meta',
+    'WeaponData/weapons.meta'
 }
 
 server_scripts {
-	"server.lua"
+    "server.lua"
 }
 
 client_scripts {
-	"NativeUI.lua",
-	'WeaponData/weaponnames.lua',
+    "NativeUI.lua",
+    'WeaponData/weaponnames.lua',
     'client.lua'
 }
 

@@ -87,6 +87,20 @@ AddEventHandler('hospital:server:SetArmor', function(amount)
 	end
 end)
 
+RegisterServerEvent('hospital:server:AddArmor')
+AddEventHandler('hospital:server:AddArmor', function(amount)
+	local src = source
+	local Player = QBCore.Functions.GetPlayer(src)
+	if Player ~= nil then
+		local playArmor = Player.PlayerData.metadata["armor"] ~= nil and Player.PlayerData.metadata["armor"] or 0
+		if playArmor + amount > 100 then
+			Player.Functions.SetMetaData("armor", 100)
+		else
+			Player.Functions.SetMetaData("armor", playArmor + amount)
+		end
+	end
+end)
+
 RegisterServerEvent('hospital:server:TreatWounds')
 AddEventHandler('hospital:server:TreatWounds', function(playerId)
 	local src = source

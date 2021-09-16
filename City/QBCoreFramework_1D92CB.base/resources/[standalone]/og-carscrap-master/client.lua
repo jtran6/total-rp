@@ -102,17 +102,17 @@ function startSearching(time, dict, anim, cb)
 end
 
 function DrawText3Ds(x, y, z, text)
-	local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-	local factor = #text / 460
-	local px,py,pz=table.unpack(GetGameplayCamCoords())
-	
-	SetTextScale(0.3, 0.3)
-	SetTextFont(6)
-	SetTextProportional(1)
-	SetTextColour(255, 255, 255, 160)
-	SetTextEntry("STRING")
-	SetTextCentre(1)
-	AddTextComponentString(text)
-	DrawText(_x,_y)
-	DrawRect(_x,_y + 0.0115, 0.02 + factor, 0.027, 28, 28, 28, 95)
+    local onScreen,_x,_y=World3dToScreen2d(x,y,z)
+    local factor = #text / 460
+    local px,py,pz=table.unpack(GetGameplayCamCoords())
+    
+    SetTextScale(0.3, 0.3)
+    SetTextFont(6)
+    SetTextProportional(1)
+    SetTextColour(255, 255, 255, 160)
+    SetTextEntry("STRING")
+    SetTextCentre(1)
+    AddTextComponentString(text)
+    DrawText(_x,_y)
+    DrawRect(_x,_y + 0.0115, 0.02 + factor, 0.027, 28, 28, 28, 95)
 end

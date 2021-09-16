@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 StatusList = {
     ["fight"] = "Red hands",
     ["widepupils"] = "Wide pupils",
