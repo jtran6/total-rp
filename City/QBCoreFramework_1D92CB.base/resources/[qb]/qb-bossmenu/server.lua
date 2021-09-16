@@ -1,4 +1,4 @@
-Accounts = {}
+local Accounts = {}
 
 CreateThread(function()
     Wait(500)
@@ -138,13 +138,13 @@ AddEventHandler('qb-bossmenu:server:updateGrade', function(target, grade)
             TriggerClientEvent('QBCore:Notify', src, "Grade Does Not Exist", "error")
         end
     else
-        local player = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid=@citizenid LIMIT 1', {['@citizenid'] = target})
+        local player = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid = ? LIMIT 1', { target })
         if player[1] ~= nil then
             Employee = player[1]
             local job = QBCore.Shared.Jobs[Player.PlayerData.job.name]
             local employeejob = json.decode(Employee.job)
             employeejob.grade = job.grades[data.grade]
-            exports.oxmysql:execute('UPDATE players SET job=@job WHERE citizenid=@citizenid', {['@job'] = json.encode(employeejob), ['@citizenid'] = target})
+            exports.oxmysql:execute('UPDATE players SET job = ? WHERE citizenid = ?', { json.encode(employeejob), target })
             TriggerClientEvent('QBCore:Notify', src, "Grade Changed Successfully!", "success")
         else
             TriggerClientEvent('QBCore:Notify', src, "Player Does Not Exist", "error")
@@ -167,7 +167,7 @@ AddEventHandler('qb-bossmenu:server:fireEmployee', function(target)
             TriggerClientEvent('QBCore:Notify', src, "Contact Server Developer", "error")
         end
     else
-        local player = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid=@citizenid LIMIT 1', {['@citizenid'] = target})
+        local player = exports.oxmysql:fetchSync('SELECT * FROM players WHERE citizenid = ? LIMIT 1', { target })
         if player[1] ~= nil then
             Employee = player[1]
             local job = {}
@@ -179,7 +179,7 @@ AddEventHandler('qb-bossmenu:server:fireEmployee', function(target)
             job.grade = {}
             job.grade.name = nil
             job.grade.level = 0
-            exports.oxmysql:execute('UPDATE players SET job=@job WHERE citizenid=@citizenid', {['@job'] = json.encode(job), ['@citizenid'] = target})
+            exports.oxmysql:execute('UPDATE players SET job = ? WHERE citizenid = ?', { json.encode(job), target })
             TriggerClientEvent('QBCore:Notify', src, "Fired successfully!", "success")
             TriggerEvent('qb-log:server:CreateLog', 'bossmenu', 'Fire', "Successfully fired " .. data.source .. ' (' .. Player.PlayerData.job.name .. ')', src)
         else

@@ -1,6 +1,6 @@
 isLoggedIn = false
 inJail = false
-jailTime = 0
+jailTime = 0 
 currentJob = "electrician"
 CellsBlip = nil
 TimeBlip = nil

@@ -18,28 +18,28 @@ AddEventHandler('qb-vehicleshop:server:buyShowroomVehicle', function(vehicle)
     local plate = GeneratePlate()
 
     if (cash - vehiclePrice) >= 0 then
-        exports.oxmysql:insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (@license, @citizenid, @vehicle, @hash, @mods, @plate, @state)', {
-            ['@license'] = pData.PlayerData.license,
-            ['@citizenid'] = cid,
-            ['@vehicle'] = vehicle,
-            ['@hash'] = GetHashKey(vehicle),
-            ['@mods'] = '{}',
-            ['@plate'] = plate,
-            ['@state'] = 0
+        exports.oxmysql:insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (?, ?, ?, ?, ?, ?, ?)', {
+            pData.PlayerData.license,
+            cid,
+            vehicle,
+            GetHashKey(vehicle),
+            '{}',
+            plate,
+            0
         })
         TriggerClientEvent("QBCore:Notify", src, "Success! Your vehicle will be waiting for you outside", "success", 5000)
         TriggerClientEvent('qb-vehicleshop:client:buyShowroomVehicle', src, vehicle, plate)
         pData.Functions.RemoveMoney('cash', vehiclePrice, "vehicle-bought-in-showroom")
         TriggerEvent("qb-log:server:CreateLog", "vehicleshop", "Vehicle purchased (showroom)", "green", "**"..GetPlayerName(src) .. "** bought a " .. QBCore.Shared.Vehicles[vehicle]["name"] .. " for $" .. vehiclePrice .. " with cash")
     elseif (bank - vehiclePrice) >= 0 then
-        exports.oxmysql:insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (@license, @citizenid, @vehicle, @hash, @mods, @plate, @state)', {
-            ['@license'] = pData.PlayerData.license,
-            ['@citizenid'] = cid,
-            ['@vehicle'] = vehicle,
-            ['@hash'] = GetHashKey(vehicle),
-            ['@mods'] = '{}',
-            ['@plate'] = plate,
-            ['@state'] = 0
+        exports.oxmysql:insert('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (?, ?, ?, ?, ?, ?, ?)', {
+            pData.PlayerData.license,
+            cid,
+            vehicle,
+            GetHashKey(vehicle),
+            '{}',
+            plate,
+            0
         })
         TriggerClientEvent("QBCore:Notify", src, "Success! Your vehicle will be waiting for you outside", "success", 5000)
         TriggerClientEvent('qb-vehicleshop:client:buyShowroomVehicle', src, vehicle, plate)
@@ -62,7 +62,7 @@ end
 
 function GeneratePlate()
     local plate = tostring(GetRandomNumber(1)) .. GetRandomLetter(2) .. tostring(GetRandomNumber(3)) .. GetRandomLetter(2)
-    local result = exports.oxmysql:scalarSync('SELECT plate FROM player_vehicles WHERE plate=@plate', {['@plate'] = plate})
+    local result = exports.oxmysql:scalarSync('SELECT plate FROM player_vehicles WHERE plate = ?', {plate})
     if result then
         plate = tostring(GetRandomNumber(1)) .. GetRandomLetter(2) .. tostring(GetRandomNumber(3)) .. GetRandomLetter(2)
     end

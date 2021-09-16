@@ -803,7 +803,7 @@ Config.Locations = {
         },
         ["products"] = Config.Products["mustapha"],
         ["showblip"] = true,
-    },   
+    },    
     ["cookies"] = {
         ["label"] = "Cookies",
         ["type"] = "hardware",
