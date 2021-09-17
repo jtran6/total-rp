@@ -1,6 +1,10 @@
 local requiredItemsShowed = false
 local requiredItemsShowed2 = false
-
+local CurrentCops = 0
+RegisterNetEvent('police:SetCopCount')
+AddEventHandler('police:SetCopCount', function(amount)
+    CurrentCops = amount
+end)
 Citizen.CreateThread(function()
     Citizen.Wait(2000)
     local requiredItems = {
