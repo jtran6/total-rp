@@ -1,6 +1,5 @@
 local inTuner = false
 local RainbowNeon = false
-
 LastEngineMultiplier = 1.0
 
 function setVehData(veh, data)
@@ -43,29 +42,23 @@ RegisterNUICallback('save', function(data)
     end)
 end)
 
-RegisterNetEvent('qb-tunerchip:server:TuneStatus')
-AddEventHandler('qb-tunerchip:server:TuneStatus', function()
+RegisterNetEvent('qb-tunerchip:client:TuneStatus')
+AddEventHandler('qb-tunerchip:client:TuneStatus', function()
     local ped = PlayerPedId()
     local closestVehicle = GetClosestVehicle(GetEntityCoords(ped), 5.0, 0, 70)
     local plate = GetVehicleNumberPlateText(closestVehicle)
     local vehModel = GetEntityModel(closestVehicle)
-
-    local displayName = GetLabelText(GetDisplayNameFromVehicleModel(vehModel))
-
-    QBCore.Functions.TriggerCallback('qb-tunerchip:server:GetStatus', function(status)
-        if status then
-
-            TriggerEvent('chat:addMessage', {
-                template = '<div class="chat-message warning"> Vehicle Status: {1}: Chiptuned: Yes</div>',
-                args = {src, displayName}
-            });
-        else
-            TriggerEvent('chat:addMessage', {
-                template = '<div class="chat-message warning"> Vehicle Status: {1}: Chiptuned: No</div>',
-                args = {src, displayName}
-            });
-        end
-    end, plate)
+    if vehModel ~= 0 then
+        QBCore.Functions.TriggerCallback('qb-tunerchip:server:GetStatus', function(status)
+            if status then
+                QBCore.Functions.Notify('This Vehicle Has Been Tuned', 'success')
+            else
+                QBCore.Functions.Notify('This Vehicle Has Not Been Tuned', 'error')
+            end
+        end, plate)
+    else
+        QBCore.Functions.Notify('No Vehicle Nearby', 'error')
+    end
 end)
 
 RegisterNUICallback('checkItem', function(data, cb)
@@ -290,6 +283,12 @@ RegisterNUICallback('SetStancer', function(data, cb)
 
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped)
+<<<<<<< HEAD
+    
+    exports["vstancer"]:SetWheelPreset(veh, -fOffset, -fRotation, -rOffset, -rRotation)
+end)
+=======
 
     exports["vstancer"]:SetVstancerPreset(veh, -fOffset, -fRotation, -rOffset, -rRotation)
 end)
+>>>>>>> 66ac0aa7a672bb74f8950c17a38e3b1d33056fae

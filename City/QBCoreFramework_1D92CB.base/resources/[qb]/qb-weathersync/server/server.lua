@@ -1,4 +1,5 @@
-CurrentWeather = Config.StartWeather
+<<<<<<< HEAD
+local CurrentWeather = Config.StartWeather
 local baseTime = Config.BaseTime
 local timeOffset = Config.TimeOffset
 local freezeTime = Config.FreezeTime
@@ -282,7 +283,7 @@ RegisterCommand('time', function(source, args, rawCommand)
                     ShiftToMinute(0)
                 end
                 local newtime = math.floor(((baseTime+timeOffset)/60)%24) .. ":"
-                local minute = math.floor((baseTime+timeOffset)%60)
+				local minute = math.floor((baseTime+timeOffset)%60)
                 if minute < 10 then
                     newtime = newtime .. "0" .. minute
                 else
@@ -305,7 +306,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
         local newBaseTime = os.time(os.date("!*t"))/2 + 360
         if freezeTime then
-            timeOffset = timeOffset + baseTime - newBaseTime            
+            timeOffset = timeOffset + baseTime - newBaseTime			
         end
         baseTime = newBaseTime
     end

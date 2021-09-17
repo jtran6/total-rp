@@ -188,68 +188,68 @@ QB.VehicleShops = {
             },
         },
     }, 
-    [3] = {
-        -- Vehicle Shop options
-        ["ShopName"] = "gocart", -- Name to get in the shared.lua
-        ["ShopLabel"] = "Go Cart Shop", -- Blip name
-        ["Categories"] = {
-            ["sports"]  = "Sports",
-            ["offroad"] = "Offroad",
-            ["motorcycles"] = "Motorcycles",
-            ["cycles"] = "Cycles",
-        },
-        ["TestDriveTimeLimit"] = 3, -- Time in minutes until the vehicle gets deleted
-        ["Location"] = vector3(5583.19, 254.6, 19.21), -- Blip Location
-        ["ReturnLocation"] = vector3(5566.32, 254.7, 19.2), -- Location to return vehicle, only enables if the vehicleshop has a job owned
-        ["VehicleSpawn"] = vector4(5613.06, 254.46, 19.2, 325.06), -- Spawn location when vehicle is bought
-        ["OwnedJob"] = "cardealer", -- false or a job inside a string like "cardealer"
-        ["ShowroomVehicles"] = {
-            [1] = {
-                coords = vector4(5588.74, 254.31, 19.2, 323.23),
-                defaultVehicle = 'veto', -- The vehicle that needs to be there on restart
-                chosenVehicle = 'veto', -- Keep this the same as defaultvehicle
-                inUse = false, -- When changing vehicle this gets set to true, don't change
-                buying = false, -- When buying a vehicle from an owned job this gets set to true, don't change
-            }, 
-            [2] = {
-                coords = vector4(5593.68, 254.52, 19.2, 323.48),
-                defaultVehicle = 'veto2',
-                chosenVehicle = 'veto2',
-                inUse = false,
-                buying = false,
-            }, 
-        },
-        -- Non-changeable options (Don't touch these)
-        ["opened"] = false,
-        ["currentmenu"] = "main",
-        ["lastmenu"] = nil,
-        ["currentpos"] = nil,
-        ["selectedbutton"] = 0,
-        ["marker"] = { r = 0, g = 155, b = 255, a = 250, type = 1 },
-        ["menu"] = {
-            ["x"] = 0.14,
-            ["y"] = 0.15,
-            ["width"] = 0.12,
-            ["height"] = 0.03,
-            ["buttons"] = 10,
-            ["from"] = 1,
-            ["to"] = 10,
-            ["scale"] = 0.29,
-            ["font"] = 0,
-            ["main"] = {
-                ["title"] = "CATEGORIES",
-                ["Name"] = "main",
-                ["buttons"] = {
-                    {name = "Categories", description = ""},
-                }
+        [3] = {
+            -- Vehicle Shop options
+            ["ShopName"] = "gocart", -- Name to get in the shared.lua
+            ["ShopLabel"] = "Go Cart Shop", -- Blip name
+            ["Categories"] = {
+                ["sports"]  = "Sports",
+                ["offroad"] = "Offroad",
+                ["motorcycles"] = "Motorcycles",
+                ["cycles"] = "Cycles",
             },
-            ["vehicles"] = {
-                ["title"] = "VEHICLES",
-                ["name"] = "vehicles",
-                ["buttons"] = {}
+            ["TestDriveTimeLimit"] = 3, -- Time in minutes until the vehicle gets deleted
+            ["Location"] = vector3(5583.19, 254.6, 19.21), -- Blip Location
+            ["ReturnLocation"] = vector3(5566.32, 254.7, 19.2), -- Location to return vehicle, only enables if the vehicleshop has a job owned
+            ["VehicleSpawn"] = vector4(5613.06, 254.46, 19.2, 325.06), -- Spawn location when vehicle is bought
+            ["OwnedJob"] = "cardealer", -- false or a job inside a string like "cardealer"
+            ["ShowroomVehicles"] = {
+                [1] = {
+                    coords = vector4(5588.74, 254.31, 19.2, 323.23),
+                    defaultVehicle = 'veto', -- The vehicle that needs to be there on restart
+                    chosenVehicle = 'veto', -- Keep this the same as defaultvehicle
+                    inUse = false, -- When changing vehicle this gets set to true, don't change
+                    buying = false, -- When buying a vehicle from an owned job this gets set to true, don't change
+                }, 
+                [2] = {
+                    coords = vector4(5593.68, 254.52, 19.2, 323.48),
+                    defaultVehicle = 'veto2',
+                    chosenVehicle = 'veto2',
+                    inUse = false,
+                    buying = false,
+                }, 
             },
-        },
-    }, -- Add your next table under this comma
+            -- Non-changeable options (Don't touch these)
+            ["opened"] = false,
+            ["currentmenu"] = "main",
+            ["lastmenu"] = nil,
+            ["currentpos"] = nil,
+            ["selectedbutton"] = 0,
+            ["marker"] = { r = 0, g = 155, b = 255, a = 250, type = 1 },
+            ["menu"] = {
+                ["x"] = 0.14,
+                ["y"] = 0.15,
+                ["width"] = 0.12,
+                ["height"] = 0.03,
+                ["buttons"] = 10,
+                ["from"] = 1,
+                ["to"] = 10,
+                ["scale"] = 0.29,
+                ["font"] = 0,
+                ["main"] = {
+                    ["title"] = "CATEGORIES",
+                    ["Name"] = "main",
+                    ["buttons"] = {
+                        {name = "Categories", description = ""},
+                    }
+                },
+                ["vehicles"] = {
+                    ["title"] = "VEHICLES",
+                    ["name"] = "vehicles",
+                    ["buttons"] = {}
+                },
+            },
+        }, -- Add your next table under this comma
 }
 
 QB.GarageLabel = {

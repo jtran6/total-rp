@@ -3,7 +3,8 @@ TriggerEvent('QB:getSharedObject', function(obj) QB = obj end)
 
 function getIdentity(source)
     local license = GetPlayerIdentifiers(source)[1]
-    local result = exports.ghmattimysql:executeSync('SELECT * FROM players  WHERE license=@license', {['@license'] = license})
+    local result = local result = exports.oxmysql:fetchSync('SELECT * FROM players WHERE license = ?', {license})
+    --local result = exports.ghmattimysql:executeSync('SELECT * FROM players  WHERE license=@license', {['@license'] = license})
     if result[1] ~= nil then
     	local charInfo = json.decode(result[1]['charinfo'])
     	return {

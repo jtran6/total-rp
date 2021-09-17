@@ -1,15 +1,11 @@
-currentDealer = nil
-knockingDoor = false
-
+<<<<<<< HEAD
+local currentDealer = nil
+local knockingDoor = false
 local dealerIsHome = false
-
 local waitingDelivery = nil
 local activeDelivery = nil
-
 local interacting = false
-
 local deliveryTimeout = 0
-
 local isHealingPerson = false
 local healAnimDict = "mini@cpr@char_a@cpr_str"
 local healAnim = "cpr_pumpchest"
@@ -83,18 +79,12 @@ Citizen.CreateThread(function()
                                     end
                                 else
                                     if waitingDelivery == nil then
-                                        TriggerEvent('chat:addMessage', {
-                                            template = '<div class="chat-message status"> Dealer {1} These are the products, I\'ll keep in touch through email</div>',
-                                            args = {src, Config.Dealers[currentDealer]["name"]}
-                                        });
+                                        TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "These are the products, I\'ll keep in touch through email")
                                         requestDelivery()
                                         interacting = false
                                         dealerIsHome = false
                                     else
-                                        TriggerEvent('chat:addMessage', {
-                                            template = '<div class="chat-message emergency"> Dealer {1} You still need to complete a delivery, what are you waiting for?!</div>',
-                                            args = {src, Config.Dealers[currentDealer]["name"]}
-                                        });
+                                        TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "error", 'You still need to complete a delivery, what are you waiting for?!')
                                     end
                                 end
                             end
@@ -182,21 +172,12 @@ function knockDoorAnim(home)
         Citizen.Wait(1000)
         dealerIsHome = true
         if Config.Dealers[currentDealer]["name"] == "Mystery man" then
-            TriggerEvent('chat:addMessage', {
-                template = '<div class="chat-message status"> Dealer {1} Hello my child, what can I do for you</div>',
-                args = {src, Config.Dealers[currentDealer]["name"]}
-            });
+            TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "normal", 'Hello my child, what can I do for you')
         elseif Config.Dealers[currentDealer]["name"] == "Fred" then
             dealerIsHome = false
-            TriggerEvent('chat:addMessage', {
-                template = '<div class="chat-message status"> Dealer {1} Unfortunately I don\'t do business anymore ... You should have treated me better</div>',
-                args = {src, Config.Dealers[currentDealer]["name"]}
-            });
+            TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "normal", 'Unfortunately I don\'t do business anymore ... You should have treated me better')
         else
-            TriggerEvent('chat:addMessage', {
-                template = '<div class="chat-message status"> Dealer {1} Yo {2}, what can I do for you?</div>',
-                args = {src, Config.Dealers[currentDealer]["name"], myData.charinfo.firstname}
-            });
+            TriggerEvent("chatMessage", "Dealer "..Config.Dealers[currentDealer]["name"], "normal", 'Yo '..myData.charinfo.firstname..', what can I do for you?')
         end
         -- knockTimeout()
     else
@@ -404,10 +385,7 @@ end
 RegisterNetEvent('qb-drugs:client:robberyCall')
 AddEventHandler('qb-drugs:client:robberyCall', function(msg, streetLabel, coords)
     PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
-    TriggerEvent('chat:addMessage', {
-        template = '<div class="chat-message emergency"> 911-ALERT: {1}</div>',
-        args = {src, msg}
-    });
+    TriggerEvent("chatMessage", "911-ALERT", "error", msg)
     local transG = 250
     local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
     SetBlipSprite(blip, 458)
