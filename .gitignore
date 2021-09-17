@@ -2,3 +2,5 @@
 **node_modules/
 cache/
 server.cfg
+**yarn.lock
+**.yarn.installed
