@@ -180,7 +180,10 @@ Config.AuthorizedVehicles = {
 	}
 }
 
-Config.WhitelistedVehicles = {}
+Config.WhitelistedVehicles = {
+    ["hpun"] = "LEO Charger",
+    ["modelsleo"] = "LEO Model S",
+}
 
 Config.AmmoLabels = {
     ["AMMO_PISTOL"] = "9x19mm parabellum bullet",

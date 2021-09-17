@@ -446,12 +446,12 @@ Config.BigBanks = {
             [1] = {
                 ["coords"] = vector3(252.55, 221.15, 101.68),
                 ["isOpened"] = false,
-                ["doorId"] = 78
+                ["doorId"] = 2
             },
             [2] = {
                 ["coords"] = vector3(261.15, 215.21, 101.68),
                 ["isOpened"] = false,
-                ["doorId"] = 79
+                ["doorId"] = 3
             }
         },
         ["camId"] = 26,
