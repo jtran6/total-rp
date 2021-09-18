@@ -160,6 +160,7 @@ QBCore.Commands.Add("newdealer", "Place A Dealer (Admin Only)", {{
     TriggerClientEvent('qb-drugs:client:CreateDealer', source, dealerName, mintime, maxtime)
 end, "admin")
 
+
 QBCore.Commands.Add("deletedealer", "Delete A Dealer (Admin Only)", {{
     name = "name",
     help = "Name of the dealer"
