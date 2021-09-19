@@ -174,6 +174,7 @@ Citizen.CreateThread(function()
 					for a = 1, #current.doors do
 						local currentDoor = current.doors[a]
 						if not currentDoor.object or not DoesEntityExist(currentDoor.object) then
+							print("Object Not Exists")
 							currentDoor.object = GetClosestObjectOfType(currentDoor.objCoords, 1.0, GetHashKey(currentDoor.objName), false, false, false)
 						end
 						FreezeEntityPosition(currentDoor.object, current.locked)
@@ -184,7 +185,9 @@ Citizen.CreateThread(function()
 					end
 				else
 					if not current.object or not DoesEntityExist(current.object) then
+						print(current.object)
 						current.object = GetClosestObjectOfType(current.objCoords, 1.0, GetHashKey(current.objName), false, false, false)
+						print(current.object)
 					end
 					FreezeEntityPosition(current.object, current.locked)
 
@@ -192,6 +195,7 @@ Citizen.CreateThread(function()
 						SetEntityRotation(current.object, 0.0, 0.0, current.objYaw, 2, true)
 					end
 				end
+				print("END OF DOOR")
 			end
 
 			if distance < maxDistance then
@@ -230,7 +234,7 @@ Citizen.CreateThread(function()
 					current.objCoords = current.textCoords
 				end
 
-				DrawText3Ds(current.objCoords.x, current.objCoords.y, current.objCoords.z, displayText)
+				DrawText3Ds(current.textCoords.x, current.textCoords.y, current.textCoords.z, displayText)
 
 				if IsControlJustReleased(0, 38) then
 					if isAuthorized then

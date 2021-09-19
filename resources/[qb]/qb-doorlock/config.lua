@@ -156,26 +156,25 @@ QB.Doors = {
 	-- Prison Door 1
 	{
 		objName = 'prop_gate_prison_01',
-		objCoords  = vector3(1846.37, 2597.91, 45.64),
-		textCoords = vector3(1844.99, 2607.85, 45.58),
+		objCoords  = vector3(1845.62, 2597.83, 45.69),
+		textCoords = vector3(1844.94, 2608.14, 45.69),
 		authorizedJobs = { 'police' },
-		objYaw = -20.0,
 		locking = false,
 		locked = true,
 		pickable = false,
-		distance = 13,
+		distance = 14,
 		size = 2
 	},
 	-- Prison Door 2	
 	{
 		objName = 'prop_gate_prison_01',
-		objCoords  = vector3(1818.5, 2604.8, 44.6),
-		textCoords = vector3(1818.5, 2608.4, 48.0),
+		objCoords  = vector3(1818.51, 2597.83, 45.69),
+		textCoords = vector3(1818.51, 2608.14, 45.69),
 		authorizedJobs = { 'police' },
 		locking = false,
 		locked = true,
 		pickable = false,
-		distance = 13,
+		distance = 12,
 		size = 2
 	},
 	-- Prison Door 3	
