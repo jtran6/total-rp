@@ -1,5 +1,5 @@
 local ItemList = {
-    ["casinochips"] = 1,
+    ["casinochips"] = 10,
 }
 
 RegisterServerEvent("qb-casino:server:sell")

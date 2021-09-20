@@ -13,7 +13,7 @@ Apartments.Locations = {
     },
     ["apartment2"] = {
         name = "apartment2",
-        label = "Morningwood Blvd",
+        label = "Morningwood Blvd(Pier)",
         coords = {
             enter = vector4(-1288.046, -430.126, 35.077, 305.348),
             doorbell = vector4(-1288.046, -430.126, 35.5, 305.348),
@@ -21,7 +21,7 @@ Apartments.Locations = {
     },
     ["apartment3"] = {
         name = "apartment3",
-        label = "Integrity Way",
+        label = "Integrity Way(Pillbox)",
         coords = {
             enter = vector4(269.075, -640.672, 42.02, 70.01),
             doorbell = vector4(269.075, -640.672, 42.5, 70.01),
@@ -29,7 +29,7 @@ Apartments.Locations = {
     },
     ["apartment4"] = {
         name = "apartment4",
-        label = "Tinsel Towers",
+        label = "Tinsel Towers(Del Perro Blvd)",
         coords = {
             enter = vector4(-621.016, 46.677, 43.591, 179.36),
             doorbell = vector4(-621.016, 46.677, 44, 179.36),
@@ -37,7 +37,7 @@ Apartments.Locations = {
     },
     ["apartment5"] = {
         name = "apartment5",
-        label = "Fantastic Plaza",
+        label = "Fantastic Plaza(PD/PDM/Legion)",
         coords = {
             enter = vector4(291.517, -1078.674, 29.405, 270.75),
             doorbell = vector4(291.517, -1078.674, 29.90, 270.75),

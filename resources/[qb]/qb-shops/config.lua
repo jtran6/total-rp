@@ -418,11 +418,19 @@ Config.Products = {
     ["casino"] = {
         [1] = {
             name = 'casinochips',
-            price = 100,
+            price = 10,
             amount = 999999,
             info = {},
             type = 'item',
             slot = 1,
+        },
+        [2] = {
+            name = 'casinochips',
+            price = 10,
+            amount = 999999,
+            info = {},
+            type = 'item',
+            slot = 2,
         }
     },
 }

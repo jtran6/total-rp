@@ -9,6 +9,7 @@ AddEventHandler('qb-customs:attemptPurchase', function(type, upgradeLevel)
         balance = exports['qb-bossmenu']:GetAccount(Player.PlayerData.job.name)
     else
         balance = Player.Functions.GetMoney(moneyType)
+        print("balance" ..balance)
     end
     if type == "repair" then
         if balance >= chicken then
