@@ -2,5 +2,6 @@
 **node_modules/
 cache/
 server.cfg
+server.cfg.bkp
 **yarn.lock
 **.yarn.installed
